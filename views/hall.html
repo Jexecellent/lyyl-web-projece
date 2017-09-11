@@ -1,0 +1,145 @@
+	<!-- header.html start -->
+	<% include include/header1.html %>
+	<!-- header.html end   -->
+	<link rel="stylesheet" type="text/css" href="/static/css/hall.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/navLeft.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+		<% include include/nav.html %>
+		<!-- nav end -->
+		<!-- nav start -->
+		<% include navLeft.html %>
+		<!-- nav end -->
+		<div class="content">
+			<div class="hallCon">
+				<div class="hTitle">
+					<span><img src="/static/img/icon01.png"></span>
+					<div>精彩推荐</div>
+				</div>
+				<div class="roomList">
+					<% if(pageData.list && pageData.list.data.length > 0){ %>
+					<% pageData.list.data.forEach(function(item){%>
+					<div class="listItem">
+						<div class="listHover">
+							<a href="/room?com=1&id=<%=item.roomId%>&acd=<%=item.anchorId%>">
+								<div class="roomT">
+									<div class="roomName">
+										德州扑克主播发牌初级场[7777]
+									</div>
+									<div class="cover">
+										<span class="carry">最低带入：<%= item.minChip %></span>
+										<span class="roomID">房间号：<%= item.roomId %></span>
+									</div>
+									<div class="roomIcon">
+										<img class="video-img" src="/static/img/9435_9366.jpg" data-scr="/static/img/9435_9366.jpg" alt="">
+										<div class="shade"></div>
+										<div class="watch"></div>
+									</div>
+								</div>
+								<div class="roomB">
+									<div class="b_b">
+										<span class="blind"><span>盲注：</span><%= item.minBet || 0 %>/<%= item.maxBet || 0 %></span>
+										<span class="bottomCash">底注：<%= item.bottomBet %></span>
+									</div>
+									<div class="n_v">
+										<!--  主播昵称 -->
+										<span class="nickname"><%= item.nickname || 'test' %></span>
+										<span class="view">2/<span>9</span></span>
+									</div>
+								</div>
+								<div class="line"></div>
+							</a>
+						</div>
+					</div>
+					<% })}else{ %>
+					<div class="listItem">
+						主播还没上线，请耐心等待!
+					</div>	
+					<% } %>
+
+				</div>
+				<div class="hTitle">
+					<span><img src="/static/img/icon03.png"></span>
+					<div>快速场</div>
+				</div>
+				<div class="matchList">
+					<div class="listItem">
+						<div class="listHover">
+							<a href="/room?com=1&id=3&acd=0">
+								<div class="roomT lvUp">
+									<span class="level levelUp">级别1</span>
+									<span class="roomID">房号：9366</span>
+									<span class="mScope">参赛金范围<br>10000-20000</span>
+									<div class="cover"></div>
+									<div class="roomIcon">
+										<img class="video-img" src="/static/img/level_up.png" data-scr="/static/img/9435_9366.jpg" alt="">
+										<div class="shade"></div>
+										<div class="watch"></div>
+									</div>
+								</div>
+								<div class="roomB">
+									<div class="b_b">
+										<span class="blind"><span>盲注：</span>10/20</span>
+										<span class="view">2/<span>9</span></span>
+									</div>
+									<div class="n_v">
+										<span class="bottomCash">底注：200</span>
+										<span class="views"><img src="/static/img/icon_views.png"> 999999</span>
+									</div>
+								</div>
+								<div class="line"></div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="roomList">
+					<div class="listItem">
+						<div class="listHover">
+							<a href="javascript:">
+								<div class="roomT">
+									<div class="roomName">
+										德州扑克主播发牌初级场[7777]
+									</div>
+									<div class="cover">
+										<span class="carry">最低带入：1200</span>
+										<span class="roomID">房间号：9366</span>
+									</div>
+								</div>
+								<div class="roomB">
+									<div class="b_b">
+										<span class="blind"><span>盲注：</span>10/20</span>
+										<span class="bottomCash">底注：2</span>
+									</div>
+									<div class="n_v">
+										<span class="nickname">美丽</span>
+										<span class="view">2/<span>9</span></span>
+									</div>
+								</div>
+								<div class="line"></div>
+							</a>
+						</div>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			$('.nav-hall').addClass('active') ;
+			/*大厅左侧边栏收缩*/
+			$(".navLeft .sideclose").click(function(){
+				var _this = $(this);
+				$(".navLeft").toggle();
+				if(_this.parent().hasClass('navLeftIn')){
+					$(".hallCon,.roomCon").css("marginLeft","287px");
+				}
+				if(_this.parent().hasClass('navLeftOut')){
+					$(".hallCon,.roomCon").css("marginLeft","107px");
+				}
+			})
+		})
+	</script>
+</body>
+</html>

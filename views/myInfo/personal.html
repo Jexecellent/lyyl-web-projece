@@ -1,0 +1,123 @@
+<% include ../include/header1.html %>
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 个人信息 start -->
+					<div id="myinfo" class="conRight">
+						<div class="conInfo">
+							<label>
+								<div class="uploadBg">上传头像</div>
+								<img class="headIcon" src="<%=pageData.headIcon%>">
+								<input id="headIcon" class="hidden" type="file" name="file">
+							</label>
+							<div class="myinfo">
+								<div>
+									<span class="nickname"><%=pageData.nickName%></span>
+									<span class="updateDiv">
+										<span class="updateShow">
+											<a class="updateName updateBtn" href="javascript:">修改昵称<img src="/static/img/personal/icon_update.png"></a>
+										</span>
+										<span class="updateNameDiv updateHide">
+											<input class="nameInput" type="text" value="<%=pageData.nickName%>">
+											<a class="btn min blue updateNameBtn" href="javascript:">修改</a>
+											<a class="btn min cancelBtn grey" href="javascript:">取消</a>
+										</span>
+									</span>
+								</div>
+								<div>
+									<span class="annount">账号：<%=pageData.account%></span>
+									<a class="btn blue min updatePass" target="_blank" href="http://game.13322.com/#/usercenter/security/3">修改密码</a>
+								</div>
+								<div>
+									<span class="lvLabel">LV<%=pageData.vip%>&nbsp;</span>
+									<div class="lvOut">
+										<span class="lvIn" style="width:30%"></span>
+										<div class="lvShow">
+											<div class="lvPlan">在获得3333经验值即可升级</div>
+											<div class="lvTip">获取途径：赠送主播礼物或参与游戏</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<span class="jindou">金豆：<%=pageData.goldBeans || 0%></span>
+									<span>金币：<%=pageData.gold || 0%></span>
+								</div>
+							</div>
+						</div>
+						<div class="audit">
+							<img src="">
+							<span>头像审核中</span>
+						</div>
+						<div class="sex">
+							<div class="updateDiv">
+								<div class="updateShow">
+									<span class="mess">性别：
+										<% if(pageData.sex==1){%>
+										男
+										<% }else if(pageData.sex==2){%>
+										女
+										<% }else{%>
+										未知
+										<%}%>
+									</span>
+									<a class="updateSex updateBtn" href="javascript:"><img src="/static/img/personal/icon_update.png"></a>
+								</div>
+								<div class="updateHide">
+									<label><input type="radio" value="1" name="sex" <% if(pageData.sex==1){%>checked<%}%>>男</label>
+									<label><input type="radio" value="2" name="sex" <% if(pageData.sex==2){%>checked<%}%>>女</label>
+									<a class="btn blue min updateSex updateSexBtn" href="javascript:">修改</a>
+									<a class="btn grey min cancelBtn" href="javascript:">取消</a>
+								</div>
+							</div>
+						</div>
+						<div class="accountDynamic">
+							<div class="riTitle">
+								<span class="titleName active">账户动态</span>
+							</div>
+							<div class="table">
+								<table>
+									<thead>
+									<th><img src="/static/img/personal/bi.png">我的金币</th>
+									<th><img src="/static/img/personal/bean.png">我的金豆</th>
+									<th><img src="/static/img/personal/integral.png">我的积分</th>
+									<th><img src="/static/img/personal/juan.png">我的乐盈券</th>
+									</thead>
+									<tbody>
+									<tr>
+										<td><%=pageData.gold || 0%></td>
+										<td><%=pageData.goldBeans ||0%></td>
+										<td>未知</td>
+										<td>未知</td>
+									</tr>
+									<tr>
+										<td><a class="btn blueB min" target="_blank" href="http://game.13322.com/recharge/game?gameId=10006">去充值</a><a class="btn blueB min" href="javascript:layer.msg('暂未开放')">去划账</a></td>
+										<td></td>
+										<td><a class="btn blueB min" href="/myInfo/myintegral">去赚取</a></td>
+										<td><a class="btn blueB min" href="javascript:layer.msg('暂未开放')">去兑换</a></td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- 个人信息 end -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript" src="/static/js/api/hyapi.js"></script>
+	<script type="text/javascript" src="/static/js/myInfo/personal.js"></script>
+	<script type="text/javascript" src="/static/js/api/ajaxfileupload.js"></script>
+</body>
+</html>

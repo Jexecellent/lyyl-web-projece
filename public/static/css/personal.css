@@ -1,0 +1,1800 @@
+body{
+	background-color: #eee;
+}
+input,textarea{
+	outline: none;
+}
+.myContainer{
+	overflow: hidden;
+	box-shadow: 0 0 6px 3px #e4e4e4;
+	margin-top: 50px;
+	position: relative;
+	min-height: 620px;
+}
+.floatL{
+	float: left;
+}
+.floatR{
+	float: right;
+}
+.hidden{
+	display: none;
+}
+.btn{
+	margin-right: 6px;
+	text-align: center;
+	font-size: 14px;
+	padding: 3px 15px 4px 15px;
+}
+.btn.min{
+	font-size: 12px;
+	padding: 3px 7px;
+}
+.btn.big{
+	font-size: 16px;
+    padding: 5px 28px;
+}
+.btn.radius{
+	border-radius: 5px;
+}
+
+.btn.blue{
+	background-color: #30b6f8;
+	border: 1px solid #30b6f8;
+	color: #fff;
+}
+.btn.blueB{
+	background-color: #fff;
+	border: 1px solid #30b6f8;
+	color: #30b6f8;
+}
+.btn.orange{
+	background-color: #f1a819;
+	border: 1px solid #f1a819;
+	color: #fff;
+}
+.btn.grey{
+	background-color: #fff;
+	border: 1px solid #dedede;
+	color: #666;
+}
+.btn.grey:hover{
+	background-color: #30b6f8;
+	border-color: #30b6f8;
+	color: #fff;
+}
+.btn.blueB:hover{
+	background-color: #30b6f8;
+	border-color: #30b6f8;
+	color: #fff;
+}
+.btn.blue:hover,.btn.orange:hover{
+	opacity: 0.8;
+}
+.updateDiv .updateHide{
+	display: none;
+}
+
+
+
+/* 左侧菜单 start */
+.conLeft{
+	background-color: #ebebeb;
+	float: left;
+	width: 220px;
+	min-height: 620px;
+	padding-top: 30px;
+	position: absolute;
+    bottom: 0;
+    top: 0;
+}
+.conLeft>ul>li>a{
+	display: block;
+	text-align: center;
+	line-height: 40px;
+}
+.conLeft>ul>li>a i.icon{
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	background-image: url(../img/personal/minnav.png);
+	vertical-align: sub;
+	margin-right: 5px;
+}
+.conLeft>ul>li>a{
+	color: #666;
+}
+.conLeft>ul>li>a:hover,.conLeft>ul>li>a.active{
+	background-color: #30b5f8;
+	color: #fff;
+}
+.conLeft>ul>li>a i.i-myinfo{
+	background-position: -22px -7px;
+}
+.conLeft>ul>li>a i.i-mymessage{
+	background-position: -22px -45px;
+}
+.conLeft>ul>li>a i.i-myfocus{
+	background-position: -22px -86px;
+}
+.conLeft>ul>li>a i.i-myreport{
+	background-position: -22px -126px;
+}
+.conLeft>ul>li>a i.i-myfriend{
+	background-position: -22px -165px;
+}
+.conLeft>ul>li>a i.i-myintegral{
+	background-position: -22px -206px;
+}
+.conLeft>ul>li>a i.i-myvip{
+	background-position: -22px -245px;
+}
+.conLeft>ul>li>a i.i-myanchor{
+	background-position: -21px -285px;
+}
+.conLeft>ul>li>a i.i-mylive{
+	background-position: -20px -325px;
+}
+.conLeft>ul>li>a:hover i.i-myinfo,.conLeft>ul>li>a.active i.i-myinfo{
+	background-position: 1px -7px;
+}
+.conLeft>ul>li>a:hover i.i-mymessage,.conLeft>ul>li>a.active i.i-mymessage{
+	background-position: -1px -45px;
+}
+.conLeft>ul>li>a:hover i.i-myfocus,.conLeft>ul>li>a.active i.i-myfocus{
+	background-position: -1px -86px;
+}
+.conLeft>ul>li>a:hover i.i-myreport,.conLeft>ul>li>a.active i.i-myreport{
+	background-position: -1px -126px;
+}
+.conLeft>ul>li>a:hover i.i-myfriend,.conLeft>ul>li>a.active i.i-myfriend{
+	background-position: -1px -165px;
+}
+.conLeft>ul>li>a:hover i.i-myintegral,.conLeft>ul>li>a.active i.i-myintegral{
+	background-position: -2px -206px;
+}
+.conLeft>ul>li>a:hover i.i-myvip,.conLeft>ul>li>a.active i.i-myvip{
+	background-position: -2px -245px;
+}
+.conLeft>ul>li>a:hover i.i-myanchor,.conLeft>ul>li>a.active i.i-myanchor{
+	background-position: -1px -285px;
+}
+.conLeft>ul>li>a:hover i.i-mylive,.conLeft>ul>li>a.active i.i-mylive{
+	background-position: -1px -325px;
+}
+.conLeft>ul>li>a .i-arrow.i-down{
+	display: inline-block;
+	width: 12px;
+	height: 8px;
+	background-image: url(../img/personal/icon_down.png);
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 17px;
+}
+.conLeft>ul>li>a .i-arrow.i-right{
+	display: inline-block;
+	width: 8px;
+	height: 12px;
+	background-image: url(../img/personal/icon_right2.png);
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 14px;
+}
+.conLeft>ul>li>a.active .i-arrow.i-right,.conLeft>ul>li>a:hover .i-arrow.i-right{
+	background-image: url(../img/personal/icon_right.png);
+}
+.conLeft .extend>li>a:hover,
+.conLeft .extend>li>a.active {
+	color: #2fb5f8;
+}
+
+.conLeft .extend>li>a{
+	display: block;
+	line-height: 40px;
+	color: #666;
+	background-color: #e6e6e6;
+	text-align: center;
+	text-indent: 25px;
+}
+
+.conLeft ul li b{
+	position: absolute;
+}
+/* 左侧菜单 end */
+
+
+/* 右侧标题 start */
+.conRight{
+	background-color: #fff;
+	float: left;
+	width: 913px;
+	min-height: 620px;
+	padding: 30px 39px 78px 28px;
+	margin-left: 220px;
+	/* display: none; */
+}
+.conRight .riTitle{
+	color: #333;
+	font-size: 18px;
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 10px;
+}
+.conRight .riTitle a{
+	color: #999;
+}
+.conRight .riTitle a.active{
+	color: #333;
+	border-bottom: 2px solid #2eb5f7;
+}
+.conRight .riTitle .titleName{
+	padding: 0px 10px 9px 10px;
+	margin-right: 15px;
+}
+.conRight .riTitle .titleName.active{
+	border-bottom: 2px solid #2eb5f7;
+}
+.conRight .riTitle .tip{
+	font-size: 14px;
+	color: #666;
+}
+.conRight .riTitle .tip span{
+	font-size: 14px;
+	color: #2fb5f8;
+}
+.conRight .addBtn{
+	float: right;
+	margin: 15px 0 10px 0;
+}
+.conRight .riTitle .backBtn{
+	font-size: 13px;
+	float: right;
+	margin-top: 10px;
+}
+.conRight .riTitle .backBtn:hover{
+	color: #30b6f8;
+}
+.conRight .riTitle .backBtn:hover i{
+	background-image: url(../img/personal/icon_back.png);
+}
+.conRight .riTitle .backBtn i{
+	vertical-align: sub;
+    margin-right: 6px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../img/personal/icon_backd.png);
+}
+/* 右侧标题 end*/
+
+/* 筛选框和表格 start*/
+.filtrate{
+	font-size: 14px;
+	color: #666;
+	padding: 15px 0;
+	border-bottom: 1px solid #e6e6e6;
+}
+.filtrate .filtrateTip{
+	float: right;
+	color: #31b5f8;
+	margin-top: 15px;
+	font-size: 12px;
+}
+.filtrate .inputAccount{
+	width: 156px;
+	height: 28px;
+	border: 1px solid #dedede;
+	margin-left: 5px;
+	text-indent: 8px;
+	font-size: 14px;
+	margin-right: 44px;
+}
+.filtrate .spanGift{
+	position: relative;
+}
+.filtrate .mySelect{
+	margin-left: 5px;
+	margin-right: 44px;
+}
+/* 通用下拉按钮 */
+.mySelect{
+	position: relative;
+}
+.mySelect .selectInput{
+	width: 130px;
+	height: 28px;
+	border: 1px solid #dedede;
+	text-indent: 5px;
+	color: #4c4c4c;
+	background-color: #fff;
+	text-indent: 8px;
+	font-size: 14px;
+}
+.mySelect .icon-arrow{
+	display: inline-block;
+	width: 11px;
+	height: 18px;
+	padding: 0 13px;
+	border-left: 1px solid #dedede;
+	background: url(../img/personal/icon_down2.png) no-repeat;
+	background-position: 13px 7px;
+    position: absolute;
+    margin: 6px 0 0 -38px;
+    cursor: pointer;
+}
+
+.mySelect .selectDown{
+	position: absolute;
+	width: 100%;
+	border: 1px solid #dedede;
+	right: 0;
+	background-color: #fff;
+	display: none;
+}
+.mySelect .selectDown li a{
+	display: block;
+	color: #666;
+	text-indent: 8px;
+	line-height: 30px;
+}
+.mySelect .selectDown li a:hover,.mySelect .selectDown li a.active{
+	background-color: #f4f4f4;
+}
+
+.timeFiltrate{
+	font-size: 14px;
+	color: #666;
+}
+.timeFiltrate .timeSection,.filtrate .timeSection{
+	width: 130px;
+	height: 28px;
+	border: 1px solid #dedede;
+	margin-left: 5px;
+	text-indent: 8px;
+	outline: none;
+	font-size: 14px;
+}
+.timeFiltrate .searchBtn,.filtrate .searchBtn{
+	margin-left: 12px;
+	color: #fff!important;
+}
+
+
+
+.table .tableTip{
+	padding: 15px 0;
+	color: #31b5f8;
+	font-size: 14px;
+}
+.table .tableTip span{
+	color: #fea216;
+	margin: 0 5px;
+}
+.table table{
+	width: 100%;
+	text-align: center;
+}
+.table table th{
+	// width: 20%;
+	background-color: #e6e6e6;
+	color: #666;
+	line-height: 40px;
+	font-weight: initial;
+	font-size: 14px;
+}
+.table table tr{
+	line-height: 40px;
+	font-size: 13px;
+	cursor: pointer;
+}
+.table table tr:nth-child(even){
+	background-color: #f7f7f7;
+}
+.table table tr:hover{
+	background-color: #f7f7f7;
+}
+.table table tr input{
+	vertical-align: middle;
+}
+.table table td.blue{
+	color: #2fb5f8;
+}
+.table table td.green{
+	color: #05a71c;
+}
+.table table td.orange{
+	color: #ff6101;
+}
+.table table td.red{
+	color: #fe0000;
+}
+/* 筛选框和表格 end*/
+
+/* 个人信息 start */
+#myinfo .headIcon{
+	vertical-align: top;
+	width: 140px;
+	height: 140px;
+}
+#myinfo .conInfo label:hover .uploadBg{
+	display: block;
+}
+#myinfo .conInfo .uploadBg{
+	position: absolute;
+	width: 140px;
+	height:140px;
+	background-image: url('../img/personal/fix2.png');
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 210px;
+	background-color: rgba(0,0,0,0.6);
+	display: none;
+}
+#myinfo .myinfo{
+	display: inline-block;
+	margin-left: 25px;
+	color: #999;
+	font-size: 14px;
+	line-height: 30px;
+	padding-top: 10px;
+}
+#myinfo .myinfo .nickname{
+	font-size: 16px;
+	color: #000;
+	margin-right: 45px;
+}
+#myinfo .myinfo .updateName{
+	font-size: 13px;
+}
+#myinfo .myinfo .updateName img{
+	vertical-align: sub;
+	margin-left: 5px;
+}
+#myinfo .myinfo .updateNameDiv{
+	display: none;
+}
+#myinfo .myinfo .nameInput{
+	width: 202px;
+	height: 24px;
+	border: 1px solid #dedede;
+	text-indent: 8px;
+}
+#myinfo .myinfo .annount{
+	margin-right: 10px;
+}
+#myinfo .myinfo .jindou{
+	margin-right: 15px;
+}
+#myinfo .myinfo .lvLabel{
+	color: #3cf;
+}
+#myinfo .myinfo .lvOut{
+	display: inline-block;
+	width: 300px;
+	height: 15px;
+	background-color: #ccc;
+	vertical-align: text-top;
+}
+#myinfo .myinfo .lvIn{
+	display: inline-block;
+	height: 15px;
+	background-color: #fc0;
+	vertical-align: top;
+}
+#myinfo .myinfo .lvOut:hover .lvShow{
+	display: block;
+}
+#myinfo .myinfo .lvShow{
+	position: absolute;
+    width: 228px;
+    height: 61px;
+    font-size: 14px;
+    background-color: #fff4cc;
+    border: 1px solid #ffa51b;
+    padding: 5px 10px;
+    display: none;
+}
+#myinfo .myinfo .lvPlan{
+	color: #ff9900;
+}
+#myinfo .myinfo .lvTip{
+	color: #999;
+}
+#myinfo .audit{
+	display: none;
+	padding: 15px 0;
+}
+#myinfo .audit img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+#myinfo .audit span{
+	margin-left: 10px;
+	font-size: 14px;
+}
+#myinfo .sex{
+	font-size: 14px;
+	width: 200px;
+	text-align: center;
+	margin-top: 15px;
+}
+#myinfo .sex .mess{
+	
+}
+#myinfo .sex .updateSex{
+	margin-left: 15px;
+}
+#myinfo .sex input{
+	vertical-align: middle;
+	margin: 0 4px;
+}
+#myinfo .accountDynamic{
+	margin-top: 60px;
+}
+#myinfo .riTitle{
+	margin-bottom: 15px;
+}
+#myinfo table th{
+	width: 25%;
+}
+#myinfo table th img{
+	vertical-align: middle;
+	margin-right: 5px;
+}
+	/* 个人信息 end */
+
+/* 我的消息 start*/
+#mymessage .riTitle{
+	border-bottom: 0;
+}
+#mymessage .titleName{
+	border-bottom: 0;
+}
+#mymessage .riContent{
+	border: 1px solid #e0e0e0;
+}
+#mymessage .contentTab{
+	padding: 25px 37px 17px 37px;
+}
+#mymessage .contentTab .tabList{
+	padding: 0 6px 14px 6px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+    margin-right: 40px;
+}
+#mymessage .contentTab .tabList.active{
+	border-bottom: 3px solid #2eb5f7;
+	color: #2fb5f8;
+}
+#mymessage .contentTab .tabList span{
+	font-size: 12px;
+    color: red;
+    margin-top: -5px;
+    position: absolute;
+}
+#mymessage .table .deleteBtn{
+	display: none;
+}
+#mymessage .table table tr.read{
+	color: #808080;
+}
+/*#mymessage .table table tr .goMesDet{*/
+	/*color: #333;*/
+/*}*/
+/*#mymessage .table table tr.read .goMesDet{*/
+	/*color: #808080;*/
+/*}*/
+
+#mymessageDetail .riContent{
+	border: 1px solid #d3d3d3;
+}
+#mymessageDetail .mesHead{
+	padding: 25px 0;
+}
+#mymessageDetail .mesTitle{
+	height:80px;
+	border-bottom: 1px solid #d3d3d3;
+	background-color: #ebebeb;
+	color: #333;
+	padding-left: 20px;
+}
+#mymessageDetail .mesTitle h3{
+	font-size: 17px;
+	padding-top: 10px;
+}
+#mymessageDetail .mesTitle p{
+	font-size: 12px;
+	margin-top: 5px;
+}
+#mymessageDetail .mesCon{
+	padding: 40px;
+}
+/* 我的消息 end */
+
+/* 我的关注 start */
+#myfocus .focusList ul{
+	margin: 16px 0;
+}
+#myfocus .focusList ul li{
+	background-color: #f2f2f2;
+	width: 447px;
+	height: 100px;
+	border: 1px solid #f2f2f2;
+	margin: 8px 0;
+	float: left;
+}
+#myfocus .focusList li:hover{
+	border-color: #51c0f7;
+}
+#myfocus .focusList ul li:nth-child(odd){
+	margin-right: 15px;
+}
+#myfocus .focusList .listL{
+	display: inline-block;
+	width: 70px;
+	padding: 15px 12px;
+}
+#myfocus .focusList .listL .headIcon{
+	width: 70px;
+	height: 70px;
+}
+#myfocus .focusList .listL .live{
+	display: inline-block;
+	width: 83px;
+	height: 20px;
+	line-height: 20px;
+	position: absolute;
+	text-align: center;
+	background-color: #2fb5f8;
+	color: #fff;
+	margin: -10px 0 0 -7px;
+}
+#myfocus .focusList .listR{
+	display: inline-block;
+	vertical-align: top;
+	padding: 15px 0 0 8px;
+	width: 311px;
+}
+#myfocus .focusList .listR h4{
+	font-size: 15px;
+	color: #000;
+}
+#myfocus .focusList .listR p{
+	color: #666;
+	margin: 8px 0;
+	height:16px;
+}
+#myfocus .focusList .listR h4 a{
+	margin-right: -7px;
+	display: none;
+}
+#myfocus .focusList .listR p a{
+	display: none;
+}
+#myfocus .focusList li:hover a{
+	display: block;
+}
+
+/* 我的关注 end */
+
+/* 我的好友 start */
+
+#myfriend .friendList ul{
+	margin: 14px 0;
+}
+#myfriend .friendList ul li{
+	width: 448px;
+	height: 154px;
+	border: 1px solid #dedede;
+	background-color: #fafafa;
+	float: left;
+	margin: 10px 0;
+}
+#myfriend .friendList ul li:hover{
+	border-color: #2fb5f8;
+	box-shadow: 0 0 5px 0px #cecece;
+}
+#myfriend .friendList ul li:nth-child(odd){
+	margin-right: 13px;
+}
+#myfriend .friendList .listL{
+	text-align: center;
+	display: inline-block;
+	width: 138px;
+}
+#myfriend .friendList ul li .headIcon{
+	width: 92px;
+	height: 92px;
+	margin: 15px 0;
+	border-radius: 50%;
+}
+#myfriend .friendList ul li .nickname{
+	font-size: 14px;
+	color: #666;
+}
+#myfriend .friendList .listL .online{
+	background-color: #f39800;
+	color: #fff;
+	position: absolute;
+    margin: 90px 0 0 -51px;
+    padding: 1px 7px;
+    border-radius: 3px;
+}
+#myfriend .friendList .listL .offline{
+	background-color: #999;
+	color: #fff;
+	position: absolute;
+    margin: 90px 0 0 -51px;
+    padding: 1px 7px;
+    border-radius: 3px;
+}
+#myfriend .friendList .listR{
+	display: inline-block;
+	width: 292px;
+	vertical-align: top;
+}
+#myfriend .friendList .rightT{
+	font-size: 14px;
+	color: #333;
+	padding: 24px 0 15px 0;
+}
+#myfriend .friendList .rightT .iconSex{
+	display: inline-block;
+	width: 14px;
+	height: 15px;
+	background-image: url(../img/personal/icon_sex.png);
+	margin: 0 12px;
+}
+#myfriend .friendList .rightT .iconSex.iconMan{
+	background-position: 0 15px;
+}
+#myfriend .friendList .rightT .iconSex.iconWoman{
+	background-position: 0 0;
+}
+#myfriend .friendList .rightC{
+	font-size: 12px;
+	color: #333;
+	padding-bottom: 24px;
+	border-bottom: 1px solid #dedede;
+}
+#myfriend .friendList .rightC span{
+	margin-right: 12px;
+}
+#myfriend .friendList .rightC .icon{
+	display: inline-block;
+	width: 18px;
+	height: 15px;
+	background-image: url(../img/personal/icon_goldbean.png);
+	margin-right: 6px;
+	vertical-align: sub;
+}
+#myfriend .friendList .rightC .iconBean{
+	background-position: 0 0;
+}
+#myfriend .friendList .rightC .iconGold{
+	background-position: 0 15px;
+}
+#myfriend .friendList .rightB{
+	font-size: 14px;
+	color: #333;
+	padding-top: 22px;
+	text-align: right;
+}
+#myfriend .friendList .rightB a{
+	margin-right: 0;
+	margin-left: 6px;
+}
+
+/* 我的好友 end*/
+
+
+/* 我的积分 start*/
+#myintegral .user{
+	margin: 30px 0;
+}
+#myintegral .userinfo{
+	display: inline-block;
+	width: 240px;
+	height: 121px;
+	padding: 30px 19px;
+	border: 1px solid #f3f3f3;
+}
+#myintegral .userinfo .userT{
+	padding: 0 11px;
+}
+#myintegral .userinfo .headIcon{
+	width: 70px;
+	height: 70px;
+}
+#myintegral .userinfo .userD{
+	display: inline-block;
+	vertical-align: top;
+	color: #4c4c4c;
+	font-size: 14px;
+	margin-left: 15px;
+}
+#myintegral .userinfo .userD p{
+	margin: 10px 0;
+}
+#myintegral .userinfo .userD img{
+	margin-right: 8px;
+}
+#myintegral .userinfo .userD span{
+	color: #2fb5f8;
+}
+#myintegral .userinfo .userB{
+	margin-top: 21px;
+}
+#myintegral .userinfo .userB a{
+	margin: 0 15px;
+}
+#myintegral .banner{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 19px;
+}
+
+#myintegral .integralList{
+	margin: 40px 16px;
+}
+#myintegral .integralList li{
+	width: 180px;
+	height: 240px;
+	float: left;
+	margin: 0 20px;
+	box-shadow: 0 0 10px #dedede;
+	text-align: center;
+	cursor: pointer;
+}
+#myintegral .integralList li:hover .summary1{
+	display: none;
+}
+#myintegral .integralList li:hover .summary2{
+	display: block;
+}
+#myintegral .integralList .integralBg{
+	height: 207px;
+	font-size: 12px;
+	position: relative;
+}
+#myintegral .integralList .integral1{
+	background: url(../img/personal/integral1.png);
+}
+#myintegral .integralList .integral2{
+	background: url(../img/personal/integral2.png);
+}
+#myintegral .integralList .integral3{
+	background: url(../img/personal/integral3.png);
+}
+#myintegral .integralList .integral4{
+	background: url(../img/personal/integral4.png);
+}
+#myintegral .integralList .integralBg .summary1{
+	color: #4d4d4d;
+	line-height: 32px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+#myintegral .integralList .integralBg .summary2{
+	color: #fff;
+	background-color: rgba(98, 98, 98, 0.8);
+	padding: 6px 0;
+    line-height: 20px;
+    position: absolute;
+	bottom: 0;
+	width: 100%;
+	display: none;
+}
+
+#myintegral .integralList .listB{
+	border-top: 1px solid #f0f0f0;
+}
+#myintegral .integralList .listB a{
+	display: block;
+	line-height: 32px;
+}
+#myintegral .integralList .listB a.alGet{
+	background-color: #d9d9d9;
+	color: #fff;
+}
+#myintegral .integralList .listB a.goGet{
+	background-color: #30b5f8;
+	color: #fff;
+}
+
+#myintegral .divGroup{
+	font-size: 14px;
+	margin: 20px 0;
+	line-height: 25px;
+}
+#myintegral .divQ{
+	color: #999;
+}
+#myintegral .divA{
+	color: #333;
+	text-indent: 12px;
+}
+
+/* 我的积分 end*/
+
+/* 我的VIP start*/
+#myvip .riContent{
+	margin: 23px 0;
+}
+#myvip .myvip{
+	text-align: center;
+	font-size: 14px;
+}
+#myvip .myvip .lvImg{
+	vertical-align: text-top;
+	margin: 0 15px;
+}
+#myvip .myvip .progress{
+	display: inline-block;
+	width: 235px;
+	height: 16px;
+	background-color: #e0e0e0;
+	border-radius: 15px;
+	position: relative;
+	font-size: 12px;
+	vertical-align: text-top;
+}
+#myvip .myvip .progress i{
+	display: inline-block;
+	position: absolute;
+	height: 16px;
+	background-color: #fece02;
+	border-radius: 15px;
+	left: 0;
+}
+#myvip .myvip .progress span{
+	position: relative;
+}
+#myvip .myvip .progress .overTip{
+	position: absolute;
+	width: 211px;
+	height: 27px;
+	line-height: 22px;
+	text-align: center;
+	background-image: url(../img/personal/bg_over.png);
+	font-size: 12px;
+	left: 0;
+	margin: -62px 0 0px 9px;
+	color: #fff;
+	display: none;
+}
+#myvip .myvip .giftbag{
+    margin: 0px 110px;
+}
+#myvip .myvip .giftbag img{
+	vertical-align: middle;
+	position: relative;
+	z-index: 9;
+}
+#myvip .myvip .giftbag a{
+	position: relative;
+	color: #fff;
+}
+#myvip .myvip .giftbag .overTip{
+	position: absolute;
+	width: 211px;
+	height: 27px;
+	line-height: 22px;
+	text-align: center;
+	background-image: url(../img/personal/bg_over.png);
+	font-size: 12px;
+	left: 0;
+	margin: -81px 0 0px -89px;
+	display: none;
+}
+#myvip .myvip .overTip span{
+	color: #fdce00;
+	margin: 0 1px;
+}
+#myvip .myvip .progress:hover .overTip,#myvip .myvip .giftbag:hover .overTip{
+	display: block;
+}
+#myvip .myvip .addFade{
+	position: absolute;
+	color: #9a9a9a;
+	width: 200px;
+    text-align: center;
+    left: 0;
+    top: 0;
+    margin: -2px 0 0 -83px;
+    opacity: 0;
+    -webkit-animation: fadeUp 1s;
+    display: none;
+}
+#myvip .myvip .addFade span{
+	color: #ffd000;
+	font-size: 16px;
+}
+@-webkit-keyframes fadeUp /* Safari 和 Chrome */
+{
+0% {opacity: 1;margin-top: -2px;}
+80% {opacity: 0.4;}
+100% {opacity: 0;margin-top: -66px;}
+}
+
+
+#myvip .myvip .lvEnd{
+	color: #ffcb00;
+	margin: 0 250px 0 80px;
+}
+#myvip .myvip .rechargeBtn{
+	display: inline-block;
+	width: 64px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	background-color: #2bb4f5;
+	color: #fff;
+	border-radius: 5px;
+	
+}
+
+#myvip .vipList{
+	margin: 45px 50px;
+	padding: 15px 15px 45px 15px;
+	border: 1px solid #efefef;
+}
+#myvip .vipList li{
+	width: 25%;
+	float: left;
+	text-align: center;
+	margin-top: 30px;
+}
+#myvip .vipList li .vipImg{
+	height: 75px;
+}
+#myvip .vipList li .vipImg span{
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+#myvip .vipList li .vipImg img{
+	vertical-align: middle;
+}
+#myvip .vipList li h3{
+	color: #666;
+	font-size: 14px;
+	line-height: 35px;
+}
+#myvip .vipList li p{
+	color: #999;
+	font-size: 12px;
+}
+#myvip .isnVip{
+	font-size: 16px;
+	color: #999;
+	text-align: center;
+	padding-top: 70px;
+}
+#myvip .isnVip a{
+	display: inline-block;
+	width: 118px;
+	height: 38px;
+	line-height: 38px;
+	border: 1px solid #2db4f7;
+	font-size: 14px;
+	border-radius: 5px;
+	margin-top: 40px;
+}
+
+#myvip .dialog{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(0,0,0,0.6);
+	display: none;
+}
+#myvip .vipDialog{
+	position: absolute;
+    width: 820px;
+    height: 757px;
+    left: 50%;
+    top: 50%;
+    background-image: url(../img/personal/vip_bg.png);
+    margin: -390px 0 0 -306px;
+    text-align: center;
+}
+#myvip .vipDialog .shutBtn{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background-image: url(../img/personal/btn_shut.png);
+	background-position: -3px 0px;
+    position: absolute;
+    right: 15px;
+    top: 112px;
+}#myvip .vipDialog .shutBtn:hover{
+	background-position: -3px -35px;
+}
+#myvip .vipDialog ul{
+    margin: 18px 59px 0 59px;
+    height: 388px;
+    overflow: auto;
+    padding: 15px 28px;
+}
+#myvip .vipDialog h2{
+	color: #d4ab00;
+	font-size: 16px;
+	margin-top: 200px;
+}
+#myvip .vipDialog h2 b{
+	color: #cd9f00;
+	font-size: 24px;
+	font-weight: bold;
+	margin: 0 5px;
+}
+#myvip .vipDialog li{
+	width: 25%;
+	float: left;
+	margin: 15px 0;
+}
+#myvip .vipDialog li .vipImg{
+	height: 75px;
+}
+#myvip .vipDialog li .vipImg span{
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+}
+#myvip .vipDialog li .vipImg img{
+	vertical-align: middle;
+}
+#myvip .vipDialog li h3{
+	color: #666;
+	font-size: 14px;
+	line-height: 35px;
+}
+#myvip .vipDialog li p{
+	color: #999;
+	font-size: 12px;
+}
+#myvip .vipDialog .rechargeBtn{
+	display: inline-block;
+	width: 118px;
+	height: 38px;
+	line-height: 38px;
+	background-color: #f0c035;
+	border-radius: 5px;
+	font-size: 16px;
+	color: #fff;
+	margin-top: 26px;
+
+}
+/* 我的VIP end*/
+
+/* 主播中心 start*/
+#myanchor .anchorCon{
+	border: 1px solid #dbdbdb;
+}
+#myanchor .anchorTitle{
+	border-bottom: 1px solid #dbdbdb;
+	height: 45px;
+}
+
+#myanchor .anchorTitle .tabPane{
+	float: left;
+	width: 118px;
+	height: 42px;
+	line-height: 42px;
+	
+	text-align: center;
+	background-color: #f5f5f5;
+	color: #656565;
+	border-top: 3px solid #f5f5f5;
+}
+#myanchor .anchorTitle .tabLine{
+	float: left;
+	width: 1px;
+	height: 46px;
+	background-color: #dbdbdb;
+}
+#myanchor .anchorTitle .tabPane.active{
+	border-top: 3px solid #2fb6f8;
+	color: #2fb6f8;
+	background-color: #fff;
+	height: 44px;
+	line-height: 44px;
+	margin-top: -1px;
+}
+
+/* 主播资料 */
+#anchorDetail{
+	padding-bottom: 50px;
+}
+#anchorDetail .userInfo{
+	margin: 30px 0 0 0;
+}
+#anchorDetail .labelGroup{
+	font-size: 14px;
+	color: #666;
+	line-height: 40px;
+}
+#anchorDetail .userInfo .headIcon{
+	width: 90px;
+	height: 90px;
+	margin: 0 20px 15px 40px;
+	vertical-align: middle;
+}
+#anchorDetail .labelGroup label{
+	display: inline-block;
+	width: 112px;
+	text-align: right;
+}
+#anchorDetail .labelGroup span{
+	margin-left: 20px;
+}
+#anchorDetail .lTitle{
+	font-size: 14px;
+	line-height: 45px;
+	border-bottom: 1px solid #e6e6e6;
+	margin: 0 27px;
+	text-indent: 7px;
+	color: #666;
+}
+#anchorDetail .basicInfo{
+	margin: 20px 0;
+}
+#anchorDetail .btnGroup{
+	text-align: center;
+}
+
+/* 主播相册 */
+#myanchor #albumList{
+	padding: 30px 0;
+}
+#albumList .list{
+	width: 170px;
+	float: left;
+	margin: 0 24px;
+	margin-bottom: 18px;
+}
+#myanchor .listCover{
+	width: 164px;
+	height: 164px;
+	border: 3px solid #fff;
+	box-shadow: 0 0 10px #a9a9a9;
+}
+#myanchor .listB{
+	line-height: 50px;
+	font-size: 14px;
+	padding: 0 8px;
+}
+#myanchor .listB .title{
+	color: #30b5f8;
+	width: 70px;
+    display: inline-block;
+    overflow: hidden;
+}
+#myanchor .listB .btnGroup{
+	float: right;
+}
+#myanchor .listB a{
+	color: #666;
+	margin-left: 10px;
+}
+#myanchor .listBorder{
+	width: 170px;
+	height: 170px;
+	line-height: 170px;
+	text-align: center;
+	border: 1px solid #30b5f8;
+	float: left;
+}
+
+#myanchor .listBorder .uploadBtn{
+	padding: 7px 11px;
+}
+#myanchor .listBorder .uploadBtn img{
+	vertical-align: middle;
+}
+#albumDetail .aTitle{
+	line-height: 60px;
+	padding: 0 40px 0 25px;
+	font-size: 14px;
+	color: #676767;
+}
+#albumDetail .aTitle .editBtn{
+	vertical-align: sub;
+	margin-left: 40px;
+}
+#albumDetail .aTitle .backBtn{
+	color: #2eb3f8;
+	float: right;
+}
+#albumDetail .cover{
+	position: absolute;
+	width: 164px;
+	height: 164px;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	justify-content:center;
+	align-items:center;
+	display:-webkit-flex;
+	margin: 3px;
+	cursor: pointer;
+}
+#albumDetail .cover:hover{
+	background-color: rgba(0,0,0,0.3);
+}
+#albumDetail .cover:hover .coverShow{
+	display: none;
+}
+#albumDetail .cover:hover .coverHide{
+	display: block;
+}
+#albumDetail .deleteBtn{
+	line-height: 27px;
+	margin-top: 13px;
+}
+#albumDetail .pictureList{
+	padding: 15px 13px;
+	float: left;
+	min-height: 172px;
+}
+#albumDetail .pictureList .list{
+	width: 120px;
+	margin: 0 12px;
+	cursor: pointer;
+	float: left;
+}
+#albumDetail .pictureList .list .listCover{
+	width: 118px;
+	height: 118px;
+	border: 1px solid #ccc;
+	box-shadow: none;
+}
+#albumDetail .pictureList .list .listBorder{
+	width: 120px;
+	height: 120px;
+	line-height: 120px;
+}
+#albumDetail .pictureList .list .coverOut{
+	display: none;
+}
+#albumDetail .pictureList .list .cover{
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	line-height: 120px;
+	background-color: rgba(0,0,0,0.3);
+	margin: 0;
+}
+#albumDetail .pictureList .list .cover .icon{
+	background-image: url(../img/personal/icon_delete.png);
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+}
+#albumDetail .pictureList .list .cover .icon.selected{
+	background-position: 0 28px;
+}
+#albumDetail .pictureList .list .cover .icon.cancel{
+	background-position: 0 0;
+}
+
+/* 主播mv */
+#mvList{
+	padding: 30px 0;
+}
+ #mvList .list{
+	border: 1px solid #e6e6e6;
+	box-shadow: 0 0 10px #a9a9a9;
+	 width: 170px;
+	 float: left;
+	 margin: 0 24px;
+	 margin-bottom: 18px;
+}
+#anchorMv #mvList .listB{
+	line-height: 30px;
+}
+#anchorMv #mvList .listSummary{
+	color: #999;
+	font-size: 13px;
+	padding: 0 8px 5px 8px;
+	height: 22px;
+}
+#mvList .listCover{
+	width: 164px;
+	height: 110px;
+	position: relative;
+	box-shadow: none;
+}
+#mvList .listCover img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+#anchorMv #mvList .listCover .playCover{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -16px;
+	margin-top: -16px;
+}
+#anchorMv #mvList .noshadow{
+	box-shadow: none;
+}
+#anchorMv #mvList .listBorder{
+	height: 185px;
+	line-height: 185px;
+}
+
+#liveCover{
+	padding-bottom: 50px;
+}
+#liveCover .coverT{
+	padding: 25px 0 25px 32px;
+	border-bottom: 1px solid #e6e6e6;
+}
+#liveCover .coverT a{
+	padding: 7px 11px;
+}
+#liveCover .coverT a img{
+	vertical-align: middle;
+}
+#liveCover .tableCon{
+	padding: 0 30px;
+}
+#liveCover table{
+	width: 100%;
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+}
+#liveCover table thead{
+	border-bottom: 1px solid #ccc;
+}
+#liveCover table th{
+	line-height: 47px;
+}
+#liveCover table tr{
+	line-height: 63px;
+	border-bottom: 1px solid #e6e6e6;
+}
+#liveCover table tr .coverImg{
+	width: 85px;
+	height: 48px;
+	margin-top: 8px;
+}
+#liveCover table tr a{
+	margin: 0 3px;
+	color: #666;
+}
+#liveCover table tr a:hover{
+	color: #31b6f9;
+}
+#liveCover table td.blue{
+	color: #31b6f9;
+}
+
+/* 主播中心 end*/
+
+/* 直播设置 start*/
+#liveset .form{
+	margin-top: 20px;
+}
+#liveset .form .formGroup{
+	font-size: 14px;
+	padding: 14px 0;
+}
+#liveset .form .formGroup .formLabel{
+	display: inline-block;
+	width: 90px;
+	text-align: right;
+	color: #666;
+}
+#liveset .form .formGroup .formDiv{
+	display: inline-block;
+	color: #333;
+	padding-left: 20px;
+}
+#liveset .form .formGroup .formDiv.texttop{
+	vertical-align: text-top;
+}
+#liveset .form .formGroup .formDiv.texttop .updateBtn{
+	margin-left: 0;
+}
+#liveset .form .formGroup .formDiv textarea{
+	width: 508px;
+	height: 100px;
+	border: 1px solid #dedede;
+	margin-bottom: 10px;
+	padding: 6px;
+}
+#liveset .form .formGroup .formDiv input{
+	width: 508px;
+	height: 28px;
+	border: 1px solid #dedede;
+	margin-bottom: 10px;
+	text-indent: 6px;
+}
+
+
+#liveset .form .formGroup .enterBtn{
+	margin-left: 56px;
+}
+#liveset .form .formGroup .updateBtn{
+	margin-left: 30px;
+}
+#liveset .form .formGroup .refreshBtn img{
+	vertical-align: sub;
+}
+/* 直播设置 end*/
+
+
+
+/* 弹窗公用样式 */
+.layui-layer-content{
+	text-align: center;
+}
+.layui-layer-content .formGroup{
+	font-size: 16px;
+	color: #666;
+	margin: 20px 0;
+}
+.layui-layer-content .formGroup label{
+	margin-right: 10px;
+}
+.layui-layer-content .formGroup input[type='text']{
+	width: 164px;
+	height: 30px;
+	border: 1px solid #dedede;
+	margin: 0;
+	text-indent: 5px;
+}
+.layui-layer-content .formGroup .mySelect{
+	text-align: left;
+}
+.layui-layer-content .btnGroup .btn{
+	margin: 0 25px;
+}
+
+
+.gameplayDiv .tip{
+	line-height: 53px;
+	color: #2fb5f8;
+	font-size: 16px;
+}
+.gameplayDiv a{
+	line-height: 50px;
+	color: #4c4c4c;
+	display: block;
+	font-size: 18px;
+}
+.gameplayDiv a.active,.gameplayDiv a:hover{
+	color: #fff;
+	background-color: #30b6f8;
+}
+/* 用户发言弹窗 */
+.usersetDiv .formGroup{
+	margin: 40px 0;
+}
+.usersetDiv .formGroup input[type='checkbox']{
+	vertical-align: middle;
+}
+.usersetDiv .formGroup span{
+	font-size: 14px;
+	color: #333;
+	margin-left: 10px;
+}
+/* 添加管理员弹窗 */
+.addmanagerDiv .formGroup{
+	margin-top: 20px;
+}
+/* 积分记录弹窗 */
+.creditslogList{
+	padding: 30px 40px;
+}
+.creditslogList table{
+	width: 100%;
+	text-align: center;
+}
+.creditslogList th{
+	background-color: #f0f0f0;
+	line-height: 30px;
+	font-size: 14px;
+	color: #999;
+}
+.creditslogList tr{
+	line-height: 36px;
+	font-size: 14px;
+	color: #4c4c4c;
+}
+/* 添加禁言弹窗 */
+
+/* 解除禁言弹窗 */
+.unbindDiv{
+	text-align: center;
+}
+.unbindDiv .tip{
+	line-height: 130px;
+	font-size: 16px;
+}
+.unbindDiv .tip img{
+	vertical-align: middle;
+	margin-right: 12px;
+}
+
+
+
+
+
+
+
+
+/* 主播上传MV弹窗 */
+.layui-layer .form{
+	padding: 20px;
+}
+.layui-layer .form .formGroup{
+	margin: 20px 0;
+}
+.layui-layer .form .formLabel{
+	display: inline-block;
+	width: 130px;
+	text-align: right;
+}
+.layui-layer .form .formInput{
+	width: 218px;
+	height: 24px;
+	text-indent: 5px;
+}
+.layui-layer .form .formTextarea{
+	width: 300px;
+	height: 118px;
+	vertical-align: text-top;
+	text-indent: 5px;
+}
+.layui-layer .form .chooseBtn{
+	margin-left: 18px;
+    vertical-align: middle;
+}
+.layui-layer .form .formBtn{
+	text-align: center;
+}
+
+
+/*分页*/
+.pageComponent{text-align: right;position: absolute;bottom: 0;right: 0;padding: 0 38px;margin-bottom: 25px;}
+.pageComponent i{font-style: normal;}
+.pageComponent span{vertical-align: middle;margin-right: 20px;}
+.pageComponent select{vertical-align: baseline;background: #f0f0f0;border-color: #f0f0f0;color: #999;margin: 0 3px;}
+.tcdPageCode{padding: 15px 0;text-align: left;display: inline-block;}
+.pageComponent a{display: inline-block;height: 22px;line-height: 22px;padding: 0 7px;margin: 0 2px;vertical-align: middle;background: #fff;color: #2eb5f7;border: 1px solid #e6e6e6;}
+.pageComponent a:hover{background-color: #2eb5f7;color: #fff;border-color: #2eb5f7;}
+.pageComponent span.current{display: inline-block;height: 22px;line-height: 22px;padding: 0 8px;margin: 0 3px;vertical-align: middle;background-color: #2eb5f7;color: #fff;}
+.pageComponent span.disabled{display: inline-block;height: 24px;line-height: 24px;padding: 0 8px;margin: 0 3px;vertical-align: middle;background-color: #f0f0f0;color: #999;}
+.pageComponent input{width: 40px;height: 22px;border: 1px solid #e6e6e6;margin: 0 5px;text-align: center;}
+.pageComponent a.goPage{color: #999;margin-left: 5px;}
+.pageComponent .goSpan{color: #999;margin-left: 5px;margin-right: 0;vertical-align: text-bottom;}
+.pageComponent a.goPage:hover{color: #fff;}
+
+
+.uploadMvBox{
+	text-align: left;
+}
+.defaultPage,.editPage{
+	display: none;
+}
+#anchorDetail .active{
+	display: block;
+}
+#mvList,.uploadMvBox{
+	display: none;
+}
+#anchorMv .active{
+	display: block;
+}
+.uploadMvBox-in{
+	width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+    display: table;
+    font: 14px 微软雅黑;
+    background: rgba(0, 0, 0, 0.4);
+}
+.uploadMvBox-in .shade{
+	display: table-cell;
+    vertical-align: middle;
+}
+.uploadMvBox-in .uploadMvBox-c{
+	width: 600px;
+    color: rgb(0, 0, 0);
+    padding-bottom: 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(180, 180, 180);
+    border-image: initial;
+    background: rgb(255, 255, 255);
+    overflow: hidden;
+    margin: 0px auto;
+}
+.uploadMvBox-in .formtitle{
+	height: 42px;
+	background: #2FB5F7;
+	text-align: center;
+	line-height: 42px;
+	color: #fff;
+	position: relative;
+	margin-bottom: 30px;
+}
+.uploadMvBox-in .formtitle span{
+	position: absolute;
+	top: 3px;
+	right: 10px;
+	cursor: pointer;
+}
+.uploadMvBox-in .formGroup{
+	padding-left: 100px;
+}
+.uploadMvBox-in .formLabel{
+	width: 80px;
+	text-align: left;
+	display: inline-block;
+}
+.uploadMvBox-in .formInput{
+	width: 164px;
+	height: 32px;
+	border: 1px solid #DEDDDD;
+	padding-left: 5px;
+}
+.uploadMvBox-in .webuploader-pick{
+	color: #666;
+}
+.uploadMvBox-in .formBtn{
+	width: 60px;
+	height: 28px;
+	margin: 20px auto;
+	background: #2FB5F7;
+	text-align: center;
+	line-height: 28px;
+}
+.uploadMvBox-in .formBtn a{
+	color: #fff;
+}
+#reviseVideoBox .formGroup{
+	text-align: left;
+}
+#uploadNewAvatarBtn .webuploader-pick{
+	color: #00b7ee;
+}
+#uploadNewAvatarBtn:hover .webuploader-pick{
+	color: #fff;
+}
+.editCover{
+	position: relative;
+}
+.modifyTheAvatarBox{
+	position: absolute;
+	top: 65px;
+	left: 28px;
+	width: 164px;
+    height: 164px;
+}
+#addAlbumBox .formGroup{
+	margin-bottom: 30px;
+}
+#addAlbumBox .formGroup .formLabel{
+	text-align: left;
+	width: 100px;
+}
+#anchorAlbum .listBorder{
+	margin-left: 20px;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重置密码 - 海妖直播</title>
+    <link rel="stylesheet" href="/static/css/common/normalize.min.css">
+    <link rel="stylesheet" href="/static/css/user.css">
+</head>
+<body>
+    <header>
+        <div class="h-inner">
+            <div class="fl logo">
+                <img src="/static/img/haiyao_logo.png" alt="">
+                <span class="h-text">
+                    重置密码
+                </span>
+            </div>
+            <a href="/" class="fr back">返回首页<i class="icon icon-back"></i></a>
+        </div>
+    </header>
+    <div class="app-user reset-pass">
+        <div class="main">
+        <form id="resetForm" action="">
+            <div class="line">
+                <span class="tit">手机号重置密码</span>
+            </div>
+            <div class="line-field">
+                <input type="text" placeholder="请输入手机号码" maxlength="11" required="required" name="mobile">
+                <i class="icon icon-ok"></i>
+                <div class="field-tip"></div>
+            </div>
+            <div class="line-field">
+                <input type="text" class="short" name="valideCode" placeholder="输入短信验证码" maxlength="4" required="required">
+                <a href="javascript:;" class="btn btn-main btn-sendcode">免费获取验证码</a>
+                <div class="field-tip"></div>
+            </div>
+            <div class="line-field">
+                <input type="password" placeholder="请输入新密码" maxlength="16" required="required" name="password">
+                <i class="icon icon-ok"></i>
+                <div class="field-tip"></div>
+            </div>
+            <div class="line-field">
+                <input type="password" placeholder="请再次输入新密码" maxlength="16" required="required" name="passwordIdent">
+                <i class="icon icon-ok"></i>
+                <div class="field-tip"></div>
+            </div>
+            <div class="line-field">
+                <input type="submit" value="重置密码" class="btn btn-main btn-block">
+            </div>
+            <div class="line-field">
+                <a href="/user/login" class="fr back">返回&raquo;</a>
+            </div>
+            </form>
+        </div>
+    </div>
+    <script src="/static/js/libs/md5.min.js"></script>
+    <script src="/static/js/api/jquery-1.12.2.min.js"></script>
+    <script src="/static/js/api/hyapi.js"></script>
+    <script src="/static/js/api/formcheck.js"></script>
+    <script src="/static/js/reset-v2.js"></script>
+</body>
+</html>

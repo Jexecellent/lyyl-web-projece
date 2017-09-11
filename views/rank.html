@@ -1,0 +1,1490 @@
+<!-- header.html start -->
+<% include include/header1.html %>
+<!-- header.html end   -->
+<link rel="stylesheet" type="text/css" href="/static/css/rank.css">
+<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+</head>
+<body>
+<!-- nav start -->
+<% include include/nav.html %>
+<!-- nav end -->
+<div class="wrap">
+	<div class="content">
+		<div class="rankT">
+		</div>
+		<div class="rankC">
+			<div class="container">
+				<!--主播魅力榜-->
+				<div class="rankList pinkStyle tabDiv">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/rank_charm.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+						<ul class="rank_charm">
+							<li>
+								<a class="tabPane active" href="javascript:" data-target="#awd">日榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#aww">周榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#awm">月榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#awt">总榜</a>
+							</li>
+						</ul>
+					</div>
+					<div class="listC">
+						<div id="awd" class="tabContent listC-l active">
+							<div class="listFront">
+								<% if (rankData.anchorWealthDay) { %>
+								<% rankData.anchorWealthDay.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<% if ( item.roomId ) { %>
+										<img src="./static/img/video2.png">
+										<% } else { %>
+										<img src="./static/img/video.png">
+										<% } %>
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.anchorWealthDay) { %>
+									<% rankData.anchorWealthDay.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<% if ( item.roomId ) { %>
+												<img src="./static/img/video2.png">
+												<% } else { %>
+												<img src="./static/img/video.png">
+												<% } %>
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="aww" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.anchorWealthWeek) { %>
+								<% rankData.anchorWealthWeek.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<% if ( item.roomId ) { %>
+										<img src="./static/img/video2.png">
+										<% } else { %>
+										<img src="./static/img/video.png">
+										<% } %>
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.anchorWealthWeek) { %>
+									<% rankData.anchorWealthWeek.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<% if ( item.roomId ) { %>
+												<img src="./static/img/video2.png">
+												<% } else { %>
+												<img src="./static/img/video.png">
+												<% } %>
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="awm" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.anchorWealthMonth) { %>
+								<% rankData.anchorWealthMonth.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<% if ( item.roomId ) { %>
+										<img src="./static/img/video2.png">
+										<% } else { %>
+										<img src="./static/img/video.png">
+										<% } %>
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.anchorWealthMonth) { %>
+									<% rankData.anchorWealthMonth.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<% if ( item.roomId ) { %>
+												<img src="./static/img/video2.png">
+												<% } else { %>
+												<img src="./static/img/video.png">
+												<% } %>
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="awt" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.anchorWealthTotal) { %>
+								<% rankData.anchorWealthTotal.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<% if ( item.roomId ) { %>
+										<img src="./static/img/video2.png">
+										<% } else { %>
+										<img src="./static/img/video.png">
+										<% } %>
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.anchorWealthTotal) { %>
+									<% rankData.anchorWealthTotal.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<% if ( item.roomId ) { %>
+												<img src="./static/img/video2.png">
+												<% } else { %>
+												<img src="./static/img/video.png">
+												<% } %>
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--人气主播榜-->
+				<div class="rankList blueStyle tabDiv">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/rqzb_bd.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+						<ul class="rank_charm">
+							<li>
+								<a class="tabPane active" href="javascript:" data-target="#afd">日榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#afw">周榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#afm">月榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#aft">总榜</a>
+							</li>
+						</ul>
+					</div>
+					<div class="listC">
+						<div id="afd" class="tabContent listC-l active">
+							<div class="listFront">
+								<% if (rankData.anchorFansDay) { %>
+								<% rankData.anchorFansDay.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.anchorFansDay) { %>
+									<% rankData.anchorFansDay.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="afw" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.anchorFansWeek) { %>
+								<% rankData.anchorFansWeek.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.anchorFansWeek) { %>
+									<% rankData.anchorFansWeek.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="afm" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.anchorFansMonth) { %>
+								<% rankData.anchorFansMonth.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.anchorFansMonth) { %>
+									<% rankData.anchorFansMonth.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="aft" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.anchorFansTotal) { %>
+								<% rankData.anchorFansTotal.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.anchorFansTotal) { %>
+									<% rankData.anchorFansTotal.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--主播周星榜-->
+				<div class="weekList orangeStyle tabDiv">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/rank_week_a.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+						<div class="listTab">
+							<span>
+								<a class="tabPane active" href="javascript:" data-target="#asc">本周</a>|
+							</span>
+							<span>
+								<a class="tabPane" href="javascript:" data-target="#asp">上周</a>
+							</span>
+						</div>
+					</div>
+					<div class="listC">
+						<div id="asc" class="tabContent listC-l active">
+							<ul>
+								<% if (rankData.anchorStarCur) { %>
+								<% rankData.anchorStarCur.forEach(function(item,index){ %>
+								<li>
+									<a href="javascript:">
+										<div class="gift">
+											<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png'%>">
+											<img class="giftBg" src="./static/img/rank_gift1.png">
+											<span class="giftName"><%= item.giftName %></span>
+										</div>
+										<div class="info">
+											<div class="anchorName">
+												<%= item.anchorName %>
+											</div>
+											<% if (item.total) { %>
+											<div class="amount">
+												<%= item.total %>个
+											</div>
+											<% } %>
+										</div>
+									</a>
+								</li>
+								<% }) %>
+								<% } %>
+							</ul>
+						</div>
+						<div id="asp" class="tabContent listC-l">
+							<ul>
+								<% if (rankData.anchorStarPre) { %>
+								<% rankData.anchorStarPre.forEach(function(item,index){ %>
+								<li>
+									<a href="javascript:">
+										<div class="gift">
+											<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png'%>">
+											<img class="giftBg" src="./static/img/rank_gift1.png">
+											<span class="giftName"><%= item.giftName %></span>
+										</div>
+										<div class="info">
+											<div class="anchorName">
+												<%= item.anchorName %>
+											</div>
+											<% if (item.total) { %>
+											<div class="amount">
+												<%= item.total %>个
+											</div>
+											<% } %>
+										</div>
+									</a>
+								</li>
+								<% }) %>
+								<% } %>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--粉丝周星榜-->
+				<div class="weekList greyStyle tabDiv">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/rank_week_f.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+						<div class="listTab">
+							<span>
+								<a class="tabPane active" href="javascript:" data-target="#psc">本周</a>|
+							</span>
+							<span>
+								<a class="tabPane" href="javascript:" data-target="#psp">上周</a>
+							</span>
+						</div>
+					</div>
+					<div class="listC">
+						<div id="psc" class="tabContent listC-l active">
+							<ul>
+								<% if (rankData.playerStarCur) { %>
+								<% rankData.playerStarCur.forEach(function(item,index){ %>
+								<li>
+									<a href="javascript:">
+										<div class="gift">
+											<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png'%>">
+											<img class="giftBg" src="./static/img/rank_gift1.png">
+											<span class="giftName"><%= item.giftName %></span>
+										</div>
+										<div class="info">
+											<div class="anchorName">
+												<%= item.anchorName %>
+											</div>
+											<% if (item.total) { %>
+											<div class="amount">
+												<%= item.total %>个
+											</div>
+											<% } %>
+										</div>
+									</a>
+								</li>
+								<% }) %>
+								<% } %>
+							</ul>
+						</div>
+						<div id="psp" class="tabContent listC-l">
+							<ul>
+								<% if (rankData.playerStarPre) { %>
+								<% rankData.playerStarPre.forEach(function(item,index){ %>
+								<li>
+									<a href="javascript:">
+										<div class="gift">
+											<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png'%>">
+											<img class="giftBg" src="./static/img/rank_gift1.png">
+											<span class="giftName"><%= item.giftName %></span>
+										</div>
+										<div class="info">
+											<div class="anchorName">
+												<%= item.anchorName %>
+											</div>
+											<% if (item.total) { %>
+											<div class="amount">
+												<%= item.total %>个
+											</div>
+											<% } %>
+										</div>
+									</a>
+								</li>
+								<% }) %>
+								<% } %>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--财富榜-->
+				<div class="rankList pinkStyle">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/rank_treasure.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+					</div>
+					<div class="listC">
+						<div class="listFront">
+							<% if (rankData.playerPlayerWealth) { %>
+							<% rankData.playerPlayerWealth.forEach(function(item,index){ %>
+							<% if ( index <= 2 ) { %>
+							<div class="no<%= index+1 %>">
+								<div class="noT">
+									<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+									<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+								</div>
+								<div class="anchor">
+									<span><%= item.anchorName %></span>
+								</div>
+								<div class="views">
+									<span><%= item.wealth %></span>
+								</div>
+							</div>
+							<% } %>
+							<% }) %>
+							<% } %>
+						</div>
+						<div class="listBack">
+							<ul>
+								<% if (rankData.playerPlayerWealth) { %>
+								<% rankData.playerPlayerWealth.forEach(function(item,index){ %>
+								<% if ( index > 2 ) { %>
+								<li>
+									<a href="javascript:">
+										<span class="index"><%= index+1 %></span>
+										<span class="anchorName"><%= item.anchorName %></span>
+										<span class="views">
+											<span><%= item.wealth %></span>
+										</span>
+									</a>
+								</li>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--消费榜-->
+				<div class="rankList blueStyle tabDiv">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/xf_bd.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+						<ul class="rank_charm">
+							<li>
+								<a class="tabPane active" href="javascript:" data-target="#xpcd">日榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#xpcw">周榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#xpcm">月榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#xpct">总榜</a>
+							</li>
+						</ul>
+					</div>
+					<div class="listC">
+						<div id="xpcd" class="tabContent listC-l active">
+							<div class="listFront">
+								<% if (rankData.playerConsumeDay) { %>
+								<% rankData.playerConsumeDay.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerConsumeDay) { %>
+									<% rankData.playerConsumeDay.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="xpcw" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerConsumeWeek) { %>
+								<% rankData.playerConsumeWeek.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerConsumeWeek) { %>
+									<% rankData.playerConsumeWeek.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="xpcm" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerConsumeMonth) { %>
+								<% rankData.playerConsumeMonth.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerConsumeMonth) { %>
+									<% rankData.playerConsumeMonth.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="xpct" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerConsumeTotal) { %>
+								<% rankData.playerConsumeTotal.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerConsumeTotal) { %>
+									<% rankData.playerConsumeTotal.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--胜率榜-->
+				<div class="rankList pinkStyle">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/rank_win.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+					</div>
+					<div class="listC">
+						<div class="listFront">
+							<% if (rankData.playerWinRate) { %>
+							<% rankData.playerWinRate.forEach(function(item,index){ %>
+							<% if ( index <= 2 ) { %>
+							<div class="no<%= index+1 %>">
+								<div class="noT">
+									<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+									<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+								</div>
+								<div class="anchor">
+									<span><%= item.anchorName %></span>
+								</div>
+								<div class="views">
+									<span><%= item.wealth %></span>
+								</div>
+							</div>
+							<% } %>
+							<% }) %>
+							<% } %>
+						</div>
+						<div class="listBack">
+							<ul>
+								<% if (rankData.playerWinRate) { %>
+								<% rankData.playerWinRate.forEach(function(item,index){ %>
+								<% if ( index > 2 ) { %>
+								<li>
+									<a href="javascript:">
+										<span class="index"><%= index+1 %></span>
+										<span class="anchorName"><%= item.anchorName %></span>
+										<span class="views">
+											<span><%= item.wealth %></span>
+										</span>
+									</a>
+								</li>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--胜利榜-->
+				<div class="rankList blueStyle tabDiv">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/sl_bd.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+						<ul class="rank_charm">
+							<li>
+								<a class="tabPane active" href="javascript:" data-target="#sppwd">日榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#sppww">周榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#sppm">月榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#sppt">总榜</a>
+							</li>
+						</ul>
+					</div>
+					<div class="listC">
+						<div id="sppwd" class="tabContent listC-l active">
+							<div class="listFront">
+								<% if (rankData.playerPlayerWinDay) { %>
+								<% rankData.playerPlayerWinDay.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerPlayerWinDay) { %>
+									<% rankData.playerPlayerWinDay.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="sppww" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerPlayerWinWeek) { %>
+								<% rankData.playerPlayerWinWeek.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerPlayerWinWeek) { %>
+									<% rankData.playerPlayerWinWeek.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="sppm" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerPlayerMonth) { %>
+								<% rankData.playerPlayerMonth.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerPlayerMonth) { %>
+									<% rankData.playerPlayerMonth.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="sppt" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerPlayerTotal) { %>
+								<% rankData.playerPlayerTotal.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerPlayerTotal) { %>
+									<% rankData.playerPlayerTotal.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--粉丝贡献榜-->
+				<div class="rankList pinkStyle tabDiv">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/rank_offer.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+						<ul class="rank_charm">
+							<li>
+								<a class="tabPane active" href="javascript:" data-target="#psd">日榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#psw">周榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#psm">月榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#pst">总榜</a>
+							</li>
+						</ul>
+					</div>
+					<div class="listC">
+						<div id="psd" class="tabContent listC-l active">
+							<div class="listFront">
+								<% if (rankData.playerSpendDay) { %>
+								<% rankData.playerSpendDay.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerSpendDay) { %>
+									<% rankData.playerSpendDay.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="psw" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerSpendWeek) { %>
+								<% rankData.playerSpendWeek.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerSpendWeek) { %>
+									<% rankData.playerSpendWeek.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="psm" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerSpendMonth) { %>
+								<% rankData.playerSpendMonth.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerSpendMonth) { %>
+									<% rankData.playerSpendMonth.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="pst" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerSpendTotal) { %>
+								<% rankData.playerSpendTotal.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerSpendTotal) { %>
+									<% rankData.playerSpendTotal.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--游戏达人榜-->
+				<div class="rankList blueStyle tabDiv">
+					<div class="listT">
+						<img class="listTimg" src="./static/img/yxdr_bd.png">
+						<a class="question" href="javascript:"><img src="./static/img/rank_question.png"></a>
+						<ul class="rank_charm">
+							<li>
+								<a class="tabPane active" href="javascript:" data-target="#ppst">日榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#ppsd">周榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#ppsm">月榜</a>
+							</li>
+							<li>
+								<a class="tabPane" href="javascript:" data-target="#ppst">总榜</a>
+							</li>
+						</ul>
+					</div>
+					<div class="listC">
+						<div id="ppsd" class="tabContent listC-l active">
+							<div class="listFront">
+								<% if (rankData.playerPlayerStarDay) { %>
+								<% rankData.playerPlayerStarDay.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerPlayerStarDay) { %>
+									<% rankData.playerPlayerStarDay.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="ppsw" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerPlayerStarWeek) { %>
+								<% rankData.playerPlayerStarWeek.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerPlayerStarWeek) { %>
+									<% rankData.playerPlayerStarWeek.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="ppsm" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerPlayerStarMonth) { %>
+								<% rankData.playerPlayerStarMonth.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerPlayerStarMonth) { %>
+									<% rankData.playerPlayerStarMonth.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+						<div id="ppst" class="tabContent listC-l">
+							<div class="listFront">
+								<% if (rankData.playerPlayerStarTotal) { %>
+								<% rankData.playerPlayerStarTotal.forEach(function(item,index){ %>
+								<% if ( index <= 2 ) { %>
+								<div class="no<%= index+1 %>">
+									<div class="noT">
+										<img class="headIcon" src="<%= item.anchorIcon || './static/img/tou.png' %>">
+										<img class="noBg" src="./static/img/NO<%= index+1 %>_bg.png">
+									</div>
+									<div class="anchor">
+										<img src="./static/img/levels/lv/1.png">
+										<span><%= item.anchorName %></span>
+									</div>
+									<div class="views">
+										<span><%= item.wealth %></span>
+									</div>
+								</div>
+								<% } %>
+								<% }) %>
+								<% } %>
+							</div>
+							<div class="listBack">
+								<ul>
+									<% if (rankData.playerPlayerStarTotal) { %>
+									<% rankData.playerPlayerStarTotal.forEach(function(item,index){ %>
+									<% if ( index > 2 ) { %>
+									<li>
+										<a href="javascript:">
+											<span class="index"><%= index+1 %></span>
+											<img src="./static/img/levels/vip/10.png">
+											<img src="./static/img/levels/lv/11.png">
+											<span class="anchorName"><%= item.anchorName %></span>
+											<span class="views">
+												<span><%= item.wealth %></span>
+											</span>
+										</a>
+									</li>
+									<% } %>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- footer start -->
+	<% include include/footer.html %>
+	<!-- footer end -->
+	<div class="scrollTop">回到顶部</div>
+</div>
+
+<script type="text/javascript" src="/static/js/api/swiper.min.js"></script>
+<script type="text/javascript" src="/static/js/rankingList.js"></script>
+
+</body>
+</html>

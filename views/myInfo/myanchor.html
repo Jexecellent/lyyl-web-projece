@@ -1,0 +1,450 @@
+<% include ../include/header1.html %>
+<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+<link rel="stylesheet" type="text/css" href="/static/css/common/webuploader.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 主播中心 start -->
+					<div id="myanchor" class="conRight">
+						<div class="anchorCon tabDiv">
+							<div class="anchorTitle clearfix">
+								<a class="tabPane active" href="javascript:" data-target="#anchorDetail">主播资料</a>
+								<i class="tabLine"></i>
+								<a class="tabPane" href="javascript:" data-target="#anchorAlbum" id="anchorAlbumBtn">主播相册</a>
+								<i class="tabLine"></i>
+								<a class="tabPane" href="javascript:" data-target="#anchorMv" id="anchorMvBtn">主播MV</a>
+								<i class="tabLine"></i>
+								<a class="tabPane" href="javascript:" data-target="#liveCover" id="liveCoverBtn">直播封面</a>
+								<i class="tabLine"></i>
+							</div>
+							<div id="anchorDetail" class="tabContent active">
+								<!-- 默认页 -->
+								<div class="defaultPage active">
+									<div class="userInfo" data-userId="<%= anchorCenter.info.data.anchorId%>">
+										<div>
+											<img class="headIcon" src="/static/img/tou.png">
+										</div>
+										<div class="labelGroup">
+											<label>昵称：</label>
+											<span><%= anchorCenter.info.data.nickName%></span>
+										</div>
+										<div class="labelGroup">
+											<label>性别：</label>
+											<span><%= anchorCenter.info.data.sex == 1 ? "男" : "女"%></span>
+										</div>
+									</div>
+									<div class="lTitle">
+										基本信息
+									</div>
+									<div class="basicInfo">
+										<div class="labelGroup">
+											<label>星座：</label>
+											<span data-constellationId=""><%= anchorCenter.info.data.constellation%></span>
+										</div>
+										<div class="labelGroup">
+											<label>生日：</label>
+											<span><%= anchorCenter.info.data.birthday%></span>
+										</div>
+										<div class="labelGroup">
+											<label>地址：</label>
+											<span>
+												<span class="province" value="100"><%= anchorCenter.info.data.province %></span>
+												<span class="city" value=''><%= anchorCenter.info.data.city %></span>
+											</span>
+										</div>
+										<div class="labelGroup">
+											<label>爱好：</label>
+											<span><%= anchorCenter.info.data.hobby%></span>
+										</div>
+										<div class="labelGroup">
+											<label>个性签名：</label>
+											<span><%= anchorCenter.info.data.sign%></span>
+										</div>
+									</div>
+									<div class="btnGroup">
+										<a class="btn blue editBtn" href="javascript:" id="toEdit">编辑</a>
+									</div>
+								</div>
+								<!-- 编辑页 -->
+								<div class="editPage">
+									<div class="userInfo" data-userId="<%= anchorCenter.info.data.anchorId%>">
+										<div>
+											<img class="headIcon" src="/static/img/tou.png">
+											<a class="btn blueB" href="javascript:" id="uploadNewAvatarBtn">上传新头像</a>
+										</div>
+										<div class="labelGroup">
+											<label>昵称：</label>
+											<span><input type="text" name="" value="<%= anchorCenter.info.data.nickName%>" id="nickName"></span>
+										</div>
+										<div class="labelGroup">
+											<label>性别：</label>
+											<span>
+												<select id="sex">
+													<option value="1">男</option>
+													<option value="2">女</option>
+												</select>
+											</span>
+										</div>
+									</div>
+									<div class="lTitle">
+										基本信息
+									</div>
+									<div class="basicInfo">
+										<div class="labelGroup">
+											<label>星座：</label>
+											<span>
+												<select id="constellation">
+													<option value="">-请选择-</option>
+													<option>水瓶座</option>
+													<option>双鱼座</option>
+													<option>白羊座</option>
+													<option>金牛座</option>
+													<option>双子座</option>
+													<option>巨蟹座</option>
+													<option>狮子座</option>
+													<option>处女座</option>
+													<option>天秤座</option>
+													<option>天蝎座</option>
+													<option>射手座</option>
+													<option>摩羯座</option>
+												</select>
+											</span>
+										</div>
+										<div class="labelGroup">
+											<label>生日：</label>
+											<span>
+												<input type="date" name="" id="birthday" value="<%= anchorCenter.info.data.birthday%>">
+											</span>
+										</div>
+										<div class="labelGroup">
+											<label>地址：</label>
+											<span>
+												<select id="s_province" name="s_province"></select>  
+											    <select id="s_city" name="s_city"></select>  
+											    <select id="s_county" name="s_county"></select>
+											    <!-- <input type="text" name="" value="比克大厦"> -->
+											</span>
+										</div>
+										<div class="labelGroup">
+											<label>爱好：</label>
+											<span><input type="text" name="" value="<%= anchorCenter.info.data.hobby%>" id="hobby"></span>
+										</div>
+										<div class="labelGroup">
+											<label>个性签名：</label>
+											<span><input type="text" name="" value="<%= anchorCenter.info.data.sign%>" id="sign"></span>
+										</div>
+									</div>
+									<div class="btnGroup">
+										<a class="btn blue saveBtn" href="javascript:">保存修改</a>
+									</div>
+								</div>
+							</div>
+							<div id="anchorAlbum" class="tabContent">
+								<div id="albumList" class="clearfix albumCon">
+									<div class="albumList-c"></div>
+									<div class="listBorder">
+										<a class="btn blue uploadBtn" href="javascript:" id="addAlbumBtn">
+											<img src="/static/img/personal/icon_uploadalbum.png"> 上传新相册
+										</a>
+									</div>
+								</div>
+								<div id="editBox">
+									<div id="albumDetail" class="clearfix albumCon hidden">
+										<div class="editCover">
+											<div class="editCover-c"></div>
+											<div class="modifyTheAvatarBox"><span id="modifyTheAvatarBtn"></span></div>
+										</div>
+										<div class="pictureList clearfix"></div>
+										<div class="listBorder" id="uploader-demo">
+											<div id="thelist" class="uploader-list"></div>
+											<a class="btn blue uploadBtn uploadPhotoBtn" href="javascript:">
+												<img src="/static/img/personal/icon_uploadcover.png"> 
+												<span id="filePicker">添加照片</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="anchorMv" class="tabContent">
+								<div id="mvList" class="clearfix albumCon active">
+									<div class="mvList-c"></div>
+									<div class="list noshadow">
+										<div class="listBorder">
+											<a class="btn blue uploadBtn uploadMvBtn" href="javascript:">
+												<img src="/static/img/personal/icon_uploadmv.png"> 上传MV
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="uploadMvBox">
+									<div class="form uploadMvBox-in">
+										<div class="shade">
+											<div class="uploadMvBox-c">
+												<div class="formtitle">
+													<h3>上传MV</h3>
+													<span class="close">X</span>
+												</div>
+												<div class="formGroup mvName">
+													<label class="formLabel">MV名称：</label>
+												    <input class="formInput" type="text" name=""  placeholder="请输入MV名称最多八个字" maxlength="8">
+												</div>
+												<div class="formGroup">
+													<label class="formLabel">MV：</label>
+													<input class="formInput mvName" type="text" name="" placeholder="请选择上传MP4/flv格式的MV">
+													<span id="chooseBtn" style="color:#000">选择文件</span>
+												</div>
+												<div class="formGroup mvRemark">
+													<label class="formLabel">MV描述：</label>
+													<textarea class="formTextarea" rows="5" placeholder="请输入20字内的MV描述" maxlength="20"></textarea>
+												</div>
+												<div class="formBtn uploadbtn">
+													<a class="blue" href="javascript:">上传</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="liveCover" class="tabContent">
+								<div class="coverT">
+									<a class="btn blue" href="javascript:">
+										<img src="/static/img/personal/icon_uploadcover.png"> 上传新封面
+									</a>
+								</div>
+								<div class="tableCon">
+									<table>
+										<thead>
+											<th>序号</th>
+											<th>封面类型</th>
+											<th>封面名称</th>
+											<th>封面图片</th>
+											<th>状态</th>
+											<th>大小</th>
+											<th>上传时间</th>
+											<th>操作</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1203</td>
+												<td>包厢封面</td>
+												<td>姐姐的照片</td>
+												<td><img class="coverImg" src="/static/img/personal/cover.png"></td>
+												<td>未使用</td>
+												<td>12.23KB</td>
+												<td>2017-5-26 10:10:10</td>
+												<td>
+													<a href="javscript:">使用</a>|<a href="javscript:">修改</a>|<a href="javscript:">删除</a>
+												</td>
+											</tr>
+											<tr>
+												<td>1203</td>
+												<td>包厢封面</td>
+												<td>姐姐的照片</td>
+												<td><img class="coverImg" src="/static/img/personal/cover.png"></td>
+												<td class="blue">使用中</td>
+												<td>12.23KB</td>
+												<td>2017-5-26 10:10:10</td>
+												<td>
+													<a href="javscript:">使用</a>|<a href="javscript:">修改</a>|<a href="javscript:">删除</a>
+												</td>
+											</tr>
+											<tr>
+												<td>1203</td>
+												<td>包厢封面</td>
+												<td>姐姐的照片</td>
+												<td><img class="coverImg" src="/static/img/personal/cover.png"></td>
+												<td>未使用</td>
+												<td>12.23KB</td>
+												<td>2017-5-26 10:10:10</td>
+												<td>
+													<a href="javscript:">使用</a>|<a href="javscript:">修改</a>|<a href="javscript:">删除</a>
+												</td>
+											</tr>
+											<tr>
+												<td>1203</td>
+												<td>包厢封面</td>
+												<td>姐姐的照片</td>
+												<td><img class="coverImg" src="/static/img/personal/cover.png"></td>
+												<td>未使用</td>
+												<td>12.23KB</td>
+												<td>2017-5-26 10:10:10</td>
+												<td>
+													<a href="javscript:">使用</a>|<a href="javscript:">修改</a>|<a href="javscript:">删除</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 主播中心 end -->
+				</div>
+			</div>
+		</div>
+		<% include ../include/footer.html %>
+	</div>
+	
+	<!--主播基本信息-->
+	<script type="text/template" id="info">
+		{{ if data}}
+		<div class="userInfo" data-userId="{{data.anchorId}}">
+			<div>
+				<img class="headIcon" src="{{data.headIcon || '/static/img/tou.png'}}">
+			</div>
+			<div class="labelGroup">
+				<label>昵称：</label>
+				<span>{{data.nickName}}</span>
+			</div>
+			<div class="labelGroup">
+				<label>性别：</label>
+				<span>{{data.sex == 1 ? "男" : "女"}}</span>
+			</div>
+		</div>
+		<div class="lTitle">
+			基本信息
+		</div>
+		<div class="basicInfo">
+			<div class="labelGroup">
+				<label>星座：</label>
+				<span>{{data.constellation}}</span>
+			</div>
+			<div class="labelGroup">
+				<label>生日：</label>
+				<span>{{data.birthday}}</span>
+			</div>
+			<div class="labelGroup">
+				<label>地址：</label>
+				<span>
+					<span class="province" value="100">{{data.province}}</span>
+					<span class="city" value=''>{{data.city}}</span>
+				</span>
+			</div>
+			<div class="labelGroup">
+				<label>爱好：</label>
+				<span>{{data.hobby}}</span>
+			</div>
+			<div class="labelGroup">
+				<label>个性签名：</label>
+				<span>{{data.sign}}</span>
+			</div>
+		</div>
+		<div class="btnGroup">
+			<a class="btn blue editBtn" href="javascript:" id="toEdit">编辑</a>
+		</div>
+		{{/if}}
+	</script>
+	<!--主播相册列表-->
+	<script type="text/template" id="album">
+		{{ if data}}
+		{{each data as value i}}
+		<div class="list" data-albumId="{{value.id}}">
+			<img class="listCover" src="../static/img/anchor/anchor1.png">
+			<div class="listB">
+				<span class="title">{{value.albumName}}</span>
+				<span class="btnGroup">
+					<a class="editBtn" href="javascript:">编辑</a>
+					<a class="deleteBtn" href="javascript:">删除</a>
+				</span>
+			</div>
+		</div>
+		{{/each}}
+		{{/if}}
+	</script>
+	<!--编辑主播相册 -->
+	<script type="text/template" id="editCover">
+		<div class="aTitle">
+			相册名称：
+			<span class="updateDiv">
+				<span class="updateShow">
+					&nbsp;&nbsp;{{data.albumName}}
+					<a class="updateBtn editBtn" href="javascript:"><img src="/static/img/personal/icon_edit.png"></a>
+				</span>
+				<span class="updateHide">
+					<input type="text" name="">
+					<a class="btn blue preserve" href="javascript:">保存</a>
+					<a class="btn grey cancelBtn cancel" href="javascript:">取消</a>
+				</span>
+			</span>
+
+			<a class="backBtn" href="javascript:">< 返回主播相册</a>
+		</div>
+		<div id="albumCover" class="clearfix albumCon">
+			<div class="list">
+				<div class="cover">
+					<span class="coverShow">
+						相册封面
+					</span>
+					<span class="coverHide hidden">
+						相册封面<br>（点击更换）
+					</span>
+				</div>
+				<img class="listCover" src="{{data.cover || '/static/img/anchor1.png'}}">
+			</div>
+		</div>
+		<div class="aTitle">
+			相册照片（共{{data.photoCout || 0}}张）
+			<a class="btn blueB floatR deleteBtn" href="javascript:">批量删除</a>
+		</div>
+	</script>
+	<!--编辑主播相册里的相片 -->
+	<script type="text/template" id="photoList">
+		{{ if data}}
+		{{each data as value i}}
+		<div class="list" data-id="{{value.id}}">
+			<div class="coverOut">
+				<div class="cover">
+					<i class="icon selected"></i>
+				</div>
+			</div>
+			<img class="listCover" src="{{value.path || './static/img/anchor/anchor1.png'}}">
+			<div class="listB">
+				<span class="btnGroup">
+					<a class="editBtn changeBtn" href="javascript:"><input type="file" id="changeBtn" name="">更换</a>
+					<a class="deleteBtn delPhotoBtn" href="javascript:">删除</a>
+				</span>
+			</div>
+		</div>
+		{{/each}}
+		{{/if}}
+	</script>
+
+	<!--主播mv列表-->
+	<script type="text/template" id="mvl">
+		{{ if data}}
+		{{each data as value i}}
+		<div class="list" data-id={{value.id}}>
+			<div class="listCover">
+				<img src="{{value.cover || '/static/img/anchor1.png'}}">
+			</div>
+			<div class="listB">
+				<span class="title">{{value.nickname}}</span>
+				<span class="btnGroup">
+					<a class="editBtn" href="javascript:">编辑</a>
+					<a class="deleteBtn" href="javascript:">删除</a>
+				</span>
+			</div>
+			<div class="listSummary">{{value.remark}}</div>
+		</div>
+		{{/each}}
+		{{/if}}
+	</script>
+
+
+	<script type="text/javascript" src="/static/js/api/webuploader.min.js"></script>
+	<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript" src="/static/js/myinfo/myanchor.js"></script>
+	<script type="text/javascript" src="/static/js/api/hyapi.js"></script>
+	<script type="text/javascript" src="/static/js/libs/template.js"></script>
+	<script type="text/javascript" src="/static/js/api/ajaxfileupload.js"></script>
+</body>
+</html>

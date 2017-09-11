@@ -1,0 +1,210 @@
+<% include ../include/header1.html %>
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+<link rel="stylesheet" type="text/css" href="/static/js/libs/uikit/css/uikit.min.css">
+<link rel="stylesheet" type="text/css" href="/static/js/libs/uikit/css/components/datepicker.almost-flat.min.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 我的报表 start -->
+					<div id="myreport" class="conRight tabDiv">
+						<div class="riTitle">
+							<a class="titleName" href="/myInfo/myreport?rType=0">充值</a>
+							<a class="titleName" href="/myInfo/myreport?rType=1">游戏</a>
+							<a class="titleName" href="/myInfo/myreport?rType=2">礼物</a>
+							<a class="titleName" href="/myInfo/myreport?rType=3">兑换</a>
+							<a class="titleName" href="/myInfo/myreport?rType=4">其他</a>
+							<span class="timeFiltrate floatR">
+								<span>日期：<input class="timeSection startTime" type="text" name="" data-uk-datepicker="{format:'YYYY-MM-DD'}">&nbsp;&nbsp;至&nbsp;<input class="timeSection endTime" type="text" name="" data-uk-datepicker="{format:'YYYY-MM-DD'}"></span>
+								<span>
+									<a class="btn blue searchBtn" href="javascript:">查询</a>
+								</span>
+							</span>
+						</div>
+						<div class="tabContent active">
+							<div class="filtrate">
+								
+							</div>
+							<div class="table">
+								<% if(rType == 0){%>
+								<table>
+									<thead>
+										<th>时间</th>
+										<th>订单号</th>
+										<th>充值金额</th>
+										<th>充值方式</th>
+										<th>充值收益</th>
+										<th>活动收益</th>
+										<th>总收益</th>
+									</thead>
+									<tbody>
+									<% if(pageData && pageData.data.length != 0){%>
+									<% pageData.data.forEach(function(item){ %>
+										<tr>
+											<td><%=item.createTime%></td>
+											<td class="blue"><%=item.orderNo%></td>
+											<td><%=item.amount%>元</td>
+											<td><%=item.type%></td>
+											<td class="green">60000金币</td>
+											<td class="green"><%=item.activityIncome%>金豆</td>
+											<td class="orange"><%=item.income%>金豆</td>
+										</tr>
+									<% })}else{%>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>--暂无数据--</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<% } %>
+									</tbody>
+								</table>
+								<%}else if(rType==1){%>
+								<table>
+									<thead>
+									<th>时间</th>
+									<th>局号</th>
+									<th>房间号</th>
+									<th>游戏类型</th>
+									<th>收益</th>
+									<th>详情</th>
+									</thead>
+									<tbody>
+									<% if(pageData && pageData.data.length != 0){%>
+									<% pageData.data.forEach(function(item){ %>
+									<tr>
+										<td><%=item.createTime%></td>
+										<td><%=item.roundNo%></td>
+										<td><%=item.roomId%></td>
+										<td><%=item.gameType%></td>
+										<td class="green">+<%=item.income%></td>
+										<td><a href="javascript:">查看</a></td>
+									</tr>
+									<% })}else{%>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>--暂无数据--</td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+									<% } %>
+									</tbody>
+								</table>
+								<%}else if(rType==2){%>
+								<table>
+									<thead>
+									<th>时间</th>
+									<th>主播名称</th>
+									<th>赠送礼物</th>
+									<th>支付</th>
+									</thead>
+									<tbody>
+									<% if(pageData && pageData.data.length != 0){%>
+									<% pageData.data.forEach(function(item){ %>
+									<tr>
+										<td><%=item.createTime%></td>
+										<td><%=item.anchorName%></td>
+										<td><%=item.giftName%>*<%=item.giftNum%></td>
+										<td><%=item.amount%>金币</td>
+									</tr>
+									<% })}else{%>
+									<tr>
+										<td></td>
+										<td>--暂无数据--</td>
+										<td></td>
+										<td></td>
+									</tr>
+									<% } %>
+									</tbody>
+								</table>
+								<%}else if(rType==3){%>
+								<table>
+									<thead>
+									<th>时间</th>
+									<th>兑换账号</th>
+									<th>订单号</th>
+									<th>兑换到平台</th>
+									<th>兑换金额</th>
+									<th>兑换结果</th>
+									</thead>
+									<tbody>
+									<tr>
+										<td>2017-05-10 10:10:10</td>
+										<td>888888888</td>
+										<td class="blue">hhly_sadasd45412124546</td>
+										<td>乐盈平台</td>
+										<td class="green">+8888金豆</td>
+										<td class="green">成功</td>
+									</tr>
+									<tr>
+										<td>2017-05-10 10:10:10</td>
+										<td>888888888</td>
+										<td class="blue">hhly_sadasd45412124546</td>
+										<td>乐盈平台</td>
+										<td class="green">+8888金豆</td>
+										<td class="red">失败</td>
+									</tr>
+									</tbody>
+								</table>
+								<%}else if(rType==4){%>
+								<table>
+									<thead>
+									<th>时间</th>
+									<th>消费内容</th>
+									<th>支付</th>
+									</thead>
+									<tbody>
+									<tr>
+										<td>2017-05-10 10:10:10</td>
+										<td>蓝色妖姬*1</td>
+										<td>11,660,000金币</td>
+									</tr>
+									<tr>
+										<td>2017-05-10 10:10:10</td>
+										<td>蓝色妖姬*1</td>
+										<td>11,660,000金币</td>
+									</tr>
+									</tbody>
+								</table>
+								<%}%>
+								<div class="pageComponent">
+									<div class="tcdPageCode"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 我的报表 end -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript" src="/static/js/libs/uikit/js/uikit.min.js"></script>
+	<script type="text/javascript" src="/static/js/libs/uikit/js/components/datepicker.min.js"></script>
+	<script type="text/javascript" src="/static/js/myinfo/myreport.js"></script>
+	<script type="text/javascript" src="/static/js/api/jquery.page.js"></script>
+
+	<script type="text/javascript">
+		var total = '2';//总条数
+		var pages = '2';//总页数
+		var pageSize = $.getUrlParam("pageSize") || 6;//每页条数
+		var pageNum = $.getUrlParam("pageNum") || 1;//当前页码
+		var rType = $.getUrlParam("rType") || 0;//消息类型
+		$(".riTitle a").eq(rType).addClass("active");
+	</script>
+</body>
+</html>

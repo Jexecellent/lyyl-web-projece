@@ -1,0 +1,286 @@
+<% include ../include/header1.html %>
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 直播收益 start -->
+					<div id="liveearnings" class="conRight tabDiv">
+						<div class="riTitle">
+							<a class="titleName tabPane active" href="javascript:" data-target="#gift">礼物</a>
+							<a class="titleName tabPane" href="javascript:" data-target="#reward">打赏</a>
+						</div>
+						<div id="gift" class="tabContent active">
+							<div class="filtrate">
+								<span>账号：<input class="inputAccount" type="text" name=""></span>
+								<span class="spanGift">
+									礼物：
+									<span class="mySelect">
+										<input class="selectInput" type="text" name="" disabled="" value="财神"><i class="icon-arrow"></i>
+										<div class="selectDown">
+											<ul>
+												<li>
+													<a class="active" href="javascript:">财神</a>
+												</li>
+												<li>
+													<a href="javascript:">飞机</a>
+												</li>
+												<li>
+													<a href="javascript:">香吻</a>
+												</li>
+												<li>
+													<a href="javascript:">蓝色妖姬</a>
+												</li>
+												<li>
+													<a href="javascript:">香槟</a>
+												</li>
+												<li>
+													<a href="javascript:">幸运星</a>
+												</li>
+												<li>
+													<a href="javascript:">炸弹</a>
+												</li>
+											</ul>
+										</div>
+									</span>
+								</span>
+								<span>日期：<input class="timeSection" type="text" name="">&nbsp;&nbsp;至&nbsp;<input class="timeSection" type="text" name=""></span>
+								<span>
+									<a class="btn blue searchBtn" href="javascript:">查询</a>
+								</span>
+							</div>
+							<div class="table">
+								<div class="tableTip">
+									05/01-05/10 总收益<span>60500</span>金币，<span>300</span>活动金币
+								</div>
+								<table>
+									<thead>
+										<th>日期</th>
+										<th>打赏者</th>
+										<th>礼物描述</th>
+										<th>收益类型</th>
+										<th>总收益（金币）</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>财神*2</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>财神*2</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>财神*2</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>财神*2</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>财神*2</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div id="reward" class="tabContent">
+							<div class="filtrate">
+								<span>账号：<input class="inputAccount" type="text" name=""></span>
+								<span>日期：<input class="timeSection" type="text" name="">&nbsp;&nbsp;至&nbsp;<input class="timeSection" type="text" name=""></span>
+								<span>
+									<a class="btn blue searchBtn" href="javascript:">查询</a>
+								</span>
+							</div>
+							<div class="table">
+								<div class="tableTip">
+									05/01-05/10 总收益<span>60500</span>金币，<span>300</span>活动金币
+								</div>
+								<table>
+									<thead>
+										<th>日期</th>
+										<th>打赏者</th>
+										<th>收益类型</th>
+										<th>总收益（金币）</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+										<tr>
+											<td>2017-05-10 10:10:10</td>
+											<td>asdasdasd</td>
+											<td>金币</td>
+											<td>60000</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- 直播收益 end -->
+				</div>
+			</div>
+		</div>
+		<% include ../include/footer.html %>
+			<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript">
+		$('.scrollTop').unbind().click(function(){
+			$('.content').animate({scrollTop: '0px'}, 800);}
+		);
+		$(".content").scroll(function(){
+			viewH =$(this).height();//可见高度  
+	        scrollTop =$(this).scrollTop();//滚动高度
+	        if(scrollTop+100>viewH){
+	        	$(".scrollTop").fadeIn();
+	        }
+	        else{
+	        	$(".scrollTop").fadeOut();
+	        }
+
+		})
+
+		/*直播分类弹窗*/
+		$('.livetypeBtn').on('click', function(){
+			layer.open({
+				title: '直播分类',
+				skin: 'haiyao-class',
+				type: 1,
+				area: ['265px', '245px'],
+				shadeClose: true, //点击遮罩关闭
+				content: '<div class="gameplayDiv"><div class="tip">请选择游戏玩法</div><div><a href="javascript:">德州扑克</a></div><div><a class="active" href="javascript:">斗地主</a></div><div><a href="javascript:">其他游戏</a></div></div>'
+			});
+		});
+
+		/*游戏玩法弹窗*/
+		$('.gameplayBtn').on('click', function(){
+			layer.open({
+				title: '游戏玩法',
+				skin: 'haiyao-class',
+				type: 1,
+				area: ['265px', '195px'],
+				shadeClose: true, //点击遮罩关闭
+				content: '<div class="gameplayDiv"><div class="tip">请选择游戏玩法</div><div><a href="javascript:">主播发牌</a></div><div><a class="active" href="javascript:">主播陪玩</a></div></div>'
+			});
+		});
+
+		/*用户发言设置弹窗*/
+		$('.usersetBtn').on('click', function(){
+			layer.open({
+				title: '用户发言设置',
+				skin: 'haiyao-class',
+				type: 1,
+				area: ['390px', '208px'],
+				shadeClose: true, //点击遮罩关闭
+				content: '<div class="usersetDiv"><div class="formGroup"><label>用户账号：</label><input type="checkbox"><span class="">仅超管，主播，管理员发言</span></div><div class="btnGroup"><a class="btn big blueB" href="javascript:">取消</a><a class="btn big blue" href="javascript:">确定</a></div></div>'
+			});
+		});
+
+		/*添加管理员弹窗*/
+		$('.addmanagerBtn').on('click', function(){
+			layer.open({
+				title: '添加管理员',
+				skin: 'haiyao-class',
+				type: 1,
+				area: ['390px', '232px'],
+				shadeClose: true, //点击遮罩关闭
+				content: '<div class="addmanagerDiv"><div class="formGroup"><label>用户账号：</label><input type="text"></div><div class="btnGroup"><a class="btn big blueB" href="javascript:">取消</a><a class="btn big blue" href="javascript:">确定</a></div></div>'
+			});
+		});
+
+		/*添加禁言弹窗*/
+		$('.addblackBtn').on('click', function(){
+			layer.open({
+				title: '禁止发言',
+				skin: 'haiyao-class',
+				type: 1,
+				area: ['390px', '272px'],
+				shadeClose: true, //点击遮罩关闭
+				content: '<div class="addblackDiv"><div class="formGroup"><label>用户账号：</label><input type="text"></div><div class="formGroup"><label>禁言时间：</label><span class="mySelect"><input class="selectInput" type="text" name="" disabled="" value="1天"><i class="icon-arrow"></i><div class="selectDown"><ul><li><a class="active" href="javascript:">1天</a></li><li><a href="javascript:">2天</a></li><li><a href="javascript:">3天</a></li></ul></div></span></div><div class="btnGroup"><a class="btn big blueB" href="javascript:">取消</a><a class="btn big blue" href="javascript:">确定</a></div></div>'
+			});
+		});
+
+		/*解除禁言弹窗*/
+		$('.unbindBtn').on('click', function(){
+			layer.open({
+				title: '解除禁言',
+				skin: 'haiyao-class',
+				type: 1,
+				area: ['390px', '232px'],
+				shadeClose: true, //点击遮罩关闭
+				content: '<div class="unbindDiv"><div class="tip"><img src="./static/img/icon_question.png">您确认解除操作？</div><div class="btnGroup"><a class="btn blueB big" href="javascript:">取消</a><a class="btn blue big" href="javascript:">确定</a></div></div>'
+			});
+		});
+
+		/*积分记录弹窗*/
+		$('.creditslogBtn').on('click', function(){
+			layer.open({
+				title: '积分记录',
+				skin: 'haiyao-class',
+				type: 1,
+				area: ['800px', '545px'],
+				shadeClose: true, //点击遮罩关闭
+				content: '<div class="creditslogList"><table><thead><th>序号</th><th>日期时间</th><th>获得途径</th><th>积分状态</th><th>账号积分</th></thead><tbody><tr><td>1</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>2</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>3</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>4</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>5</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>6</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>7</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>8</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>9</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>10</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr></tbody></table></div>'
+			});
+		});
+
+		/*主播上传MV弹窗*/
+		$('.uploadMvBtn').on('click', function(){
+			layer.open({
+				title: '上传MV',
+				skin: 'haiyao-class',
+				type: 1,
+				area: ['600px', '360px'],
+				shadeClose: true, //点击遮罩关闭
+				content: '<div class="form"><div class="formGroup"><label class="formLabel">MV名称：</label><input class="formInput" type="text" name="" placeholder="请输入MV名称最多八个字"></div><div class="formGroup"><label class="formLabel">MV名称：</label><input class="formInput" type="text" name="" placeholder="请选择上传MP4/flv格式的MV"><label class="btn blue min chooseBtn">选择文件<input class="hidden" type="file" name=""></label></div><div class="formGroup"><label class="formLabel">MV名称：</label><textarea class="formTextarea" rows="5" placeholder="请输入20字内的MV描述"></textarea></div><div class="formBtn"><a class="btn blue" href="javascript:">上传</a></div></div>'
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<ul>
+	<li>
+		<a data-target="myinfo" class="tabMenu <%= act==1?'active':'' %>" href="/myInfo">
+			<i class="icon i-myinfo"></i>
+			<span>个人信息</span>
+		</a>
+	</li>
+	<li>
+		<a data-target="mymessage" class="tabMenu <%= act==2?'active':'' %>" href="/myInfo/mymessage">
+			<i class="icon i-mymessage"></i>
+			<span>我的消息</span>
+		</a>
+	</li>
+	<li>
+		<a data-target="myfocus" class="tabMenu <%= act==3?'active':'' %>" href="/myInfo/myfocus">
+			<i class="icon i-myfocus"></i>
+			<span>我的关注</span>
+		</a>
+	</li>
+	<li>
+		<a data-target="myreport" class="tabMenu <%= act==4?'active':'' %>" href="/myInfo/myreport">
+			<i class="icon i-myreport"></i>
+			<span>我的报表</span>
+		</a>
+	</li>
+	<li>
+		<a data-target="myfriend" class="tabMenu <%= act==5?'active':'' %>" href="/myInfo/myfriend">
+			<i class="icon i-myfriend"></i>
+			<span>我的好友</span>
+		</a>
+	</li>
+	<li>
+		<a data-target="myintegral" class="tabMenu <%= act==6?'active':'' %>" href="/myInfo/myintegral">
+			<i class="icon i-myintegral"></i>
+			<span>积分中心</span>
+		</a>
+	</li>
+	<li>
+		<a data-target="myvip" class="tabMenu <%= act==7?'active':'' %>" href="/myInfo/myvip">
+			<i class="icon i-myvip"></i>
+			<span>我的VIP</span>
+		</a>
+	</li>
+	<% if(session.user){%>
+	<% if(session.user.identity==1){%>
+	<li>
+		<a data-target="myanchor" class="tabMenu <%= act==8?'active':'' %>" href="/myInfo/myanchor">
+			<i class="icon i-myanchor"></i>
+			<span>主播中心</span>
+		</a>
+	</li>
+	<li>
+		<a class="mylive tabMenu <%= act>=9?'active':''%>" data-target="mylive" href="javascript:" state="off">
+			<i class="icon i-mylive"></i>
+			<span>直播相关<i class="i-arrow i-right"></i></span>
+			<ul class="extend <%= act>=9?'':'hide'%>">
+				<li><a class="<%= act==9?'active':'' %>" data-target="liveset" href="/myInfo/liveset">直播设置</a></li>
+				<li><a class="<%= act==10?'active':'' %>" data-target="livereport" href="/myInfo/livereport">直播记录</a></li>
+				<li><a class="<%= act==11?'active':'' %>"
+				data-target="liveearnings" href="/myInfo/liveearnings">直播收益</a></li>
+			</ul>
+		</a>
+	</li>
+	<%}%>
+	<%}%>
+</ul>

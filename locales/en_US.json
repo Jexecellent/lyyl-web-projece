@@ -1,0 +1,19 @@
+{
+	"-1": "failure",
+	"0": "success",
+	"10003": "mixxx",
+	"10006": "accountOrpassword is error",
+	"30003": "anchor not exists",
+	"40002": "gold not enough",
+	"90003": "params error",
+	"90010": "data status error",
+	"99999": "internal exception",
+	"Hello": "Hello %s",
+	"login": "login",
+	"register": "register",
+	"home": "Home",
+	"hall": "Hall",
+	"anchor": "Anchor",
+	"ranking": "Ranking",
+	"activity": "Activity"
+}

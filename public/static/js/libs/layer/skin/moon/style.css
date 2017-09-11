@@ -1,0 +1,240 @@
+
+html #layui_layer_skinmoonstylecss {
+	display: none;
+	position: absolute;
+	width: 1989px;
+}
+body .layer-ext-moon[type="dialog"] {
+	min-width: 320px;
+}
+body .layer-ext-moon.layui-layer {
+    top: 150px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border:2px solid #2fb5f8;
+    -webkit-background-clip: content;
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, .3);
+    border-radius: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s
+}
+body .layer-ext-moon-msg[type="dialog"]{min-width:200px;}
+body .layer-ext-moon .layui-layer-title {
+	padding: 0 80px 0 20px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #fff;
+    overflow: hidden;
+    background-color: #2fb5f8;
+    border-radius: 2px 2px 0 0;
+}
+
+
+
+body .layer-ext-moon .layui-layer-content .layui-layer-ico {
+	height: 32px;
+	width: 32px;
+	top:18.5px;
+}
+body .layer-ext-moon .layui-layer-ico0 {
+	background: url(default.png) no-repeat -96px 0;
+	;
+}
+body .layer-ext-moon .layui-layer-ico1 {
+	background: url(default.png) no-repeat -224px 0;
+	;
+}
+body .layer-ext-moon .layui-layer-ico2 {
+	background: url(default.png) no-repeat -192px 0;
+}
+body .layer-ext-moon .layui-layer-ico3 {
+	background: url(default.png) no-repeat -160px 0;
+}
+body .layer-ext-moon .layui-layer-ico4 {
+	background: url(default.png) no-repeat -320px 0;
+}
+body .layer-ext-moon .layui-layer-ico5 {
+	background: url(default.png) no-repeat -288px 0;
+}
+body .layer-ext-moon .layui-layer-ico6 {
+	background: url(default.png) -256px 0;
+}
+body .layer-ext-moon .layui-layer-ico7 {
+	background: url(default.png) no-repeat -128px 0;
+}
+body .layer-ext-moon .layui-layer-setwin {
+	top: 15px;
+	right: 15px;
+}
+body .layer-ext-moon .layui-layer-setwin a {
+	width: 16px;
+	height: 16px;
+}
+body .layer-ext-moon .layui-layer-setwin .layui-layer-min cite:hover {
+	background-color: #56abe4;
+}
+body .layer-ext-moon .layui-layer-setwin .layui-layer-max {
+	background: url(default.png) no-repeat -80px 0;
+}
+body .layer-ext-moon .layui-layer-setwin .layui-layer-max:hover {
+	background: url(default.png) no-repeat -64px 0;
+}
+body .layer-ext-moon .layui-layer-setwin .layui-layer-maxmin {
+	background: url(default.png) no-repeat -32px 0;
+}
+body .layer-ext-moon .layui-layer-setwin .layui-layer-maxmin:hover {
+	background: url(default.png) no-repeat -16px 0;
+}
+body .layer-ext-moon .layui-layer-setwin .layui-layer-close1,body .layer-ext-moon .layui-layer-setwin .layui-layer-close2 {
+	background: url(default.png) 0 0;
+}
+body .layer-ext-moon .layui-layer-setwin .layui-layer-close1:hover,body .layer-ext-moon .layui-layer-setwin .layui-layer-close2:hover {
+	background: url(default.png) -48px 0;
+}
+body .layer-ext-moon .layui-layer-padding{padding-top: 24px;}
+body .layer-ext-moon .layui-layer-btn {
+	
+}
+body .layer-ext-moon .layui-layer-btn a {
+	font-size: 12px;
+	font-weight: normal;
+	margin: 0 3px;
+	margin-right: 7px;
+	margin-left: 7px;
+	padding: 6px 20px;
+	color: #fff;
+	border: 1px solid #0064b6;
+	background: #0071ce;
+	border-radius: 3px;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	text-decoration: none;
+	outline: none;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn0 {
+	background: #0071ce;
+}
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn1 {
+	background: #fff;
+	color: #404a58;
+	border: 1px solid #c0c4cd;
+	border-radius: 3px;
+}
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn2 {
+	background: #f60;
+	color: #fff;
+	border: 1px solid #f60;
+	border-radius: 3px;
+}
+body .layer-ext-moon .layui-layer-btn .layui-layer-btn3 {
+	background: #f00;
+	color: #fff;
+	border: 1px solid #f00;
+	border-radius: 3px;
+}
+
+body .layer-ext-moon .layui-layer-title span.layui-layer-tabnow{
+	height:47px;
+}
+
+
+.layui-layer-content .recall{
+      	padding: 0px 35px 20px 35px;
+      	background: #f5f5f5;
+      	color: #333333;
+      	font-size: 12px;
+      	overflow: hidden;
+      }
+.layui-layer-content .recall div{
+      	margin-top: 15px;
+      }
+.layui-layer-content .recall .title,.layui-layer-content .recall .area{
+      	width: 100%;
+      }
+.layui-layer-content .recall .title input{
+      	
+      	padding:10px;
+      	height: 15px;
+      }
+.layui-layer-content .recall .type input.radio {
+    vertical-align: text-bottom;
+}
+      .layui-layer-content .recall .houser input{
+        width:85%;
+      	padding:1%;
+      	height: 15px;
+      }
+.layui-layer-content .recall .area textarea{
+     	  width:85%;
+      	  padding:1%;
+          height: 210px;
+      }
+.layui-layer-content .recall .area textarea{
+	 width:85%;
+      	padding:1%;
+      	vertical-align: top;
+      	font-size:12px;
+      }
+.layui-layer-content .recall .title input{
+	 width:85%;
+      	padding:1%;
+	    vertical-align: 0px;
+	    font-size:12px;
+}
+      
+ .layui-layer-content .recall .houser2 input{
+             width: 170px;
+      }
+.layui-layer-content  .recall .jubao{
+	  cursor: pointer;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 14px;
+    color: #333333;
+    background: #ffffff;
+    border: 1px solid #c2c2c2;
+      }
+ .layui-layer-content .jubao:hover,.layui-layer-content .jubao.active:hover{
+      	background: #2fb5f8;
+      	color: #fff;
+      }
+ .layui-layer-content .jubao.active{
+      	background: #e5e5e5;
+      }
+ .layui-layer-content .rebutton{
+      	cursor: pointer;
+      	margin:0 auto;
+      	width: 150px;
+      	height: 30px;
+      	text-align: center;
+      	line-height: 30px;
+      	color: #fff;
+      	background: #2fb5f8;
+      	font-size: 13px;
+      }
+ .layui-layer-content .rebutton:hover{
+      	background: #2DA5E1;
+      }
+  input[type="radio"] {
+       vertical-align: -1px;
+    margin: 0px 5px;
+    width: 10px;
+    height: 10px;
+}

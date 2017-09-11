@@ -1,0 +1,79 @@
+<% include ../include/header1.html %>
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 我的关注 start -->
+					<div id="myfocus" class="conRight">
+						<div class="riTitle">
+							<span class="titleName active">我的关注(<%=pageData.data.total%>)</span>
+						</div>
+						<div class="riContainer">
+							<div class="focusList">
+								<ul class="clearfix">
+									<% if(pageData && pageData.data.list.length != 0){%>
+									<% pageData.data.list.forEach(function(item){ %>
+									<li>
+										<div class="listL">
+											<img class="headIcon" src="<%=item.avatar %>">
+											<% if(item.live){ %>
+											<div class="live">正在直播</div>
+											<%}%>
+										</div>
+										<div class="listR">
+											<h4><%=item.anchorName %><a class="btn blue min floatR" href="javascript:">进入房间</a></h4>
+											<p><%=item.sign %></p>
+											<p>观看人数：<%=item.roomUsers %><a class="canFocusBtn floatR" href="javascript:" data-aid="<%=item.anchorId %>">取消关注</a></p>
+										</div>
+									</li>
+									<% })}else{%>
+									<div>
+										您目前还没有关注的主播
+									</div>
+									<% } %>
+								</ul>
+								<div class="pageComponent">
+									<div class="tcdPageCode"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 我的关注 end -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript" src="/static/js/api/jquery.page.js"></script>
+	<!-- 消息列表 -->
+	<script type="text/template" id="tpl">
+		{{each data as item i}}
+		<tr>
+			<td>&nbsp;<input type="checkbox" name=""></td>
+			<td>{{ item.sponsorName }}</td>
+			<td><a class="goMesDet" href="javascript:">{{ item.title }}</a></td>
+			<td>{{ item.time }}</td>
+			<td>未读消息</td>
+		</tr>
+		{{/each}}
+	</script>
+
+	<script type="text/javascript">
+		var total = '<%=pageData.data.total%>';//总条数
+		var pages = '<%=pageData.data.pages%>';//总页数
+		var pageSize = $.getUrlParam("pageSize") || 6;//每页条数
+		var pageNum = $.getUrlParam("pageNum") || 1;//当前页码
+
+	</script>
+	<script type="text/javascript" src="/static/js/myinfo/myfocus.js"></script>
+</body>
+</html>

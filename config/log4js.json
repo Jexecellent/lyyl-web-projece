@@ -1,0 +1,34 @@
+{
+  "appenders": [
+    {
+      "type": "console"
+    },
+    {
+      "type": "file",
+      "filename": "/haiyao-nodejs-info.log",
+      "maxLogSize": 100048576,
+      "layout": {
+        "type": "basic"
+      },
+      "backups": 5,
+      "category": "info-log"
+    },
+    {
+      "type": "file",
+      "filename": "/haiyao-nodejs-error.log",
+      "maxLogSize": 100048576,
+      "layout": {
+        "type": "basic"
+      },
+      "backups": 5,
+      "category": "error-log"
+    }
+  ],
+  "levels": {
+    "info-log": "INFO",
+    "error-log":"ERROR"
+  },
+  "replaceConsole": true,
+  "lineDebug": false
+}
+

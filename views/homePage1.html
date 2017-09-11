@@ -1,0 +1,605 @@
+	<!-- header.html start -->
+	<% include include/header1.html %>
+	<!-- header.html end   -->
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+	<script type="text/javascript" src="/static/js/api/swiper.min.js"></script>
+	<script type="text/javascript" src="/static/js/libs/template.js"></script>
+	<script type="text/javascript" src="/static/js/index.js"></script>
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+		<% include include/nav.html %>
+		<!-- nav end -->
+		<div class="content" style="padding-top : 0px;">
+			<div class="homePage">
+				<div class="focus">
+					<div class="swiper-container focus-swiper"  id="pic">
+					    <div class="swiper-wrapper">
+					        <div class="swiper-slide">
+					        	<a href="javascript:;" target="_blank">
+					        		<img src="/static/img/banner/banner1.png">
+					        	</a>
+					        </div>
+					        <div class="swiper-slide">
+					        	<a href="javascript:;" target="_blank">
+					        		<img src="/static/img/banner/banner2.png">
+					        	</a>
+					        </div>
+					        <div class="swiper-slide">
+					        	<a href="javascript:;" target="_blank">
+					        		<img src="/static/img/banner/banner3.png">
+					        	</a>
+					        </div>
+					        <div class="swiper-slide">
+					        	<a href="javascript:;" target="_blank">
+					        		<img src="/static/img/banner/banner4.png">
+					        	</a>
+					        </div>
+					        <div class="swiper-slide">
+					        	<a href="javascript:;" target="_blank">
+					        		<img src="/static/img/banner/banner5.png">
+					        	</a>
+					        </div>
+					    </div>
+					</div>
+				    <!-- <div class="pagination"></div> -->
+				</div>
+				<div class="container">
+					<div class="homePageC">
+						<div class="homePageL">
+							<!-- 视频 -->
+			               	<div class="homePage-in-l">
+			               	 <!-- 视频 -->
+			               	 <% if(pageData.randomRoom.data.length > 0){ %>
+			               	    <object name="name" id="moveflash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="100%" height="100%">
+			               	        <param name="Base" value="" />
+			               	        <param name="movie" value="/flash/texaspoker/texaspokegame.swf?roomId=<%=pageData.randomRoom.data[0].roomId%>&isShow=true&ci=1&acd=<%=pageData.randomRoom.data[0].anchorId%>" />
+			               	        <param name="quality" value=High/>
+			               	        <param name="_cx" value="12383" />
+			               	        <param name="_cy" value="1588" />
+			               	        <param name="FlashVars" />
+			               	        <param name="Src" value="/flash/texaspoker/texaspokegame.swf?roomId=<%=pageData.randomRoom.data[0].roomId%>&isShow=true&ci=1&acd=<%=pageData.randomRoom.data[0].anchorId%>" />
+			               	        <param name="WMode" value="transparent" />
+			               	        <param name="Play" value="-1" />
+			               	        <param name="Loop" value="-1" />
+			               	        <param name="Menu" value="-1" />
+			               	        <param name="AllowScriptAccess" value="always" />
+			               	        <param name="Scale" value="ShowAll" />
+			               	        <param name="DeviceFont" value="0" />
+			               	        <param name	="EmbedMovie" value="0" />
+			               	        <param name="BGColor" />
+			               	        <param name="SWRemote" />
+			               	        <param name="MovieData" />
+			               	        <embed  wmode="transparent" src="/flash/texaspoker/texaspokegame.swf?roomId=<%=pageData.randomRoom.data[0].roomId%>&isShow=true&ci=1&acd=<%=pageData.randomRoom.data[0].anchorId%>" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100%" height="100%">
+			               	        </embed>
+			               	    </object>
+			               	    <% } %>
+			               	    <!-- 视频代码结束 -->
+			               	    <div class="enter">
+			               	        <% if(pageData.randomRoom.data[0].roomId){ %>
+			               	        <p> 进入直播间</p>
+			               	        <a href="/room?com=1&id=<%=pageData.randomRoom.data[0].roomId%>&acd=<%=pageData.randomRoom.data[0].anchorId%>">进入直播间</a>
+		               	        	<% } %>
+			               	    </div>
+			               	</div>
+			                <!-- 视频代码结束 -->
+						</div>
+						<div class="homePageR roomType">
+							<ul>
+								<% pageData.randomRoom.data.forEach(function(item,index){ %>
+								<li class="<%= index==0?'active':''%>" data-flash="/flash/texaspoker/texaspokegame.swf?roomId=<%=item.roomId%>&acd=<%=item.anchorId%>" data-roomurl="/room?com=1&id=<%=item.roomId%>&acd=<%=item.anchorId%>">
+									<a href="javascript:"><img src="/static/img/default03.png" data-scr="/static/img/default03.png"></a>
+									<i><img src="/static/img/newarrow.png"></i>
+								</li>
+								<% }) %>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- 精彩推荐 -->
+				<div class="recommend">
+					<div class="container">
+						<div class="recommendT">
+							<span><i>精彩</i>●<b>推荐</b></span>
+							<a href="javascript:" id="anotherRecom">换一批</a>
+						</div>
+						<div class="recommendC" id="recomList">
+							<% pageData.list.data.forEach(function(item){ %>
+							<div class="roomList">
+								<a href="/room?com=1&id=<%=item.roomId%>&acd=<%=item.anchorId%>">
+									<div class="roomT">
+										<div class="cover">
+											<!-- 用户名-->
+											<span class="nickname"><%= item.nickname%> </span><br>
+											<!-- 盲注 -->
+											<span class="carry">盲注：1200</span><br>
+											<!-- 底注 -->
+											<span class="bottomCash">底注：9366</span>
+										</div>
+										<div class="roomIcon">
+											<img class="video-img" src="/static/img/default02.png" data-scr="/static/img/9435_9366.jpg" alt="">
+											<div class="shade"></div>
+											<div class="watch" style="top:35%;"></div>
+										</div>
+									</div>
+									<div class="roomB">
+										<div class="b_b">
+											<span class="roomname">德州扑克<span>主播陪玩</span></span>
+											<span class="views"><span>10</span>/20</span>
+										</div>
+									</div>
+									<div class="line"></div>
+								</a>
+							</div>
+							<% }) %>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main">
+				<!-- 精彩活动start -->
+				<div class="activity">
+					<div class="container">
+						<div class="activityT">
+							<span><i>精彩</i>●<b>活动</b></span>
+						</div>
+						<div class="activityC">
+							<div class="activityGroup">
+								<div  class="focus" id="picAct">
+                                    <div class="swiper-wrapper">
+								        <div class="swiper-slide">
+								        	<a href="javascript:;" target="_blank">
+								        		<img src="/static/img/activity/huodong_01.png">
+								        	</a>
+								        </div>
+								        <div class="swiper-slide">
+								        	<a href="javascript:;" target="_blank">
+								        		<img src="/static/img/activity/p2.png">
+								        	</a>
+								        </div>
+								        <div class="swiper-slide">
+								        	<a href="javascript:;" target="_blank">
+								        		<img src="/static/img/activity/p3.png">
+								        	</a>
+								        </div>
+								    </div>
+								    <div class="pagination"></div>
+								</div>
+							    
+									<!--
+									<a href="javascript:;" class="focus_arrow btn_left"></a>
+									<a href="javascript:;" class="focus_arrow btn_right"></a>
+									-->
+							
+								<div>
+									<a class="activity2" href="javascript:">
+										<img src="/static/img/activity/huodong_03.png">
+									</a>
+									<a class="activity3" href="javascript:">
+										<img src="/static/img/activity/huodong_03.png">
+									</a>
+								</div>
+							</div>
+							<div class="activity4">
+								<a href="javascript:">
+									<img src="/static/img/activity/huodong_02.png">
+								</a>
+							</div>
+
+							<div class="activityList" onclick="javascript: layer.tips('敬请期待！', this, {tips: [1, '#0FA6D8'] ,
+                  					time : 1000});">
+								<div class="listT">
+									<span>资讯综合</span>
+									<div class="tabGroup">
+										<a class="active" href="javascript:">全部</a>
+										<a href="javascript:">公告</a>
+										<a href="javascript:">新闻</a>
+										<a href="javascript:">活动</a>
+									</div>
+								</div>
+								<div class="listC">
+									<a href="javascript:">
+										<img class="activity5" src="/static/img/activity/huodong_04.png">
+									</a>
+									<ul class="">
+										<li>
+											<a href="javascript:">
+												<span class="aType">[活动]</span>
+												<span class="aTitle">新村新气象，五一送豪礼</span>
+												<span class="aTime">2017.04.18</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:">
+												<span class="aType">[活动]</span>
+												<span class="aTitle">新村新气象，五一送豪礼</span>
+												<span class="aTime">2017.04.18</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:">
+												<span class="aType">[活动]</span>
+												<span class="aTitle">新村新气象，五一送豪礼</span>
+												<span class="aTime">2017.04.18</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:">
+												<span class="aType">[活动]</span>
+												<span class="aTitle">新村新气象，五一送豪礼</span>
+												<span class="aTime">2017.04.18</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:">
+												<span class="aType">[活动]</span>
+												<span class="aTitle">新村新气象，五一送豪礼</span>
+												<span class="aTime">2017.04.18</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:">
+												<span class="aType">[活动]</span>
+												<span class="aTitle">新村新气象，五一送豪礼</span>
+												<span class="aTime">2017.04.18</span>
+											</a>
+										</li>
+									</ul>
+									<a class="viewMore" href="javascript:">
+										查看更多&nbsp;>>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 精彩活动end -->
+				<!-- 快速场 -->
+				<div class="match">
+					<div class="container">
+						<div class="matchTtitle">
+							快速场
+						</div>
+						<div class="matchC">
+							<div class="matchList">
+								<div class="listHover">
+									<a href="javascript:">
+										<div class="matchT lvUp">
+											<span class="level levelUp">级别1</span>
+											<span class="roomID">房号：9366</span>
+											<span class="mScope">参赛金范围<br>10000-20000</span>
+											<div class="cover"></div>
+											<div class="roomIcon">
+												<img src="/static/img/level_up.png" data-scr="" alt="">
+												<div class="shade"></div>
+												<div class="watch"></div>
+											</div>
+										</div>
+										<div class="matchB">
+											<div class="b_b">
+												<span class="blind"><span>盲注：</span>10/20</span>
+												<span class="view">2/<span>9</span></span>
+											</div>
+											<div class="n_v">
+												<span class="bottomCash">底注：200</span>
+												<span class="views"><img src="/static/img/icon_views.png"> 999999</span>
+											</div>
+										</div>
+										<div class="line"></div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 德州扑克 -->
+				<div class="puke play-list" id="rc_1">
+					<div class="container">
+						<!-- ad -->
+						<a href="javascript:">
+							<img src="/static/img/activity/huodong_05.png">
+						</a>
+						<div class="pukeT">
+							<span>德州扑克</span>
+							<div class="tabGroup">
+								<a class="active" href="javascript:">全部</a>
+								<a href="javascript:">新手房</a>
+								<a href="javascript:">普通房</a>
+								<a href="javascript:">高手房</a>
+							</div>
+						</div>
+						<div class="pukeC">
+							<!--全部-->
+							<div class="curPuke">
+								<% if(pageData.list && pageData.list.data.length != 0){%>
+								<% pageData.list.data.forEach(function(item){ %>
+								<div class="pukeList">
+									<div class="listHover">
+										<a href="/room?com=1&id=<%=item.roomId%>&acd=<%=item.anchorId%>">
+											<div class="roomT">
+												<h3 class="roomName">德州扑克主播发牌初级场[7777]</h3>
+												<div class="cover">
+													<span class="carry">最低带入：1200</span>
+													<span class="roomID">房间号：9366</span>
+												</div>
+												<div class="roomIcon">
+													<img class="video-img" src="/static/img/default02.png" data-scr="/static/img/9435_9366.jpg" alt="">
+													<div class="shade"></div>
+													<div class="watch"></div>
+												</div>
+											</div>
+											<div class="roomB">
+												<div class="b_b">
+													<span class="blind"><span>盲注：</span>10/20</span>
+													<span class="bottomCash">底注：<%= item.bottomBet%></span>
+												</div>
+												<div class="n_v">
+													<span class="nickname"><%= item.nickname || 'test'%></span>
+													<span class="view">2/<span>9</span></span>
+												</div>
+											</div>
+											<div class="line"></div>
+										</a>
+									</div>
+								</div>
+								<% })}else{%>
+								<div class="hint">
+									<span>很抱歉，主播还未上线，请耐心等候！</span>
+								</div>	
+								<% } %>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 明星主播 -->
+				<div class="star-show">
+					<div class="shuffer-title"></div>
+					<div class="full">
+						<div class="content">
+							<a class="arrow-left" href="#"></a>
+							<a class="arrow-right" href="#"></a>
+							<div class="cover-left"></div>
+							<div class="swiper-container star-container">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a href="javascrpit:;" target="_blank">
+											<img src="./static/img/zhubo1.png"/>
+											<div class="shuffer-line"></div>
+											<div class="stars-info">
+												<div class="name">漂亮妹子1</div>
+												<div class="intro">快来看我的直播呀</div>
+												<div class="number"><img src="./static/img/icon_love2.png"> 5102</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="javascrpit:;" target="_blank">
+											<img src="./static/img/zhubo2.png"/>
+											<div class="shuffer-line"></div>
+											<div class="stars-info">
+												<div class="name">漂亮妹子2</div>
+												<div class="intro">快来看我的直播呀</div>
+												<div class="number"><img src="./static/img/icon_love2.png"> 5102</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="javascrpit:;" target="_blank">
+											<img src="./static/img/zhubo3.png"/>
+											<div class="shuffer-line"></div>
+											<div class="stars-info">
+												<div class="name">漂亮妹子3</div>
+												<div class="intro">快来看我的直播呀</div>
+												<div class="number"><img src="./static/img/icon_love2.png"> 5102</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="javascrpit:;" target="_blank">
+											<img src="./static/img/zhubo4.png"/>
+											<div class="shuffer-line"></div>
+											<div class="stars-info">
+												<div class="name">漂亮妹子4</div>
+												<div class="intro">快来看我的直播呀</div>
+												<div class="number"><img src="./static/img/icon_love2.png"> 5102</div>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="javascrpit:;" target="_blank">
+											<img src="./static/img/zhubo5.png"/>
+											<div class="shuffer-line"></div>
+											<div class="stars-info">
+												<div class="name">漂亮妹子5</div>
+												<div class="intro">快来看我的直播呀</div>
+												<div class="number"><img src="./static/img/icon_love2.png"> 5102</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="cover-right"></div>
+						</div>
+					</div>
+				</div>
+				<!-- 主播发牌 -->
+				<div class="deal play-list" id="rc_2">
+					<div class="container">
+						<div class="pukeT">
+							<span>主播发牌</span>
+							<div class="tabGroup">
+								<a class="active" href="javascript:">全部</a>
+								<a href="javascript:">新手房</a>
+								<a href="javascript:">普通房</a>
+								<a href="javascript:">高手房</a>
+							</div>
+						</div>
+						<div class="pukeC">
+							<!--全部-->
+							<div class="curPuke">
+								<% if(pageData.list && pageData.list.data.length != 0){%>
+								<% pageData.list.data.forEach(function(item){ %>
+								<div class="pukeList">
+									<div class="listHover">
+										<a href="/room?com=1&id=<%=item.roomId%>&anchorId=<%=item.anchorId%>">
+											<div class="roomT">
+												<h3 class="roomName">德州扑克主播发牌初级场[7777]</h3>
+												<div class="cover">
+													<span class="carry">最低带入：1200</span>
+													<span class="roomID">房间号：9366</span>
+												</div>
+												<div class="roomIcon">
+													<img class="video-img"  src="/static/img/default02.png" data-scr="/static/img/9435_9366.jpg" alt="">
+													<div class="shade"></div>
+													<div class="watch"></div>
+												</div>
+											</div>
+											<div class="roomB">
+												<div class="b_b">
+													<span class="blind"><span>盲注：</span>10/20</span>
+													<span class="bottomCash">底注：2</span>
+												</div>
+												<div class="n_v">
+													<span class="nickname">美丽</span>
+													<span class="view">2/<span>9</span></span>
+												</div>
+											</div>
+											<div class="line"></div>
+										</a>
+									</div>
+								</div>
+								<% })}else{%>
+								<div class="hint">
+									<span>很抱歉，主播还未上线，请耐心等候！</span>
+								</div>	
+								<% } %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer start -->
+		<% include include/footer.html %>
+		<!-- footer end -->
+		<div class="floatBox">
+			<a class="floatBox-share" href="javascript:void(0);">分享</a>
+			<a class="floatBox-down" href="javascript:void(0);">
+				APP下载
+				<div class="downApp">扫码下载APP</div>
+			</a>
+			<a class="floatBox-help" href="javascript:void(0);">帮助</a>
+			<a class="floatBox-service kefulink clickA" href="javascript:void(0);" target="_blank">客服</a>
+			<a class="floatBox-con fist" href="javascript:void(0);">回到顶部</a>
+		</div>
+	</div>
+	<!-- 精彩推荐房间列表 -->
+	<script type="text/template" id="tpl">
+		{{each data as item i}}
+		<div class="roomList" data-src="{{ item.anchorId }}">
+			<a href="javascript:">
+				<div class="roomT">
+					<div class="cover">
+						<img class="video-img"  src="/static/img/default02.png" data-scr="/static/img/9435_9366.jpg" alt=""><br>
+						<!-- 用户名-->
+						<span class="nickname">{{ item.nickname }}111 </span><br>
+						<!-- 盲注 -->
+						<span class="carry">盲注：1200</span><br>
+						<!-- 底注 -->
+						<span class="bottomCash">底注：9366</span>
+					</div>
+				</div>
+				<div class="roomB">
+					<div class="b_b">
+						<span class="roomname">德州扑克TTTT<span>主播陪玩</span></span>
+						<span class="views"><span>10</span>/20</span>
+					</div>
+				</div>
+				<div class="line"></div>
+			</a>
+		</div>
+		{{/each}}
+	</script>
+	<!-- 游戏房间列表 -->
+	<script type='text/template' id = 'ten'>
+		{{each data as item i}}
+		<div class="pukeList">
+			<div class="listHover">
+				<a href="javascript:">
+					<div class="roomT">
+						<h3 class="roomName">德州扑克主播发牌初级场[7777]</h3>
+						<div class="cover">
+							<span class="carry">最低带入：1200</span>
+							<span class="roomID">房间号：9366</span>
+						</div>
+						<div class="roomIcon">
+							<img class="video-img"  src="/static/img/default02.png" data-scr="/static/img/9435_9366.jpg" alt="">
+							<div class="shade"></div>
+							<div class="watch"></div>
+						</div>
+					</div>
+					<div class="roomB">
+						<div class="b_b">
+							<span class="blind"><span>盲注：</span>10/20</span>
+							<span class="bottomCash">底注：{{ item.bottomBet }}</span>
+						</div>
+						<div class="n_v">
+							<span class="nickname">{{ item.nickname || 'test' }}</span>
+							<span class="view">2/<span>9</span></span>
+						</div>
+					</div>
+					<div class="line"></div>
+				</a>
+			</div>
+		</div>
+		{{/each}}
+	</script>
+	<script type="text/template" id="moveTem">
+	    <div class="homePage-in-l">
+	        <!-- 视频 -->
+	        <object name="name" id="moveflash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="100%" height="100%">
+	            <param name="Base" value="" />
+	            <param name="movie" value="{{dataFlash}}" />
+	            <param name="quality" value=High/>
+	            <param name="_cx" value="12383" />
+	            <param name="_cy" value="1588" />
+	            <param name="FlashVars" />
+	            <param name="Src" value="{{dataFlash}}" />
+	            <param name="WMode" value="transparent" />
+	            <param name="Play" value="-1" />
+	            <param name="Loop" value="-1" />
+	            <param name="Menu" value="-1" />
+	            <param name="AllowScriptAccess" value="always" />
+	            <param name="Scale" value="ShowAll" />
+	            <param name="DeviceFont" value="0" />
+	            <param name="EmbedMovie" value="0" />
+	            <param name="BGColor" />
+	            <param name="SWRemote" />
+	            <param name="MovieData" />
+	            <embed  wmode="transparent" src="{{dataFlash}}" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100%" height="100%">
+	            </embed>
+	        </object>
+	        <!-- 视频代码结束 -->
+	        <div class="enter">
+	            <p>进入直播间</p>
+	            <a href="#">进入直播间</a>
+	        </div>
+	    </div>
+	</script>
+	<!-- 新闻列表列表 -->
+	<script type="text/template" id="news">
+		{{each data as item i}}
+		<li>
+			<a href="javascript:">
+				<span class="aType">[活动]</span>
+				<span class="aTitle">新村新气象，五一送豪礼</span>
+				<span class="aTime">2017.04.18</span>
+			</a>
+		</li>
+		{{/each}}
+	</script>
+</body>
+</html>

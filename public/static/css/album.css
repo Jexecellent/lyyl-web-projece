@@ -1,0 +1,124 @@
+.pc-slide-cover{
+    position: absolute;
+    top :  0;
+    left : 0 ;
+    right: 0;
+    bottom :  0 ;
+    background: rgba(0, 0, 0, .6) ;
+    z-index: 9999;
+    display: none ;
+}
+.pc-slide {
+    width: 700px;
+    margin: 100px auto 0;
+    background: #000;
+    padding: 0px 49px;
+    position: relative;
+}
+.pc-slide .close-pc-slide{
+    position: absolute;
+    top : 0px ;
+    right: 0px;
+    padding: 0 8px;
+    color: #fff;
+    font-size: 24px;
+}
+.pc-slide .close-pc-slide:hover{
+    background: #2FB5F8 ;
+}
+.view .swiper-container {
+    width: 600px;
+    height: 600px;
+}
+.view .album-big-list li{
+    box-sizing: border-box;
+    padding: 0 10px;
+    vertical-align: middle ;
+    text-align: center;
+}
+.view .album-big-list li span{
+    height: 100%;
+    display: inline-block ;
+    vertical-align: middle ;
+}
+.view .swiper-container img{
+    width: 400px;
+    max-height: 600px;
+    vertical-align: middle ;
+}
+.view .arrow-left {
+    background: url(http://www.swiper.com.cn/demo/pcSlide/images/index_tab_l.png) no-repeat left top;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -25px;
+    width: 28px;
+    height: 51px;
+    z-index: 10;
+}
+
+.view .arrow-right {
+    background: url(http://www.swiper.com.cn/demo/pcSlide/images/index_tab_r.png) no-repeat left bottom;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -25px;
+    width: 28px;
+    height: 51px;
+    z-index: 10;
+}
+
+.preview {
+    width: 100%;
+    margin-top: 10px;
+    position: relative;
+}
+
+.preview .swiper-container {
+    width: 625px;
+    height: 86px;
+    margin-left: 35px;
+}
+
+.preview .swiper-slide {
+    width: 87px;
+    height: 84px;
+}
+
+.preview .slide6 {
+    width: 82px;
+}
+
+.preview .arrow-left {
+    background: url(http://www.swiper.com.cn/demo/pcSlide/images/feel3.png) no-repeat left top;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    margin-top: -9px;
+    width: 9px;
+    height: 18px;
+    z-index: 10;
+}
+
+.preview .arrow-right {
+    background: url(http://www.swiper.com.cn/demo/pcSlide/images/feel4.png) no-repeat left bottom;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -9px;
+    width: 9px;
+    height: 18px;
+    z-index: 10;
+}
+
+.preview img {
+    padding: 2px;
+    width: 80px;
+    height: 80px;
+
+}
+
+.preview .active-nav img {
+    padding: 1px;
+    border: 1px solid #2fb5f8;
+}

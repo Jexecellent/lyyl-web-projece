@@ -1,0 +1,116 @@
+<% include ../include/header1.html %>
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 直播设置 -->
+					<div id="liveset" class="conRight">
+						<div class="riTitle">
+							<span class="titleName active">直播设置</span>
+						</div>
+						<div class="riContainer">
+							<div class="form">
+								<div class="formGroup">
+									<label class="formLabel">房间ID：</label>
+									<div class="formDiv">
+										<%=setting.id%>
+										<a class="enterBtn btn blue" href="javascript:">进入直播房间</a>
+									</div>
+								</div>
+								<div class="formGroup">
+									<label class="formLabel">房间标题：</label>
+									<div class="formDiv">
+										<%=setting.roomName%>
+									</div>
+								</div>
+								<div class="formGroup">
+									<label class="formLabel">房间公告：</label>
+									<div class="formDiv texttop">
+										<textarea rows="5" disabled="">123房间的公告</textarea>
+										<div>
+											<span class="updateDiv">
+												<span class="updateShow">
+													<a class="btn updateBtn grey" href="javascript:">修改</a>
+												</span>
+												<span class="updateHide">
+													<a class="btn grey" href="javascript:">保存</a>
+													<a class="btn cancelBtn grey" href="javascript:">取消</a>
+												</span>
+											</span>
+												
+										</div>
+									</div>
+								</div>
+								<div class="formGroup">
+									<label class="formLabel">rtmp地址：</label>
+									<div class="formDiv texttop">
+										<input id="streamurl" type="text" name="streamUrl" value="<%=setting.streamUrl%>">
+										<div>
+											<a class="copyBtn btn blue" href="javascript:" data-clipboard-target="#streamurl">复制</a>
+										</div>
+									</div>
+								</div>
+								<div class="formGroup">
+									<label class="formLabel">串流码：</label>
+									<div class="formDiv texttop">
+										<input type="text" name="streamKey" value="<%=setting.streamKey%>" id="streamkey">
+										<div>
+											<a class="refreshBtn btn blue" href="javascript:"><img src="/static/img/personal/icon_refresh.png"> 刷新</a>
+											<a class="copyBtn btn blue" href="javascript:" data-clipboard-target="#streamkey">复制</a>
+										</div>
+									</div>
+								</div>
+								<div class="formGroup">
+									<label class="formLabel">直播分类：</label>
+									<div class="formDiv">
+									<%=['德州扑克', '斗地主', '其它游戏'][setting.gameType-1]%>
+										<%if(setting.gameType === 1){%>
+										德州扑克-盲注：<%=setting.minBet%>/<%=setting.maxBet%>
+										<%}%>
+										<a class="updateBtn btn grey livetypeBtn" href="javascript:">修改</a>
+									</div>
+								</div>
+								<div class="formGroup">
+									<label class="formLabel">游戏玩法：</label>
+									<div class="formDiv">
+										<%=['主播发牌', '主播陪玩'][setting.playType-1]%>
+										<a class="updateBtn btn grey gameplayBtn" href="javascript:">修改</a>
+									</div>
+								</div>
+								<div class="formGroup">
+									<label class="formLabel">房间设置：</label>
+									<div class="formDiv">
+										<a class="setBtn btn grey" href="/myInfo/manager" data-target="manager">管理员</a>
+										<a class="setBtn btn grey" href="/myInfo/blacklist" data-target="blacklist">黑名单</a>
+										<a class="btn grey" href="javascript:">屏蔽IP</a>
+										<a class="btn grey usersetBtn" href="javascript:">用户发言</a>
+									</div>
+								</div>
+								<div class="formGroup">
+									<label class="formLabel"></label>
+									<div class="formDiv">
+										<a class="btn liveBtn blue" href="javascript:">开始直播</a>
+										<a class="btn courseBtn orange" href="javascript:">直播教程</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript" src="/static/js/api/hyapi.js"></script>
+	<script type="text/javascript" src="/static/js/libs/clipboard.min.js"></script>
+	<script type="text/javascript" src="/static/js/setting/liveset.js"></script>
+</body>
+</html>

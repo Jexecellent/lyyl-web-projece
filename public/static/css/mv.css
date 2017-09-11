@@ -1,0 +1,338 @@
+body{
+	background-color: #eee;
+}
+
+.icon{
+	background-image: url(../img/rank/group_mv.png);
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	
+}
+.iconPlay{
+	background-position: 0 0;
+	margin: 0 5px 0 10px;
+}
+.iconPlay2{
+	background-position: -12px 0;
+	margin: 0 7px 0 10px;
+}
+
+.mvContent{
+	background: url(../img/rank/mv_bg.png) center;
+	height: 628px;
+}
+
+.mvContent .mvTop{
+	padding: 25px 0 15px 0;
+}
+.mvContent .mvTop .mvName{
+	font-size: 18px;
+	color: #fff;
+}
+.mvContent .mvTop .mvPlaytimes{
+	color: #ddd;
+}
+
+
+.mvContent .mvLeft{
+	float: left;
+	width: 874px;
+	height: 492px;
+	background-color: #000;
+}
+.mvContent .mvRight{
+	float: left;
+	width: 306px;
+	height: 492px;
+	background-color: #212121;
+	padding: 0 10px;
+}
+.mvContent .mvRight .rightT{
+	color: #fff;
+	font-size: 13px;
+	padding: 10px 0 7px 0;
+	text-indent: 12px;
+}
+
+.shotMvList li .mvCover{
+	display: inline-block;
+	position: relative;
+}
+.shotMvList li .mvCover img{
+	width: 130px;
+	height: 73px;
+}
+.shotMvList li .mvCover .mvTime{
+	background-color: #717171;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	bottom: 4px;
+	padding: 0 2px;
+	height: 13px;
+	line-height: 13px;
+	text-align: center;
+}
+.shotMvList li .mvCover .mvLive{
+	background-color: #52a37a;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 21px;
+	line-height: 21px;
+	text-align: center;
+	font-size: 13px;
+	z-index: 10;
+}
+.shotMvList li .mvDetail{
+	display: inline-block;
+	width: 170px;
+	color: #ccc;
+	vertical-align: top;
+	overflow: hidden;
+}
+.shotMvList .mvTitle{
+	line-height: 20px;
+	height: 57px;
+	margin-left: 8px;
+}
+.shotMvList li{
+	padding: 7px 0;
+	border-top: 1px solid #333;
+}
+.shotMvList li.active .mvTitle{
+	color: #2fb6f6;
+}
+.shotMvList li.active,.shotMvList li:hover{
+	cursor: pointer;
+	background-color: #333;
+}
+
+.commentDiv{
+	padding: 21px 0;
+	width: 874px;
+}
+.commentDiv .chatIcon{
+	margin: 6px 9px 0px 18px;
+    vertical-align: top;
+}
+.commentDiv .hornIcon{
+	margin-right: -4px;
+}
+.commentDiv .commentInput{
+	background-color: #1b2b3a;
+	border: 1px solid #2d3e4e;
+	outline: none;
+	width: 445px;
+	height: 32px;
+	border-radius: 5px;
+	color: #999;
+	text-indent: 8px;
+	box-sizing: border-box;
+}
+.commentDiv .btn{
+	display: inline-block;
+	width: 101px;
+	height: 32px;
+	line-height: 32px;
+	color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 14px;
+	vertical-align: middle;
+}
+.commentDiv .btn img{
+	vertical-align: sub;
+	margin-right: 9px;
+}
+.commentDiv .sendBtn{
+	background-color: #30b5f8;
+	margin-left: -10px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.commentDiv .shareBtn{
+	background-color: #666;
+	margin-right: 10px;
+	float: right;
+}
+.commentDiv .praiseBtn{
+	background-color: #666;
+	margin-right: 10px;
+	float: right;
+}
+
+.commentContent{
+	margin-top: 10px;
+	padding-bottom: 30px;
+}
+.commentContent .commentLeft{
+	display: inline-block;
+	width: 865px;
+	height: 1050px;
+	background: #fff;
+}
+.commentContent .commentLeft .anchorInfo{
+	background-color: #fff;
+	height: 120px;
+	margin-bottom: 10px;
+}
+.commentContent .commentLeft .anchorInfo .headIcon{
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	margin: 25px 0 0 18px;
+}
+.commentContent .commentLeft .anchorInfo .anchorDet{
+	display: inline-block;
+	vertical-align: top;
+	line-height: 22px;
+	margin: 25px 0 0 10px;
+}
+.commentContent .commentLeft .anchorInfo .anchorName{
+	font-size: 15px;
+	color: #666;
+}
+.commentContent .commentLeft .anchorInfo .mvSummary{
+	color: #555;
+}
+.commentContent .commentLeft .anchorInfo .uploadTime{
+	color: #999;
+}
+.commentContent .commentLeft .anchorInfo .focusDiv{
+	float: right;
+	margin: 70px 10px 0 0;
+}
+.commentContent .commentLeft .anchorInfo .flishPerson{
+	position: absolute;
+	margin-top: -45px;
+	z-index: 1;
+}
+.commentContent .commentLeft .anchorInfo .focusGroup{
+	background-color: #30b5f8;
+	color: #fff;
+	width: 171px;
+	height: 33px;
+	line-height: 33px;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 14px;
+	position: relative;
+	z-index: 2;
+}
+.commentContent .commentLeft .anchorInfo .focusGroup .focusBtn,
+.commentContent .commentLeft .anchorInfo .focusGroup .concernBtn{
+	display: inline-block;
+	color: #fff;
+	width: 66px;
+}
+.commentContent .commentLeft .anchorInfo .focusGroup span{
+	display: inline-block;
+	width: 100px;
+}
+
+.commentContent .commentLeft .commentList{
+	padding-bottom: 40px;
+}
+.commentContent .commentLeft .commentShotT{
+	font-size: 18px;
+	line-height: 60px;
+	color: #000;
+	border-bottom: 1px solid #dfdfdf;
+	margin: 0 28px;
+}
+.commentContent .commentLeft .commentShotT span{
+	font-size: 16px;
+	color: #999;
+}
+.commentContent .commentLeft .commentList .cList li{
+	border-bottom: 1px solid #dfdfdf;
+	padding: 16px 0;
+	margin: 0 28px;
+}
+
+.commentContent .commentLeft .headIcon{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	vertical-align: top;
+}
+.commentContent .commentLeft .userInfo{
+	display: inline-block;
+	font-size: 14px;
+	line-height: 22px;
+    padding: 7px 0 7px 12px;
+    width: 733px;
+}
+.commentContent .commentLeft .userInfo .username{
+	color: #30b5f6;
+}
+.commentContent .commentLeft .userInfo .commmentCon{
+	color: #555;
+}
+.commentContent .commentLeft .userInfo .commentTime{
+	float: right;
+	color: #666;
+	font-size: 12px;
+}
+
+.commentContent .commentRight{
+	display: inline-block;
+	width: 325px;
+	margin-left: 6px;
+    background-color: #fff;
+    vertical-align: top;
+	height: 610px;
+}
+.commentContent .commentRight .otherMv{
+	margin: 0 10px;
+	padding-bottom: 10px;
+}
+.commentContent .commentRight .otherMv .commentShotT{
+	line-height: 60px;
+	font-size: 18px;
+	color: #000;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 15px;
+}
+.commentContent .commentRight .otherMv .commentShotT .moreBtn{
+	float: right;
+	font-size: 13px;
+	color: #999;
+}
+.commentContent .commentRight .otherMv .shotMvList li{
+	border-top: none;
+}
+.commentContent .commentRight .otherMv .shotMvList li:hover{
+	background-color: #efefef;
+}
+.commentContent .commentRight .otherMv .shotMvList .mvTitle{
+	color: #555;
+}
+.commentContent .commentRight .otherMv .shotMvList .mvPlaytimes{
+	color: #999;
+}
+.cue{
+	text-align: center;
+	margin-top: 50px;
+	font-size: 14px;
+}
+.mvRight .rightC{
+	height: 458px;
+}
+.mvLive{
+	display: none;
+}
+.shotMvList .active .mvLive{
+	display: block;
+}
+.shotMvList .active .mvLive{
+	display: block;
+}
+.anchorDet p{
+	height: 20px;
+	margin-bottom: 5px;
+}

@@ -1,0 +1,774 @@
+<!-- header.html start -->
+<% include include/header1.html %>
+<!-- header.html end   -->
+	<link rel="stylesheet" type="text/css" href="/static/css/anchorDetail.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+	<script type="text/javascript" src="/static/js/api/swiper.min.js"></script>
+	<script type="text/javascript" src="/static/js/api/idangerous.swiper.min.js"></script>
+	<script type="text/javascript" src="/static/js/libs/template.js"></script>
+	<script type="text/javascript" src="/static/js/anchor.js"></script>
+	<script type="text/javascript" src="/static/js/api/tab.js"></script>
+	<script type="text/javascript" src="/static/js/api/core.js"></script>
+</head>
+<body>
+<div class="wrap">
+	<!-- nav start -->
+	<% include include/nav.html %>
+	<!-- nav end -->
+	<div class="content">
+		<div class="anchorDetail" id="anchorDetail">
+			<div class="container">
+				<div class="anchorCon">
+					<div class="anchorTitle">
+						<%= anchor.basicInfo.data.nickName%>
+							<span>
+								<a href="javascript:" class="shareBox"><i></i> 分享</a>
+								<div class="share-dialog">
+									<div class="share-dialog-title">分享到</div>
+									<div class="share-dialog-cont">
+										<div class="share-platform">
+											<div class="bdsharebuttonbox">
+												<a href="#" id="bds_weixin" class="bds_weixin" title="微信"></a><!-- 分享到微信 -->
+												<a href="#" id="bds_tsina" class="bds_tsina"  title="新浪"></a><!-- 分享到新浪微博 -->
+												<a href="#" id="bds_sqq" class="bds_sqq"  title="QQ好友"></a><!-- 分享到QQ好友 -->
+												<a href="#" id="bds_qzone" class="bds_qzone"  title="QQ空间"></a><!-- 分享到QQ空间 -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</span>
+						</div>
+						<div class="anchorInfo">
+							<div class="anchorLeft">
+								<img class="anchorHead" src="./static/img/anchor1.png%>">
+								<div class="f_e" data-id="<%= anchor.basicInfo.data.anchorId%>">
+									<a class="focus follow" href="javascript:"><img src="./static/img/anchor/icon_love.png">&nbsp;关注</a>
+									<a class="focus cancel cur" href="javascript:">取消关注</a>
+									<% if (anchor.basicInfo.data.isOnlive) { %>
+									<a class="enterRoom onLine" href="javascript:">进入直播</a>
+									<% } else { %>
+									<a class="enterRoom grey" href="javascript:">未开播</a>
+									<% } %>
+								</div>
+							</div>
+							<div class="anchorRight">
+								<label>
+									<span>直播间：</span>
+									<%= anchor.basicInfo.data.roomName%>
+								</label>
+								<label>
+									<span>粉丝数：</span>
+									<%= anchor.basicInfo.data.fansNum%>
+								</label>
+								<label>
+									<span>房间号：</span>
+									<%= anchor.basicInfo.data.roomId%>
+								</label>
+								<label>
+									<span>访问数：</span>
+									<%= anchor.basicInfo.data.nickName%>*
+								</label>
+								<label>
+									<span>房间人数：</span>
+									<%= anchor.basicInfo.data.nickName%>*
+								</label>
+								<label>
+									<span>上次直播时间：</span>
+									<%= anchor.basicInfo.data.lastLiveTime%>
+								</label>
+							</div>
+						</div>
+						<div class="anchorContent tabDiv">
+							<div class="anchorTab">
+								<a class="active tabPane homepage" href="javascript:" data-target="#home">主页</a>
+								<a class="tabPane Album" href="javascript:" data-target="#album">相册</a>
+								<a class="tabPane mv" href="javascript:" data-target="#mv">MV</a>
+							</div>
+							<div id="home" class="tabContent active">
+								<div class="info">
+									<div class="shotInfo">
+										<label>
+											<span>性别：</span><%= anchor.basicInfo.data.sex == 1 ? "男" : "女"%>
+										</label>
+										<label>
+											<span>生日：</span><%= anchor.basicInfo.data.birthday%>
+										</label>
+										<label>
+											<span>身高：</span><%= anchor.basicInfo.data.height%>
+										</label>
+										<label>
+											<span>星座：</span><%= anchor.basicInfo.data.constellation%>
+										</label>
+										<label>
+											<span>家乡：</span><%= anchor.basicInfo.data.nickName%>*
+										</label>
+									</div>
+									<div>
+										<label>
+											<span>个性签名：</span><%= anchor.basicInfo.data.sign%>
+										</label>
+									</div>
+									<div>
+										<label>
+											<span>兴趣爱好：</span><%= anchor.basicInfo.data.hobby%>
+										</label>
+									</div>
+								</div>
+								<div class="album">
+									<div class="hTitle">
+										<span>相册</span>
+									</div>
+									<div class="albumList" id="photo">
+										<% if (anchor.findPhoto.data != "") { %>
+										<% anchor.findPhoto.data.forEach(function(item){ %>
+										<div class="list">
+											<a href="javascript:">
+												<img class="albumImg" src="<%= item.path || './static/img/anchor/anchor1.png'%>">
+												<div class="cover">
+													<img src="./static/img/anchor/icon_loupe.png">
+												</div>
+											</a>
+										</div>
+										<% }) %>
+										<div class="dialog">
+											<div class="albumDialog">
+												<div class="pc-slide">
+													<div class="view">
+														<div class="swiper-container photoBox">
+															<a class="arrow-left" href="#"></a>
+															<a class="arrow-right" href="#"></a>
+															<div class="swiper-wrapper">
+																<% anchor.findPhoto.data.forEach(function(item){ %>
+																<div class="swiper-slide">
+																	<a href="javascript:" target="_blank"><img src="<%= item.path || './static/img/anchor/anchor1.png'%>" alt=""></a>
+																</div>
+																<% }) %>
+															</div>
+															<span class="close"></span>
+														</div>
+													</div>
+													<div class="preview">
+														<a class="arrow-left" href="#"></a>
+														<a class="arrow-right" href="#"></a>
+														<div class="swiper-container">
+															<div class="swiper-wrapper">
+																<% anchor.findPhoto.data.forEach(function(item){ %>
+																<div class="swiper-slide active-nav">
+																	<img src="<%= item.path || './static/img/anchor/anchor1.png'%>" alt="">
+																</div>
+																<% }) %>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<% } else { %>
+										<p class="cue">主播还没有上传照片哦</p>
+										<% } %>
+									</div>
+								</div>
+								<div class="mv">
+									<div class="hTitle">
+										<span>MV</span>
+									</div>
+									<div class="mvList">
+										<% if (anchor.MvList.data.list != "") { %>
+										<% anchor.MvList.data.list.forEach(function(item){ %>
+										<div class="list">
+											<a href="/mv?id=<%= item.id%>&anchorId=<%= anchor.basicInfo.data.anchorId%>">
+												<div class="listT">
+													<img class="albumImg" src="<%= item.path || './static/img/anchor/anchor1.png'%>">
+													<div class="cover">
+														<img src="./static/img/anchor/icon_play.png">
+													</div>
+												</div>
+												<div class="listB">
+													<p class="mvName"><%= item.name%></p>
+													<p class="v_p">
+														<span class="views"><i></i><%= item.views%></span>
+														<span class="praise"><i></i><%= item.appreciate%></span>
+													</p>
+												</div>
+											</a>
+										</div>
+										<% }) %>
+										<% } else { %>
+										<p class="cue">主播还没有上传mv哦</p>
+										<% } %>
+									</div>
+								</div>
+							</div>
+							<div id="album" class="tabContent">
+								<div class="albumO">
+									<div class="albumList">
+										<div class="photoAlbum">
+											<% if (anchor.AlbumList.data.list != "") { %>
+											<% anchor.AlbumList.data.list.forEach(function(item){ %>
+											<div class="list">
+												<a href="javascript:">
+													<div class="listT">
+														<img class="albumImg" src="<%= item.path || './static/img/anchor/anchor1.png'%>">
+														<div class="cover">
+															<img src="./static/img/anchor/icon_loupe.png">
+														</div>
+													</div>
+													<div class="listB">
+														<%= item.albumName%>
+														<span><%= item.photoCout%>张</span>
+													</div>
+												</a>
+											</div>
+											<% }) %>
+											<% } else { %>
+											<p class="cue">主播还没有上传照片哦</p>
+											<% } %>
+										</div>
+										<div class="photoList">
+											<% anchor.AlbumList.data.list.forEach(function(item){ %>
+											<div class="imgList" style="display:none">
+												<div class="title"><span class="album">相册</span> &gt; <span class="albumName"><%= item.albumName%></span></div>
+												<% if (item.anchorPhotoList != "") { %>
+												<ul>
+													<% item.anchorPhotoList.forEach(function(item){ %>
+													<li>
+														<img class="albumImg" src="<%= item.path || './static/img/anchor/anchor1.png'%>">
+														<div class="cover">
+															<img src="./static/img/anchor/icon_loupe.png">
+														</div>
+													</li>
+													<% }) %>
+												</ul>
+												<% } else { %>
+												<p class="cue">主播还没有上传照片哦</p>
+												<% } %>
+												<div class="dialog">
+													<% if (item.anchorPhotoList != "") { %>
+													<div class="albumDialog">
+														<div class="pc-slide">
+															<div class="view">
+																<div class="swiper-container albumBox">
+																	<a class="arrow-left" href="#"></a>
+																	<a class="arrow-right" href="#"></a>
+																	<div class="swiper-wrapper">
+																		<% item.anchorPhotoList.forEach(function(item){ %>
+																		<div class="swiper-slide">
+																			<a href="javascript:" target="_blank"><img src="<%= item.path || './static/img/anchor/anchor1.png'%>" alt=""></a>
+																		</div>
+																		<% }) %>
+																	</div>
+																	<span class="close"></span>
+																</div>
+															</div>
+															<div class="preview">
+																<a class="arrow-left" href="#"></a>
+																<a class="arrow-right" href="#"></a>
+																<div class="swiper-container">
+																	<div class="swiper-wrapper">
+																		<% item.anchorPhotoList.forEach(function(item){ %>
+																		<div class="swiper-slide active-nav">
+																			<img src="<%= item.path || './static/img/anchor/anchor1.png'%>" alt="">
+																		</div>
+																		<% }) %>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<% } else { %>
+													<p class="cue">主播还没有上传照片哦</p>
+													<% } %>
+												</div>
+											</div>
+											<% }) %>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="mv" class="tabContent">
+								<div class="mvList">
+									<% if (anchor.MvList.data.list != "") { %>
+									<% anchor.MvList.data.list.forEach(function(item){ %>
+									<div class="list">
+										<a href="/mv?id=<%= item.id%>&anchorId=<%= anchor.basicInfo.data.anchorId%>">
+											<div class="listT">
+												<img class="albumImg" src="<%= item.path || './static/img/anchor/anchor1.png'%>">
+												<div class="cover">
+													<img src="./static/img/anchor/icon_play.png">
+												</div>
+											</div>
+											<div class="listB">
+												<p class="mvName"><%= item.name%></p>
+												<p class="v_p">
+													<span class="views"><i></i><%= item.views%></span>
+													<span class="praise"><i></i><%= item.appreciate%></span>
+												</p>
+											</div>
+										</a>
+									</div>
+									<% }) %>
+									<% } else { %>
+									<p class="cue">主播还没有上传mv哦</p>
+									<% } %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="anchorBar tabDiv">
+			<div class="barLeft">
+				<div class="tabPane active anchorListBtn" data-target="#anchorList">
+					主播列表
+				</div>
+				<div class="tabPane followAnchorBtn" data-target="#focusAnchor">
+					关注主播
+				</div>
+			</div>
+			<div class="barCon">
+				<div id="anchorList" class="tabContent active">
+					<div class="searchBar">
+						<input class="searchInput" type="text" name="" placeholder="搜主播">
+						<a class="searchBtn" href="#"><img src="./static/img/anchor/icon_search_d.png"></a>
+					</div>
+					<ul>
+						<% if (anchor.anchorList.data.list.length) { %>
+						<% anchor.anchorList.data.list.forEach(function(item){ %>
+						<li class="clearfix" id="<%= item.anchorId%>">
+							<div class="headIcon">
+								<img src="<%= item.headIcon || './static/img/anchor/anchor1.png'%>">
+							</div>
+							<div class="userinfo">
+								<p><%= item.nickName%></p>
+								<p>
+									<img src="./static/img/anchor/icon_focus_d.png">
+									<% if (item.isOnlive == true )  { %>
+									<img src="./static/img/anchor/icon_video_l.png">
+									<% } else { %>
+									<img src="./static/img/anchor/icon_video_d.png">
+									<% } %>
+								</p>
+							</div>
+							<div class="views">
+								<%= item.fansNum%>
+							</div>
+						</li>
+						<% }) %>
+						<% } %>
+					</ul>
+				</div>
+				<div id="focusAnchor" class="tabContent">
+					<div class="searchBar">
+						<input class="searchInput" type="text" name="" placeholder="搜主播">
+						<a class="searchBtn" href="#"><img src="./static/img/anchor/icon_search_d.png"></a>
+					</div>
+					<ul>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 主播资料模板 -->
+	<script type="text/template" id="tplInfo">
+		<div class="container">
+			<div class="anchorCon">
+				<div class="anchorTitle">
+					{{data.Info.data.nickName}}
+					<span>
+						<a href="javascript:" class="shareBox"><i></i> 分享</a>
+						<div class="share-dialog">
+							<div class="share-dialog-title">分享到</div>
+							<div class="share-dialog-cont">
+								<div class="share-platform">
+									<div class="bdsharebuttonbox">
+										<a href="#" id="bds_weixin" class="bds_weixin" title="微信"></a><!-- 分享到微信 -->
+										<a href="#" id="bds_tsina" class="bds_tsina"  title="新浪"></a><!-- 分享到新浪微博 -->
+										<a href="#" id="bds_sqq" class="bds_sqq"  title="QQ好友"></a><!-- 分享到QQ好友 -->
+										<a href="#" id="bds_qzone" class="bds_qzone"  title="QQ空间"></a><!-- 分享到QQ空间 -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</span>
+				</div>
+				<div class="anchorInfo">
+					<div class="anchorLeft">
+						{{if data.Info.data.headIcon}}
+						<img class="anchorHead" src={{data.headIcon}}>
+						{{else}}
+						<img class="anchorHead" src="./static/img/anchor1.png">
+						{{/if}}
+						<div class="f_e" data-id="{{data.Info.data.anchorId}}">
+							<a class="focus follow" href="javascript:"><img src="./static/img/anchor/icon_love.png">&nbsp;关注</a>
+							<a class="focus cancel cur" href="javascript:">取消关注</a>
+							{{if data.Info.data.isOnlive}}
+							<a class="enterRoom onLine" href="javascript:">进入直播</a>
+							{{else}}
+							<a class="enterRoom grey" href="javascript:">未开播</a>
+							{{/if}}
+						</div>
+					</div>
+					<div class="anchorRight">
+						<label>
+							<span>直播间：</span>
+							{{data.Info.data.roomName}}
+						</label>
+						<label>
+							<span>粉丝数：</span>
+							{{data.Info.data.fansNum}}
+						</label>
+						<label>
+							<span>房间号：</span>
+							{{data.Info.data.roomId}}
+						</label>
+						<label>
+							<span>访问数：</span>
+							{{data.Info.data.nickName}}*
+						</label>
+						<label>
+							<span>房间人数：</span>
+							{{data.Info.data.nickName}}*
+						</label>
+						<label>
+							<span>上次直播时间：</span>
+							{{data.Info.data.lastLiveTime}}
+						</label>
+					</div>
+				</div>
+				<div class="anchorContent tabDiv">
+					<div class="anchorTab">
+						<a class="active tabPane" href="javascript:" data-target="#home">主页</a>
+						<a class="tabPane" href="javascript:" data-target="#album">相册</a>
+						<a class="tabPane" href="javascript:" data-target="#mv">MV</a>
+					</div>
+					<div id="home" class="tabContent active">
+						<div class="info">
+							<div class="shotInfo">
+								<label>
+									<span>性别：</span>{{data.Info.data.sex == "1"?'男':'女'}}
+								</label>
+								<label>
+									<span>生日：</span>{{data.Info.data.birthday}}
+								</label>
+								<label>
+									<span>身高：</span>{{data.Info.data.height}}
+								</label>
+								<label>
+									<span>星座：</span>{{data.Info.data.constellation}}
+								</label>
+								<label>
+									<span>家乡：</span>{{data.Info.data.nickName}}*
+								</label>
+							</div>
+							<div>
+								<label>
+									<span>个性签名：</span>{{data.Info.data.sign}}
+								</label>
+							</div>
+							<div>
+								<label>
+									<span>兴趣爱好：</span>{{data.Info.data.hobby}}
+								</label>
+							</div>
+						</div>
+						<div class="album">
+							<div class="hTitle">
+								<span>相册</span>
+							</div>
+							<div class="albumList">
+								{{if data.AlbumList.data != ""}}
+									{{each data.findPhoto.data as value i}}
+									<div class="list">
+										<a href="javascript:">
+											<img class="albumImg" src="{{value.path || './static/img/anchor/anchor1.png'}}">
+											<div class="cover">
+												<img src="./static/img/anchor/icon_loupe.png">
+											</div>
+										</a>
+									</div>
+									{{/each}}
+									<div class="dialog">
+											<div class="albumDialog">
+												<div class="pc-slide">
+													<div class="view">
+														<div class="swiper-container photoBox">
+															<a class="arrow-left" href="#"></a>
+															<a class="arrow-right" href="#"></a>
+															<div class="swiper-wrapper">
+																{{each data.findPhoto.data as value i}}
+																<div class="swiper-slide">
+																	<a href="javascript:" target="_blank"><img src="{{value.path || './static/img/anchor/anchor1.png'}}" alt=""></a>
+																</div>
+																{{/each}}
+															</div>
+															<span class="close"></span>
+														</div>
+													</div>
+													<div class="preview">
+														<a class="arrow-left" href="#"></a>
+														<a class="arrow-right" href="#"></a>
+														<div class="swiper-container">
+															<div class="swiper-wrapper">
+																{{each data.findPhoto.data as value i}}
+																<div class="swiper-slide active-nav">
+																	<img src="{{value.path || './static/img/anchor/anchor1.png'}}" alt="">
+																</div>
+																{{/each}}
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+									</div>
+								{{else}}
+								<p class="cue">主播还没有上传相片哦</p>
+								{{/if}}
+							</div>
+						</div>
+						<div class="mv">
+							<div class="hTitle">
+								<span>MV</span>
+							</div>
+							<div class="mvList">
+								{{if data.MvList.data.list!=""}}
+									{{each data.MvList.data.list as value i}}
+									<div class="list">
+										<a href="/mv?id={{value.id}}&anchorId={{data.Info.data.anchorId}}">
+											<div class="listT">
+												<img class="albumImg" src="{{value.cover || './static/img/anchor/anchor1.png'}}">
+												<div class="cover">
+													<img src="./static/img/anchor/icon_play.png">
+												</div>
+											</div>
+											<div class="listB">
+												<p class="mvName">{{value.name}}</p><!--名字-->
+												<p class="v_p">
+													<span class="views"><i></i>{{value.views}}</span><!--观看量-->
+													<span class="praise"><i></i>{{value.appreciate}}</span><!--点赞量-->
+												</p>
+											</div>
+										</a>
+									</div>
+									{{/each}}
+								{{else}}
+								<p class="cue">主播还没有上传mv哦</p>
+								{{/if}}
+							</div>
+						</div>
+					</div>
+					<div id="album" class="tabContent">
+						<div class="albumO">
+							<div class="albumList">
+								<div class="photoAlbum">
+									{{if data.AlbumList.data.list != ""}}
+									{{each data.AlbumList.data.list as value i}}
+										<div class="list">
+											<a href="javascript:">
+												<div class="listT">
+													<img class="albumImg" src="./static/img/anchor/anchor1.png">
+													<div class="cover">
+														<img src="./static/img/anchor/icon_loupe.png">
+													</div>
+												</div>
+												<div class="listB">
+													{{value.albumName}}
+													<span>{{value.photoCout}}张</span>
+												</div>
+											</a>
+										</div>
+									{{/each}}
+									{{else}}
+										<p class="cue">主播还没有上传相册哦</p>
+									{{/if}}
+								</div>
+								<div class="photoList">
+									{{each data.AlbumList.data.list as value i}}
+										<div class="imgList" style="display:none">
+											<div class="title"><span class="album">相册</span> &gt; <span class="albumName">{{value.albumName}}</span></div>
+											{{if data.AlbumList.data.list[i].anchorPhotoList != ""}}
+											<ul>
+												{{each data.AlbumList.data.list[i].anchorPhotoList as value j}}
+													<li>
+														<img class="albumImg" src="{{value.path || './static/images/b1.jpg'}}">
+														<div class="cover">
+															<img src="./static/img/anchor/icon_loupe.png">
+														</div>
+													</li>
+												{{/each}}
+											</ul>
+
+											<div class="dialog">
+												<div class="albumDialog">
+													<div class="pc-slide">
+														<div class="view">
+															<div class="swiper-container albumBox">
+																<a class="arrow-left" href="#"></a>
+																<a class="arrow-right" href="#"></a>
+																<div class="swiper-wrapper">
+																{{each data.AlbumList.data.list[i].anchorPhotoList as value j}}
+																	<div class="swiper-slide">
+																		<a href="javascript:" target="_blank"><img src="{{value.path || './static/images/b1.jpg'}}" alt=""></a>
+																	</div>
+																{{/each}}
+																</div>
+																<span class="close"></span>
+															</div>
+														</div>
+														<div class="preview">
+															<a class="arrow-left" href="#"></a>
+															<a class="arrow-right" href="#"></a>
+															<div class="swiper-container">
+																<div class="swiper-wrapper">
+																{{if data.AlbumList.data.list[i].anchorPhotoList}}
+																{{each data.AlbumList.data.list[i].anchorPhotoList as value j}}
+																	<div class="swiper-slide active-nav">
+																		<img src="{{value.path || './static/images/b1.jpg'}}" alt="">
+																	</div>
+																{{/each}}
+																{{/if}}
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											{{else}}
+												<p class="cue">主播还没有上传相册哦</p>
+											{{/if}}
+										</div>
+									{{/each}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="mv" class="tabContent">
+						<div class="mvList">
+						{{if data.MvList.data.list.lenght > 0}}
+							{{each data.MvList.data.list as value i}}
+							<div class="list">
+								<a href="/mv?id={{value.id}}&anchorId={{data.Info.data.anchorId}}">
+									<div class="listT">
+										<img class="albumImg" src="{{value.cover || './static/img/anchor/anchor1.png'}}">
+										<div class="cover">
+											<img src="./static/img/anchor/icon_play.png">
+										</div>
+									</div>
+									<div class="listB">
+										<p class="mvName">{{value.name}}</p><!--名字-->
+										<p class="v_p">
+											<span class="views"><i></i>{{value.views}}</span><!--观看量-->
+											<span class="praise"><i></i>{{value.appreciate}}</span><!--点赞量-->
+										</p>
+									</div>
+								</a>
+							</div>
+							{{/each}}
+						{{else}}
+						<p class="cue">主播还没有上传mv哦</p>
+						{{/if}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+	<!-- 搜索主播列表模板 -->
+	<script type="text/template" id="anchorSearch">
+		{{ if data != ""}}
+			{{each data as value i}}
+			<li class="clearfix" id={{value.anchorId}}>
+				<div class="headIcon">
+					<img src={{value.headIcon || './static/img/anchor1.png'}}>
+				</div>
+				<div class="userinfo">
+					<p>{{value.nickName}}</p>
+					<p>
+						<img src="./static/img/anchor/icon_focus_d.png">
+						{{if value.isOnlive}}
+						<img src="./static/img/anchor/icon_video_l.png">
+						{{else}}
+						<img src="./static/img/anchor/icon_video_d.png">
+						{{/if}}
+					</p>
+				</div>
+				<div class="views">
+					{{value.fansNum}}
+				</div>
+			</li>
+			{{/each}}
+		{{else}}
+			<p class="cue"></p>
+		{{/if}}
+	</script>
+
+	<!-- 关注主播列表模板 -->
+	<script type="text/template" id="followSearch">
+		{{ if data != ""}}
+		{{each data as value i}}
+		<li class="clearfix" id={{value.anchorId}}>
+			<div class="headIcon">
+				<img src={{value.headIcon || './static/img/anchor1.png'}}>
+			</div>
+			<div class="userinfo">
+				<p>{{value.anchorName}}</p>
+				<p>
+					<img src="./static/img/anchor/icon_focus_d.png">
+					{{if value.live}}
+					<img src="./static/img/anchor/icon_video_l.png">
+					{{else}}
+					<img src="./static/img/anchor/icon_video_d.png">
+					{{/if}}
+				</p>
+			</div>
+			<div class="views">
+				{{value.fansNum}}*粉丝数
+			</div>
+		</li>
+		{{/each}}
+		{{else}}
+		<p class="cue"></p>
+		{{/if}}
+	</script>
+
+	<!--分享start-->
+	<script>
+		$(function(){
+			var url=window.location.href;
+	//		var image=$("#dbs_image").val();
+	//		var title=$("#dbs_title").val();
+
+			var config={
+				"title":''
+				,"pics":''
+				,"desc":""
+				,"url":url
+				,"msg":""
+				,"KEY_weixin":"bds_weixin"
+				,"KEY_sina":"bds_tsina"
+				,"KEY_qq":"bds_sqq"
+				,"KEY_qzone":"bds_qzone"
+			};
+			BBH_share.initData(config);
+		});
+		var check=$('.follow').find('.follNotice').size();
+		if(check>0){
+			$('.closeNotice').click(function(event) {
+				$('.follNotice').hide();
+			});
+			var t=setTimeout(function(){
+
+				$('.follNotice').show();
+
+			}, 5000)
+			var t=setTimeout(function(){
+
+				$('.follNotice').hide();
+
+			}, 40000)
+		}
+	</script>
+
+	</body>
+</html>

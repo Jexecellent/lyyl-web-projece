@@ -1,0 +1,45 @@
+<div  ng-controller="loginCtr">
+    <div class="nav">
+        <div class="nav-in">
+            <div class="logo"><img src="images/hy_logo_zh_cn.png" alt=""/></div>
+            <h3>海妖直播</h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-l"><img src="images/loginImg_zh_cn.png" alt=""/></div>
+        <div class="main-r">
+            <from>
+                <h4>欢迎登录</h4>
+                <div class="inp">
+                    <label for="" translate="login.use">登录账号:</label>
+                    <input ng-model="loginUser.account" type="text"/>
+                </div>
+                <div class="inp">
+                    <label for="" translate="login.pwd">登录密码:</label>
+                    <input type="password" ng-model="loginUser.password"/>
+                </div>
+                <div class="inp iden">
+                    <label for="">验证码:</label>
+                    <input type="text"/>
+                    <span class="idenImg"></span>
+                    <p class="hint" ng-show="errIdenImg">请输入验证码</p>
+                </div>
+                <div class="select">
+                    <div class="entryText">
+                        <input type="checkbox" ng-model="checkedPwd" ng-click="savePwd()">                  
+                        <span>下次自动登录</span>
+                    </div>
+                    <div class="areaText">
+                        <span>使用地区</span>
+                        <select ng-model="lan" ng-change="setLang(lan)" >
+                            <option value="zh"> 中国大陆</option>
+                            <option value="en"> English</option>
+                        </select>
+                    </div>
+                </div>
+                <p style="color:red">{{valid}}</p>
+                <input type="submit" class="btn" ng-click="login()" value="登录"/>
+            </from>
+        </div>
+    </div>
+</div>

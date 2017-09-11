@@ -1,0 +1,303 @@
+.content{
+	padding-top: 70px;
+}
+
+.rankT{
+	height: 120px;
+	background: url(../img/rank_title.png) center;
+}
+.rankC .container{
+	width: 1412px;
+	overflow: hidden;
+}
+.rankList{
+	width: 670px;
+	margin: 0 18px;
+	float: left;
+	margin-bottom: 100px;
+}
+.rankList .listT{
+	height: 53px;
+}
+.rankList .listT .question img{
+	vertical-align: top;
+}
+.rankList .listT ul{
+	float: right;
+	margin: 21px 13px 0 0;
+}
+.rankList .listT ul li{
+	float: left;
+}
+.rankList .listT ul li a{
+	display: inline-block;
+	width: 66px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: #4c4c4c;
+}
+/* 颜色主题 start */
+/* 粉红 */
+.rankList.pinkStyle .listT ul li a.active{
+	background-color: #fff;
+	color: #ff3399;
+}
+.rankList.pinkStyle .listT ul li a:hover{
+	background-color: #f19ec2;
+	color: #fff;
+}
+.rankList.pinkStyle .listC .listFront .no1{
+	background: url(../img/rank_no1bg.png);
+}
+.rankList.pinkStyle .listC .listFront .no2{
+	background: url(../img/rank_no2bg.png);
+}
+.rankList.pinkStyle .listC .listFront .no3{
+	background: url(../img/rank_no3bg.png);
+}
+.rankList.pinkStyle .listC .listBack .index{
+	background-color: #f09ec1;
+}
+/* 蓝色 */
+.rankList.blueStyle .listT ul li a.active{
+	background-color: #fff;
+	color: #0099ff;
+}
+.rankList.blueStyle .listT ul li a:hover{
+	background-color: #99ccff;
+	color: #fff;
+}
+.rankList.blueStyle .listC .listFront .no1{
+	background: url(../img/NO1bg.png);
+}
+.rankList.blueStyle .listC .listFront .no2{
+	background: url(../img/NO2bg.png);
+}
+.rankList.blueStyle .listC .listFront .no3{
+	background: url(../img/NO3bg.png);
+}
+.rankList.blueStyle .listC .listBack .index{
+	background-color: #97ceff;
+}
+/* 颜色主题 end */
+.rankList .listC{
+	height: 710px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0px 0px 6px 0px #b5b5b5;
+}
+.rankList .listC .listFront{
+	overflow: hidden;
+	text-align: center;
+	font-size: 14px;
+	position: relative;
+	height: 260px;
+}
+.rankList .listC .listFront .no1{
+	width: 230px;
+	height: 260px;
+	margin: 0 10px;
+	position: absolute;
+	top: 0px;
+	left: 190px;
+}
+.rankList .listC .listFront .no1 .noT{
+	width: 137px;
+	height: 160px;
+	margin: auto;
+	margin-top: 12px;
+	position: relative;
+}
+.rankList .listC .listFront .no1 .noT .noBg{
+	position: absolute;
+	left: 0;
+	width: 137px;
+	height: 160px;
+}
+.rankList .listC .listFront .no1 .noT .headIcon{
+	position: absolute;
+	width: 110px;
+	height: 110px;
+	left: 13px;
+    top: 29px;
+}
+
+.rankList .listC .listFront .no2{
+	width: 190px;
+	height: 225px;
+	position: absolute;
+	top: 35px;
+	left: 0px;
+}
+.rankList .listC .listFront .noT{
+	width: 103px;
+	height: 112px;
+	margin: auto;
+	margin-top: 24px;
+	position: relative;
+}
+.rankList .listC .listFront .noT .noBg{
+	position: absolute;
+	left: 0;
+	width: 103px;
+	height: 112px;
+}
+.rankList .listC .listFront .noT .headIcon{
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	left: 7px;
+    top: 4px;
+}
+.rankList .listC .listFront .anchor{
+	margin-top: 20px;
+	color: #4c4c4c;
+}
+.rankList .listC .listFront .anchor img{
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.rankList .listC .listFront .views{
+	margin-top: 8px;
+	color: #999;
+}
+.rankList .listC .listFront .views img{
+	margin-right: 12px;
+	vertical-align: middle;
+}
+
+.rankList .listC .listFront .no3{
+	width: 190px;
+	height: 225px;
+	position: absolute;
+	top: 35px;
+	right: 0px;
+}
+.rankList .listC .listBack{
+	margin-top: 30px;
+}
+.rankList .listC .listBack a{
+	display: block;
+	line-height: 60px;
+	border-radius: 5px;
+	color: #4c4c4c;
+}
+.rankList .listC .listBack li:nth-child(odd) a{
+	background-color: #f7f7f7;
+}
+.rankList .listC .listBack .index{
+	display: inline-block;
+	color: #fff;
+	width: 25px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 50%;
+	margin: 0 15px;
+}
+.rankList .listC .listBack img{
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.rankList .listC .listBack .views{
+	float: right;
+	margin-right: 30px;
+	color: #999;
+}
+.rankList .listC .listBack .views img{
+	margin-right: 20px;
+}
+
+.weekList{
+	width: 676px;
+    margin: 0 15px;
+    float: left;
+    margin-bottom: 100px;
+}
+.weekList .listT{
+	height: 53px;
+}
+.weekList.orangeStyle .listC{
+	background: url(../img/rank_orange.png);
+	height: 554px;
+}
+.weekList.greyStyle .listC{
+	background: url(../img/rank_grey.png);
+	height: 554px;
+}
+.weekList .listTab{
+	float: right;
+	font-size: 18px;
+	color: #cccccc;
+	margin: 10px 10px 0 0;
+}
+.weekList .listTab a{
+	color: #999;
+	margin: 0 20px;
+	letter-spacing: 5px;
+}
+.weekList.orangeStyle .listTab a.active,.weekList.orangeStyle .listTab a:hover{
+	color: #ff821d;
+}
+.weekList.greyStyle .listTab a.active,.weekList.greyStyle .listTab a:hover{
+	color: #61d1a5;
+}
+.weekList .listT .question img {
+    vertical-align: top;
+}
+
+.weekList .listC{
+	padding: 100px 15px 0 15px;
+}
+.weekList .listC ul li{
+	float: left;
+	margin: 0 5px;
+	margin-bottom: 10px;
+}
+.weekList .listC a{
+	width: 310px;
+	height: 124px;
+	background-color: #f7f7f7;
+	display: block;
+	border-radius: 10px;
+}
+.weekList .listC .gift{
+	width: 85px;
+	height: 89px;
+	padding: 17px 0 0 30px;
+	display: inline-block;
+}
+.weekList .listC .gift .headIcon{
+	position: absolute;
+	width: 79px;
+	height: 79px;
+	margin: 3px 0 0 3px;
+}
+.weekList .listC .gift .giftBg{
+	position: absolute;
+}
+.weekList .listC .gift .giftName{
+	position: absolute;
+	color: #fff;
+	margin: 70px 0 0 19px;
+	width: 48px;
+	height: 16px;
+	text-align: center;
+}
+.weekList .listC .info{
+	display: inline-block;
+	vertical-align: top;
+	color: #4c4c4c;
+	font-size: 14px;
+	padding: 30px 20px;
+}
+.weekList .listC .info .levels img{
+	margin: 7px 8px 4px 0;
+}
+.weekList .listC .info .amount{
+	color: #999;
+}

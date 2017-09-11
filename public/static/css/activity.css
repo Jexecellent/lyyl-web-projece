@@ -1,0 +1,14 @@
+.content{
+	padding-top: 70px;
+}
+
+.activity{
+	overflow: hidden;
+}
+.acitvityList{
+	float: left;
+	margin-right: 20px;
+}
+.acitvityList:nth-child(2n){
+	margin-right: 0;
+}

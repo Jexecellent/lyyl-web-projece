@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<config>
+		<!-- 资源站点地址 -->
+		<ResourceSite value="" />
+		<!-- 客户端Flash站点地址 -->
+		<FlashSite value="" />
+		<!-- 服务器数据站点地址 -->
+		<DataSite value="" />
+		<!-- 游戏服务器ip地址 -->
+<!-- 		<IpSite value="192.168.1.107" /> -->
+		<IpSite value="183.61.172.94" />
+		<!-- 游戏服务器端口 -->
+		<Port value="9090" />
+		<!-- 聊天服务器ip地址 -->
+<!-- 		<ChatIpSite value="192.168.1.63" /> -->
+		<!-- 游戏服务器端口 -->
+<!-- 		<ChatPort value="9060" /> -->
+		<!-- 视频地址 -->
+<!-- 		<RtmpSite value="rtmp://183.240.9.85/led/3-91" /> -->
+		<RtmpSite value="rtmp://192.168.1.210:1935/room_hd/1" />
+	</config>
+</root>

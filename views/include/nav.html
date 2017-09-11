@@ -1,0 +1,70 @@
+<div class="nav">
+	<div class="container">
+		<img class="logo" src="/static/img/logo.png">
+		<ul>
+			<li><a class="nav-home" href="/"><%= __('home') %></a></li>
+			<li><a href="/hall" class="nav-hall"><%= __('hall') %></a></li>
+			<li><a href="/anchor" class="nav-anchor"><%= __('anchor') %></a></li>
+			<li><a href="/rankingList" class="nav-list"><%= __('ranking') %></a></li>
+			<li><a href="/activePage" class="nav-activity"><%= __('activity') %></a></li>
+			<li><a href="#" class="nav-cz">充值</a></li>
+			<li><a href="#" class="nav-lt">论坛</a></li>
+			<li><a href="#" class="nav-hzhb">合作伙伴</a></li>
+			<li><a href="#" class="nav-dl">下载</a></li>
+		</ul>
+		<div class="s_l">
+			<div class="search">
+				<input type="text" name="" placeholder="搜房间/主播">
+				<a href="javascript:"><img src="/static/img/search2.png">&nbsp;</a>
+			</div>
+			<div class="login">
+				<% if(!session.isLogin && session.user == null){ %>
+				 <div class="noLogin">
+					<img src="/static/img/user-icon.png">
+					<a href="javascript:"  id="login_a"><%= __('login') %></a>|
+					<a href="/user/register"><%= __('register') %></a>| <a href="javascript:change('en_US');">English</a> | <a href="javascript:change('zh_CN');">中文</a>
+				</div>
+				<% }else {%>
+				<div class="isLogin">
+					<a href="/myInfo">
+						<img class="headIcon" src="<%= session.user.headIcon || '/static/img/tou.png'%>">
+						<span class="tip">8</span>
+						<span class="nickname"><%=session.user.nickName%></span>
+						<img class="arrow" src="/static/img/icon_down.png">
+					</a>
+					<div class="pullDown">
+						<div class="pullDownTop">
+							<a class="logout" href="/user/logout">退出登录</a>
+						</div>
+						<div class="pullDownCon">
+							<a href=""><img class="headIcon" src="/static/img/tou.png"></a>
+							<div class="user">
+								<div class="username">
+                                    <a href=""><%=session.user.nickName%></a>
+								</div>
+								<div class="userinfo">
+									<img class="vip" src="/static/img/levels/vip/<%=session.user.vip || 1%>.png">
+									<img class="lv" src="/static/img/levels/lv/<%=session.user.level || 1%>.png">
+									<span class="coin"><img src="/static/img/icon_coin.png"><%=session.user.gold%></span>
+								</div>
+							</div>
+						</div>
+						<div class="pullDownBot">
+							<a href="/myInfo/myfriend">好友</a>
+							<a href="javascript:">历史</a>
+							<a href="/myInfo/myfocus">关注</a>
+							<a href="/myInfo/myreport">报表</a>
+							<a href="/myInfo/mymessage"><span>8</span>消息</a>
+							<a href="/myInfo/myintegral">积分</a>
+						</div>
+					</div>
+				</div>
+				<% } %>
+			</div>
+			<span class="save">
+				<a href="javascript:"><img src="/static/img/icon_save.png">
+				保存桌面</a>
+			</span>
+		</div>
+	</div>
+</div>

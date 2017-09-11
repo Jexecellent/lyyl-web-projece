@@ -1,0 +1,919 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+html, body {
+	height: 100%;
+	font-family: "微软雅黑";
+}
+
+select, input {
+	outline: none;
+}
+
+input {
+	border: none;
+}
+.r-btn{
+	position: absolute;
+	right: 0;
+	text-align: center;
+	width: 20px;
+	height: 20px;
+	line-height: 22px;
+	background: #d2cfce;
+	cursor: pointer;
+}
+.nav {
+	height: 56px;
+	background: url("../images/nav-bj.jpg") repeat-x;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 999;
+}
+
+.nav-l {
+	float: left;
+	padding-left: 40px;
+}
+
+.nav .logo {
+	float: left;
+	margin: 15px 35px 0 0;
+}
+
+.nav h3 {
+	font: 20px/56px "微软雅黑";
+	color: #EBEBEB;
+	float: left;
+}
+
+.nav .top {
+	float: right;
+	height: 56px;
+	line-height: 56px;
+	font-size: 14px;
+	color: #fff;
+	margin-right: 52px;
+	position: relative;
+}
+
+.nav .top .zh_cn {
+	padding-right: 15px;
+	position: relative;
+	cursor: pointer;
+}
+
+.nav .top .zh_cn:after {
+	content: '';
+	display: block;
+	width: 8px;
+	height: 6px;
+	background: url(../images/icon01.png) no-repeat -27px -18px;
+	position: absolute;
+	top: 7px;
+	right: 0px;
+}
+
+.nav .top .curLang {
+	width: 400px;
+	padding: 8px 10px 20px;
+	position: absolute;
+	top: 56px;
+	right: 0px;
+	background: #fff;
+	color: #000;
+	border: 1px solid #E0E0E0;
+	z-index: 10;
+	line-height: 35px;
+	display: none;
+}
+
+.nav .top .curLang ul {
+	overflow: hidden;
+}
+
+.nav .top .curLang li {
+	float: left;
+	margin: 0 2px;
+	height: 26px;
+	line-height: 26px;
+}
+
+.nav .top .curLang li a {
+	display: block;
+	padding: 0 8px;
+	color: #000;
+}
+
+.nav .top .curLang li a:hover {
+	color: #237AE4;
+}
+
+.siderbar {
+	width: 200px;
+	position: fixed;
+	top: 56px;
+	bottom: 0;
+	left: 0;
+	z-index: 3;
+	margin-bottom: -9999px;
+	padding-bottom: 9999px;
+	background-color: #292A2F;
+	border-right: 1px solid #f2f2f2;
+}
+
+.userImg {
+	padding: 12px 0 15px 0;
+	background: #3D3E43;
+}
+
+.userImg .userPhoto {
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	border: 3px solid #EF614B;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.userImg .userPhoto img {
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.userImg .userName {
+	text-align: center;
+	color: #EF6149;
+	font: 14px "微软雅黑";
+	margin: 9px 0 15px 0;
+}
+
+.userFit a {
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	background: url("../images/iconList.png") no-repeat;
+	cursor: pointer;
+}
+
+.userFit .datum {
+	background-position: -26px 0;
+}
+
+.userFit .revise {
+	height: 14px;
+	background-position: -13px 0;
+	margin: 0 20px;
+}
+
+.userFit .quit {
+	background-position: 0px 0;
+}
+
+.userFit {
+	width: 95px;
+	margin: 0 auto;
+	padding-left: 7px;
+}
+
+.inquiry {
+	border-top: 1px dashed #38393E;
+	padding: 10px 15px 0;
+	margin-top: 10px;
+	font: 12px "微软雅黑";
+	color: #fff;
+}
+
+.inquiry label {
+	display: block;
+	margin-bottom: 4px;
+}
+
+.inquiry select {
+	width: 170px;
+	height: 20px;
+	border-radius: 1px;
+	border: 1px solid #95A8B7;
+	color: #363636;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.inquiry-list {
+	height: 50px;
+}
+
+.inquiry .search button {
+	width: 54px;
+	height: 24px;
+	font: 13px/22px "微软雅黑";
+	background: #237AE4;
+	color: #fff;
+	border: none;
+	margin-left: 115px;
+	border-radius: 1px;
+	cursor: pointer;
+}
+
+.inquiry .search button:hover {
+	background: #1C63B6;
+}
+
+.menuList {
+	height: 100%;
+	list-style: none;
+	font: 14px "微软雅黑";
+	background: #292A2F;
+}
+
+.menuList>li {
+	position: relative;
+}
+
+.menuList li a {
+	color: #fff;
+	padding: 10px;
+	display: block;
+	text-decoration: none;
+}
+
+.menuList li a.active em {
+	background-position: -47px -17px;
+}
+
+.menuList>li>a {
+	border-bottom: 1px dashed #38393E;
+	border-left: 2px solid transparent;
+	padding-left: 20px;
+}
+
+.menuList li .active {
+	border-left-color: #F16147;
+}
+
+.menuList>li>a:hover {
+	border-left-color: #F16147;
+}
+
+.menuList li em {
+	width: 9px;
+	height: 7px;
+	background: url("../images/iconList.png") no-repeat -38px -16px;
+	display: inline-block;
+	float: right;
+	position: absolute;
+	top: 16px;
+	right: 20px;
+}
+
+.menuList li i {
+	width: 8px;
+	height: 10px;
+	background: url('../images/iconList01.png') no-repeat;
+	display: inline-block;
+}
+
+.menuList li p {
+	margin-bottom: 0;
+}
+
+.menuList li .icon1 {
+	background-position: -49px 0;
+	margin: 4px 10px 0 0;
+}
+
+.menuList li .icon2 {
+	width: 11px;
+	height: 9px;
+	background-position: -69px 0;
+	margin: 4px 7px 0 0;
+}
+
+.menuList li .icon3 {
+	width: 7px;
+	background-position: -40px 0;
+	margin: 4px 10px 0 0;
+}
+
+.menuList li .icon4 {
+	background-position: -59px 0;
+	margin: 4px 10px 0 0;
+}
+
+.menuList li .icon5 {
+	width: 10px;
+	background-position: -24px -15px;
+	margin: 4px 8px 0 0;
+}
+
+.menuList li .icon6 {
+	width: 10px;
+	background-position: -81px 0px;
+	margin: 4px 8px 0 0;
+}
+
+.menuList li .icon7 {
+	width: 10px;
+	height: 7px;
+	background-position: -12px -16px;
+	margin: 4px 9px 0 0;
+}
+
+.menuList li .icon8 {
+	width: 10px;
+	height: 8px;
+	background-position: 0 -16px;
+	margin: 4px 10px 0 0;
+}
+
+.menuList li .icon9, .menuList li .icon10, .menuList li .icon11,.menuList li .icon12 {
+	width: 10px;
+	height: 12px;
+	background-position: -60px -12px;
+	margin: 4px 10px 0 0;
+}
+.menuList li .icon13{
+    width: 10px;
+    height: 10px;
+    background-position:-74px -13px;
+    margin: 4px 10px 0 0;
+}
+.twoList li {
+	padding-left: 30px;
+	border-left: 2px solid transparent;
+	background: #3D3E43;
+	border-bottom: 1px dashed #38393E;
+}
+
+.menuList li.hide {
+	display: none;
+}
+
+.twoList li.current {
+	border-left-color: #B5B5B5;
+	background: #323335;
+}
+
+.twoList li:hover {
+	border-left-color: #B5B5B5;
+	background: #323335;
+}
+
+.twoList li a {
+	border-bottom: none;
+	font-size: 12px;
+}
+
+.main-box {
+	position: absolute;
+	top: 56px;
+	left: 200px;
+	right: 0;
+	bottom: 0;
+	font-size: 14px;
+	background: #F9F9F9;
+	font-family: "微软雅黑";
+}
+
+.location, .tab-title, .term {
+	background: #fff;
+}
+
+.location {
+	padding: 10px 0 0 15px;
+	color: #707176;
+	padding-bottom: 15px;
+}
+
+.tab-title {
+	height: 43px;
+	border-bottom: 1px solid #ccc;
+}
+
+.tab-title>li {
+	float: left;
+	border-top: 3px solid transparent;
+	background: #F9F9F9;
+}
+
+.tab-title>li>a {
+	display: inline-block;
+	padding: 10px 20px;
+	color: #707176;
+}
+
+.tab-title>li.active {
+	border-top-color: #237AE3;
+	color: #237AE3;
+	background: #FFFFFF;
+}
+
+.tab-content>div {
+	display: none;
+}
+
+.tab-content .active {
+	display: block;
+}
+
+.term {
+	height: 35px;
+	padding: 7px 30px 0 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.term .add, .term .filter, .term .firm {
+	float: left;
+}
+
+.term .system {
+	float: right;
+	margin-top: 3px;
+}
+
+.term .add {
+	height: 27px;
+	background: #E0E0E0;
+	border: 1px solid #CACACA;
+	border-radius: 1px;
+	font: 13px/27px "微软雅黑";
+	color: #707176;
+	padding: 0 10px 0 50px;
+	margin-left: 18px;
+	background: #E0E0E0 url('../images/icon01.png') no-repeat -81px -1px;
+	cursor: pointer;
+}
+
+.term .filter {
+	line-height: 27px;
+	position: relative;
+	cursor: pointer;
+	margin-left: 90px;
+}
+
+.term .filter .low {
+	width: 16px;
+	height: 8px;
+	display: inline-block;
+	margin-left: 10px;
+	cursor: pointer;
+	background: url('../images/icon01.png') no-repeat 0 -18px;
+}
+
+.filterList {
+	width: 150px;
+	position: absolute;
+	left: 60px;
+	top: 30px;
+	list-style: none;
+	z-index: 100;
+	border: 1px solid #ccc;
+	background: #fff;
+	margin: 0;
+	padding: 10px 20px;
+	display: none;
+}
+
+.filterList li {
+	margin: 10px 0;
+	height: 20px;
+}
+
+.filterList li:hover {
+	color: #2479E6;
+	cursor: pointer;
+}
+
+.filterList input {
+	margin-right: 10px;
+}
+
+.filterList label {
+	margin-top: -8px;
+	cursor: pointer;
+}
+
+.firm {
+	margin-left: 20px;
+	margin-top: 3px;
+}
+
+.system button {
+	width: 54px;
+	height: 24px;
+	font: 13px/22px "微软雅黑";
+	background: #237AE4;
+	color: #fff;
+	border: none;
+	margin-left: 20px;
+	border-radius: 1px;
+}
+
+.navTitle, .tableList {
+	padding: 0 20px 0;
+}
+
+.tableList {
+	padding-top: 7px;
+	overflow-x: auto;
+}
+
+.tableList .box-content table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.tableList th {
+	background: #707176;
+	color: #fff;
+	font: 14px "微软雅黑";
+}
+
+.tableList td, .tableList th {
+	text-align: center;
+	padding: 10px;
+	border: 1px solid #E3E3E3;
+}
+
+.tableList td {
+	background: #fff;
+}
+
+.tableList .gay td {
+	background: #eee;
+}
+
+.tableList td.abs {
+	color: #FC5C1B;
+}
+
+.tableList td.sb {
+	color: #FC5C1B;
+}
+
+.tableList td.cg {
+	color: #237AE4;
+}
+
+.tableList td.gq {
+	color: #FC5C1B;
+}
+
+.tableList td.dd {
+	color: #FC5C1B;
+}
+
+.tableList a {
+	color: #237AE4;
+}
+
+.tableList a.amend {
+	margin-right: 15px;
+}
+
+.tableList a:hover {
+	text-decoration: none;
+}
+
+.tableList .amend i, .tableList .del i, .tableList .jy i, .tableList .qy i
+	{
+	width: 17px;
+	height: 17px;
+	display: inline-block;
+	background: url('../images/icon.png') no-repeat;
+	margin-bottom: -3px;
+	margin-right: 5px;
+}
+
+.tableList .del i {
+	background-position: -17px 0;
+}
+
+.tableList .amend i {
+	background-position: 0 0;
+}
+/*功能样式  */
+#modal .box {
+	margin-top: 24px;
+	position: relative;
+}
+
+.company {
+	width: 320px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+
+#radio-2 {
+	margin-left: 52px;
+}
+
+.save {
+	margin-left: 35%;
+}
+
+.iziModal .iziModal-header {
+	text-align: center;
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+/*确认删除*/
+.delete {
+	width: 325px;
+	height: 180px;
+	background: url("../images/ic_bg.png") no-repeat;
+	padding-top: 30px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -162px;
+	margin-top: -74px;
+}
+
+.delete .promptText {
+	text-align: center;
+	font: 16px "微软雅黑";
+	color: #000;
+}
+
+.delete .promptText p {
+	height: 30px;
+}
+
+.delete .promptBtn {
+	padding: 30px 30px 0;
+}
+
+.delete .promptBtn button {
+	width: 104px;
+	height: 27px;
+	border-radius: 4px;
+	background: #F16149;
+	border: none;
+	color: #fff;
+	font: 14px "微软雅黑";
+	display: inline-block;
+	cursor: pointer;
+}
+
+/*删除失败*/
+.deleteFailed {
+	width: 325px;
+	height: 148px;
+	background: url("../images/ic_bg.png") no-repeat;
+	padding-top: 30px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -162px;
+	margin-top: -74px;
+}
+
+.deleteFailed .promptText {
+	text-align: center;
+	font: 16px "微软雅黑";
+	color: #000;
+}
+
+.deleteFailed .promptText p {
+	height: 30px;
+}
+
+.deleteFailed .promptBtn {
+	padding: 20px 30px 0;
+}
+
+.deleteFailed .promptBtn button {
+	width: 104px;
+	height: 27px;
+	border-radius: 4px;
+	background: #F16149;
+	border: none;
+	color: #fff;
+	font: 14px "微软雅黑";
+	display: inline-block;
+	cursor: pointer;
+}
+
+/*删除成功*/
+.deleteSuccess {
+	width: 325px;
+	height: 180px;
+	background: url("../images/ic_bg.png") no-repeat;
+	padding-top: 50px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -162px;
+	margin-top: -74px;
+}
+
+.deleteSuccess .promptText {
+	text-align: center;
+	font: 16px "微软雅黑";
+	color: #000;
+}
+
+.deleteSuccess .promptText p {
+	height: 30px;
+}
+
+.deleteSuccess .delBtn {
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+	background: url("../images/ic_gb01.png") no-repeat;
+	cursor: pointer;
+}
+
+b {
+	color: red;
+}
+
+.save {
+	margin-left: 35%;
+}
+/*引用bootstrap的一些样式  */
+.btn-primary {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+}
+/* .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+} */
+.btn-primary:hover {
+	color: #fff;
+	background-color: #286090;
+	border-color: #204d74;
+}
+
+.anchorList .term .filter {
+	margin-left: 20px;
+}
+
+.term .means {
+	margin: 3px 0 0 25px;
+}
+
+.term .means i {
+	font-style: normal;
+	color: #227BE1;
+	font-style: normal;
+}
+
+/* 充值报表 */
+.recharge .location {
+	border-bottom: 1px solid #ccc;
+}
+
+.recharge .term {
+	padding-right: 0px;
+}
+
+.recharge .term .filter {
+	margin-left: 20px;
+}
+
+.recharge .check {
+	float: right;
+}
+
+.recharge .term .sum, .term .gold {
+	margin: 3px 0 0 20px;
+}
+
+.recharge .term .sum span, .term .gold span {
+	color: #237AE3;
+	margin: 0 25px 0 15px;
+}
+
+.recharge .account {
+	float: left;
+	margin-top: 3px;
+	margin-right: 15px;
+}
+
+.recharge .account label {
+	margin-left: 10px;
+	display: inline-block;
+}
+
+.recharge .account input, .recharge .account select {
+	width: 100px;
+	height: 22px;
+	border: 1px solid #94A7B8;
+	border-radius: 2px;
+	background: #fff;
+}
+
+.recharge .check #dateSelectors input, .recharge .time-uantum #dateSelectors input
+	{
+	background: #fff url('../images/ic_rl.png') no-repeat 104px 2px;
+}
+
+.roomSum {
+	float: left;
+}
+
+/*视频资源加载部分*/
+.loading {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+}
+/* 礼物配置 */
+.giftConfigure .tableList .box-content table {
+	width: 250%;
+}
+
+.giftConfigure .cartoon, .cartoon{
+	height: 27px;
+	display: inline-block;
+	border: 1px solid #F36B55;
+	border-radius: 5px;
+	font: 12px/27px "微软雅黑";
+	text-align: center;
+	margin: 0 5px;
+	color: #F36B55;
+	cursor: pointer;
+	z-index: 8;
+	padding: 0 5px;
+}
+
+.giftConfigure .imgBox {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	display: inline-block;
+}
+
+.giftConfigure .box-content {
+	overflow: auto;
+}
+
+.giftConfigure .upArrow, .giftConfigure .downArrow, .groom .upArrow,
+	.groom .downArrow {
+	width: 16px;
+	height: 8px;
+	background: url('../images/ic_fx.png') no-repeat;
+	display: inline-block;
+}
+
+.giftConfigure .downArrow, .groom .downArrow {
+	margin-left: 15px;
+	background-position: -1px -10px;
+}
+
+.giftConfigure .first, .giftConfigure .last, .groom .first, .groom .last
+	{
+	background: none;
+}
+.menuList li .icon14 {
+    width: 12px;
+    height: 14px;
+    background-position: -86px -12px;
+    margin: 4px 10px 0 0;
+}

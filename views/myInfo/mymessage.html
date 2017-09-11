@@ -1,0 +1,108 @@
+<% include ../include/header1.html %>
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 消息列表 -->
+					<div id="mymessage" class="conRight">
+						<div class="riTitle">
+							<span class="titleName active">收件箱</span>
+							<span class="tip">（共计<%=pageData.data.totalMsgNum%>条，<span><%=pageData.data.unreadNum%></span>未读）</span>
+						</div>
+						<div class="riContent tabDiv">
+							<div class="contentTab">
+								<a class="tabList" href="/myInfo/mymessage?mType=1">系统公告<% if(pageData && pageData.data.unread[0] != 0){%><span>新</span><%}%></a>
+								<a class="tabList" href="/myInfo/mymessage?mType=2">活动推送<% if(pageData && pageData.data.unread[1] != 0){%><span>新</span><%}%></a>
+								<a class="tabList" href="/myInfo/mymessage?mType=3">验证消息<% if(pageData && pageData.data.unread[2] != 0){%><span>新</span><%}%></a>
+								<a class="tabList" href="/myInfo/mymessage?mType=4">游戏信息<% if(pageData && pageData.data.unread[3] != 0){%><span>新</span><%}%></a>
+								<a class="tabList" href="/myInfo/mymessage?mType=5">其他信息<% if(pageData && pageData.data.unread[4] != 0){%><span>新</span><%}%></a>
+							</div>
+							<div id="verifyMessage" class="active">
+								<div class="table">
+									<table>
+										<thead>
+											<th style="width: 36px;"></th>
+											<th>发件人</th>
+											<th style="width: 386px;">消息主题</th>
+											<th>时间</th>
+											<th width="210">
+												<a class="btn blue min radius deleteBtn" href="javascript:">删除</a>
+												<a class="btn blueB min radius emptyBtn" href="javascript:">全部清空</a>
+											</th>
+										</thead>
+										<tbody id="messageList">
+											<% if(pageData && pageData.data.page.list.length != 0){%>
+											<% pageData.data.page.list.forEach(function(item){ %>
+											<tr <%if(item.read){%>class="read"<%} %> onClick="window.location.href= '/myInfo/messagedetail?id=<%=item.id %>'">
+												<td>&nbsp;<input type="checkbox" data-mid="<%=item.id %>"></td>
+												<td><%=item.sponsorName %></td>
+												<td><%=item.title %></td>
+												<td><%=item.time %></td>
+												<%if(item.read){%>
+												<td>已读消息</td>
+												<%}else{%>
+												<td>未读消息</td>
+												<%} %>
+											</tr>
+											<% })}else{%>
+											<tr>
+												<td></td>
+												<td></td>
+												<td>--暂无数据--</td>
+												<td></td>
+												<td></td>
+											</tr>	
+											<% } %>
+										</tbody>
+									</table>
+									<div class="pageComponent">
+										<div class="tcdPageCode"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript" src="/static/js/api/jquery.page.js"></script>
+	<!-- 消息列表 -->
+	<script type="text/template" id="tpl">
+		{{each data as item i}}
+		<tr>
+			<td>&nbsp;<input type="checkbox" name=""></td>
+			<td>{{ item.sponsorName }}</td>
+			<td><a class="goMesDet" href="javascript:">{{ item.title }}</a></td>
+			<td>{{ item.time }}</td>
+			<td>未读消息</td>
+		</tr>
+		{{/each}}
+	</script>
+
+	<script type="text/javascript">
+		var total = '<%=pageData.data.page.total%>';//总条数
+		var pages = '<%=pageData.data.page.pages%>';//总页数
+		var pageSize = $.getUrlParam("pageSize") || 6;//每页条数
+		var pageNum = $.getUrlParam("pageNum") || 1;//当前页码
+		var mType = $.getUrlParam("mType") || 1;//消息类型
+
+		$(".tabList").eq(mType-1).addClass("active");
+
+//		if(pageNum > "<%=pageData.data.page.lastPage%>"){
+//			window.location.href = "?pageNum="+"<%=pageData.data.page.lastPage%>"+"&pageSize="+pageSize+"&mType="+mType;
+//		}
+	</script>
+	<script type="text/javascript" src="/static/js/myinfo/mymessage.js"></script>
+</body>
+</html>

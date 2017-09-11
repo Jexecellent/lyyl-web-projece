@@ -1,0 +1,132 @@
+<% include ../include/header1.html %>
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 我的好友 start -->
+					<div id="myfriend" class="conRight">
+						<div class="riTitle">
+							<span class="titleName active">我的好友</span>
+						</div>
+						<div class="riContainer">
+							<div class="friendList">
+								<ul id="friendList" class="clearfix">
+									<% if(pageData && pageData.data.list.length != 0){%>
+									<% pageData.data.list.forEach(function(item){ %>
+									<li>
+										<div class="listL">
+											<img class="headIcon" src="<%=item.headIcon || /static/img/tou.png %>">
+											<% if(item.isOnline==0){%>
+											<span class="offline">已离线</span>
+											<% }else{ %>
+											<span class="online">在线中</span>
+											<% } %>
+											<div class="nickname"><%=item.friendName %></div>
+										</div>
+										<div class="listR">
+											<div class="rightT">
+												账号：<%=item.friendAccount %>
+												<% if(item.sex==1){%>
+												<i class="iconSex iconMan"></i>
+												<% }else if (item.sex==2){ %>
+												<i class="iconSex iconWoman"></i>
+												<% }else{ %>
+												<% } %>
+												<% if(item.vip!=0){%>
+												<img src="/static/img/levels/vip/<%=item.vip %>.png">
+												<% } %>
+												<img src="/static/img/levels/lv/<%=item.level || 1 %>.png">
+												
+											</div>
+											<div class="rightC">
+												<span><i class="icon iconBean"></i><%=item.goldBeans || 0 %></span>
+												<span><i class="icon iconGold"></i><%=item.gold || 0 %></span>
+											</div>
+											<div class="rightB">
+												<a class="btn blueB radius inviteBtn" data-fid="<%=item.friendId %>" href="javascript:">邀请</a>
+												<a class="btn blueB radius deleteBtn" data-fid="<%=item.friendId %>" href="javascript:">删除</a>
+												<a class="btn blueB radius traceBtn" data-fid="<%=item.friendId %>" href="javascript:">跟踪</a>
+												<a class="btn blueB radius" href="javascript:">聊天</a>
+											</div>
+										</div>
+									</li>
+									<% })}else{%>
+									<div>
+										您目前还没有好友
+									</div>	
+									<% } %>
+									
+								</ul>
+								<div class="pageComponent">
+									<div class="tcdPageCode"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 我的好友 end -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 好友列表 -->
+	<script type="text/template" id="tpl">
+		{{each data as item i}}
+		<li>
+			<div class="listL">
+				<img class="headIcon" src="{{ item.headIcon }}">
+				{{if item.isOnline==0}}
+				<span class="offline">已离线</span>
+				{{else}}
+				<span class="online">在线中</span>
+				{{/if}}
+				<div class="nickname">{{ item.friendName }}</div>
+			</div>
+			<div class="listR">
+				<div class="rightT">
+					账号：{{ item.friendAccount }}
+					{{if item.sex==1}}
+					<i class="iconSex iconMan"></i>
+					{{else if item.sex==2}}
+					<i class="iconSex iconWoman"></i>
+					{{else}}
+					{{/if}}
+					{{if item.vip!=0}}
+					<img src="/static/img/levels/vip/{{item.vip}}.png">
+					{{/if}}
+					<img src="/static/img/levels/lv/{{item.level}}.png">
+					
+				</div>
+				<div class="rightC">
+					<span><i class="icon iconBean"></i>{{ item.goldBeans }}</span>
+					<span><i class="icon iconGold"></i>{{ item.gold }}</span>
+				</div>
+				<div class="rightB">
+					<a class="btn blueB radius inviteBtn" data-fid="{{ item.friendId }}" href="javascript:">邀请</a>
+					<a class="btn blueB radius deleteBtn" data-fid="{{ item.friendId }}" href="javascript:">删除</a>
+					<a class="btn blueB radius traceBtn" data-fid="{{ item.friendId }}" href="javascript:">跟踪</a>
+					<a class="btn blueB radius" href="javascript:">聊天</a>
+				</div>
+			</div>
+		</li>
+		{{/each}}
+	</script>
+	<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript" src="/static/js/api/jquery.page.js"></script>
+	<script type="text/javascript">
+		var total = '<%=pageData.data.total%>';//总条数
+		var pages = '<%=pageData.data.pages%>';//总页数
+		var pageSize = $.getUrlParam("pageSize") || 6;//每页条数
+		var pageNum = $.getUrlParam("pageNum") || 1;//当前页码
+	</script>
+	<script type="text/javascript" src="/static/js/myinfo/myfriend.js"></script>
+</body>
+</html>

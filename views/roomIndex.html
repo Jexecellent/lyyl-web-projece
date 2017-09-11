@@ -1,0 +1,869 @@
+<% include include/header1.html %>
+    <link rel="stylesheet" type="text/css" href="/static/css/navLeft.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/roomVideo.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/album.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/swiper.min.css">
+    <script type="text/javascript" src="/static/js/api/swiper.2.7.6.min.js"></script>
+    <script src="/static/js/api/tinyscrollbar.js"></script>
+    <script src="/static/js/api/socket.io.js"></script>
+    <script src="/static/js/api/roomChat.js"></script>
+    <script src="/static/js/api/enterroom.js"></script>
+</head>
+<body>
+    <div class="wrap main-container">
+    <% include include/nav.html %>
+        <% include navLeft.html%>
+        <div class="content">
+            <div id="scrollbarveido" class="allScrollbar">
+                <div class="scrollbar disable">
+                    <div class="track">
+                        <div class="thumb">
+                            <div class="end"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="viewport" id="js-live-room-normal-left">
+                    <div class="overview">
+                        <div class="roomCon">
+                            <div class="roomCover">
+                                <div class="liveOpen">
+                                    <a class="getCode" href="javascript:">获取推流码</a>
+                                    <span>直播开关：</span>
+                                    <label class="turnOn" turn="on"><i></i></label>
+                                    <input id="rid" type="hidden" value="<%= roomInfo.list?roomInfo.list.data.id:0%>">
+                                    <!-- <a style="margin-left: 10px;" href="javascript:;" id="rid">房间号：[ <%= roomInfo.roomId%> ]</a> -->
+                                    <a class="lookCourse" href="javascript:">查看直播教程</a>
+                                </div>
+                                <!-- 游戏视频 -->
+                                <div class="videoGame room-video">
+                                    <div class="videoPlay">
+                                        <!-- 视频区 -->
+                                        <div id="js-room-video" class="room-video">
+                                            <!-- 视频 -->
+                                            <object name="name" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="moveflash" type="application/x-shockwave-flash"  width="100%" height="100%">
+                                                <param name="Base" value="" />
+                                                <param name="movie" value="/flash/texaspoker/texaspokegame.swf?roomId=<%=roomInfo.roomId%>&ci=<%=roomInfo.companyId%>&videoType=<%=roomInfo.anchor?1:2%>&password=<%=roomInfo.password%>&acd=<%=roomInfo.anchor?roomInfo.anchor.data.anchorId:0%>" />
+                                                <param name="quality" value=High/>
+                                                <param name="_cx" value="12383" />
+                                                <param name="_cy" value="1588" />
+                                                <param name="FlashVars"/>
+                                                <param name="Src" value="/flash/texaspoker/texaspokegame.swf?roomId=<%=roomInfo.roomId%>&ci=<%=roomInfo.companyId%>&videoType=<%=anchor?1:2%>&password=<%=roomInfo.password%>&acd=<%=roomInfo.anchor?roomInfo.anchor.anchorId:0%>" />
+                                                <param name="WMode" value="transparent" />
+                                                <param name="Play" value="-1" />
+                                                <param name="Loop" value="-1" />
+                                                <param name="Menu" value="-1" />
+                                                <param name="AllowScriptAccess" value="always" />
+                                                <param name="Scale" value="ShowAll" />
+                                                <param name="DeviceFont" value="0" />
+                                                <param name="EmbedMovie" value="0" />
+                                                <param name="BGColor" />
+                                                <param name="SWRemote" />
+                                                <param name="MovieData" />
+                                                <embed  wmode="transparent" src="/flash/texaspoker/texaspokegame.swf?roomId=<%=roomInfo.data.roomId%>&ci=<%=roomInfo.data.companyId%>&videoType=<%=anchor?1:2%>&password=<%=roomInfo.data.password%>&acd=<%=anchor?anchor.anchorId:0%>" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="100%" height="100%">
+                                                </embed>
+                                            </object>
+                                            <!-- 视频代码结束 -->
+                                        </div>
+                                    </div>
+                                    <div class="videoAction">
+                                    </div>
+                                </div>
+                                <!-- 礼物信息 -->
+                                <div class="giftCon clearfix">
+                                    <div class="infoLeft">
+                                        <h1>【德州扑克】 【主播发牌】 【中级场】</h1>
+                                        <p>
+                                            <span>盲注： 25/50</span>
+                                            <span>最低带入： 3000</span>
+                                            <span>底注： 10</span>
+                                        </p>
+                                    </div>
+                                    <% if(roomInfo.anchor){ %>
+                                    <div class="infoRight">
+                                        <!-- 送礼物定时弹框 -->
+                                        <div class="wrap_lw songliwu">
+                                            <div class="closeSong">&nbsp;</div>
+                                            <img src="/static/img/ic_liwu.png" alt="">
+                                        </div>
+                                        <!-- end -->
+                                        <ul>
+                                            <% if(roomInfo.giftList && roomInfo.giftList.data.length>0){ %>
+                                            <% roomInfo.giftList.data.forEach(function(gift){ %>
+                                            <li data-id="<%= gift.id%>" data-name="<%= gift.name%>" data-jinbi="<%= gift.costGold%>" data-jindou="<%= gift.costBeans%>" data-bi="<%= gift.costGold%>" data-dec="<%= gift.desc%>" data-yan="<%= gift.exp%>" data-img="<%= gift.giftUrl%>">
+                                                <img src="<%= gift.iconUrl%>">
+                                            </li>
+                                            <% })} %>
+                                        </ul>
+                                        <div class="giftInfo" id="gift-content">
+                                            <div class="giftT clearfix">
+                                                <div class="giftL">
+                                                    <img src="/static/img/gift/zuichun.gif">
+                                                </div>
+                                                <div class="giftR">
+                                                    <p class="">
+                                                        <span class="giftName">财神</span>
+                                                        <img src="/static/img/goblejin.png">
+                                                        <span class="giftBi">199990</span>
+                                                    </p>
+                                                    <p class="giftDec">
+                                                        一言不合就开飞机
+                                                    </p>
+                                                    <p class="giftExc">
+                                                        表情赠送获得经验：<span>2000</span>
+                                                    </p>
+                                                    <p>
+                                                        <input type="text" name="" value="1" id="giftval">
+                                                         <a href="javascript:;" class="giveBtn giftsend" data-type=""  data-room="<%= roomInfo.list.data.id%>" data-acd="<%=roomInfo.anchor.data.anchorId %>"  data-click= 1   data-group=0    data-giftName="">
+                                                             <span class="process"></span>
+                                                             <span class="text">赠送<!-- 赠送 --></span>
+                                                             <span class="lainsong out"><i>连送 X</i><b class="double-num">0</b></span>
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="giftC">
+                                                单次送出礼物价值超过100金币，聊天窗横幅展示
+                                            </div>
+                                            <div class="giftB">
+                                                <a href="javascript:">10</a>
+                                                <a href="javascript:">66</a>
+                                                <a href="javascript:">188</a>
+                                                <a href="javascript:">520</a>
+                                                <a href="javascript:">666</a>
+                                                <a href="javascript:">1314</a>
+                                            </div>
+                                            <div class="triangleDown">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                </div>
+                                <!-- 主播信息 -->
+                                <% if(roomInfo.anchor){ %>
+                                <div class="anchorInfo">
+                                    <div class="userinfo mt30">
+                                        <h3><span>基础信息</span></h3>
+                                        <dl>
+                                            <dt>性别：</dt>
+                                            <dd><%= roomInfo.anchor.data.sex==1?'男': (roomInfo.anchor.data.sex==2?'女':'未知')%></dd>
+                                            <dt>生日：</dt>
+                                            <dd><%=roomInfo.anchor.data.birthday || '1998年10月10日'%></dd>
+                                            <dt>身高：</dt>
+                                            <dd><%=roomInfo.anchor.data.height || 170 %> cm</dd>
+                                            <dt>星座：</dt>
+                                            <dd><%=roomInfo.anchor.data.constellation || '水瓶座' %></dd>
+                                            <dt>家乡：</dt>
+                                            <dd style="margin-right:0;">冰山一角</dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>个性签名：</dt>
+                                            <dd><%=roomInfo.anchor.data.sign || '好的开始是成功的一半' %></dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>兴趣爱好：</dt>
+                                            <dd><%=roomInfo.anchor.data.hobby || '吃喝玩乐德州扑克' %></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="albumList mt30" id="albumImg">
+                                        <h3><span>相册</span></h3>
+                                        <% if(roomInfo.anchorPhoto.data && roomInfo.anchorPhoto.data.length>0){ %>
+                                        <ul>
+                                            <% roomInfo.anchorPhoto.data.forEach(function(photo){ %>
+                                            <li>
+                                                <a href="javascript:">
+                                                    <div class="roomIcon">
+                                                        <img class="video-img" src="/static/img/anchor1.png">
+                                                        <div class="shade"></div>
+                                                        <div class="watch"></div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <% }) %>
+                                        </ul>
+                                        <%}else{ %>
+                                        <div style="text-align: center;color:#999;">
+                                                该主播还未上传相册哦~~
+                                        </div>
+                                        <% } %>
+                                    </div>
+                                    <div class="mvList mt30">
+                                        <h3><span>MV</span></h3>
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:">
+                                                    <div class="listT">
+                                                        <div class="roomIcon">
+                                                            <img class="video-img" src="/static/img/anchor1.png">
+                                                            <div class="shade"></div>
+                                                            <div class="watch"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="listB">
+                                                        <p>mv名字名字</p>
+                                                        <p class="v_p">
+                                                            <span><i></i>123213</span>
+                                                            <span class="praise"><i></i>123213</span>
+                                                        </p>
+                                                    </div>
+                                                    <div class="line"></div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧聊天室 -->
+            <div class="roomRight room-no-notice">
+                <div class="shrink room-chat-expand-btn">
+                </div>
+                <div class="decAnnounce">
+                    <span><img src="./static/img/icon_noise.png">直播公告：</span>
+                    <span class="dec-noise" style="color:#333;">2016年8月10日 - 因使用了WebKit的CSS扩展属性,该方法适用于WebKit浏览器及移动端; </span>                    
+                </div>
+                <% if(roomInfo.anchor){ %>
+                <div class="anchorDec">
+                    <!-- 主播面板 -->
+                    <div class="decT">
+                        <img class="anchorHead" src="/static/img/tou.png">
+                        <div class="decTitleR">
+                            <h3 data-acd="<%=roomInfo.anchor.data.anchorId%>">主播：<%=roomInfo.anchor.data.nickName%></h3>
+                            <p>
+                                <span><img src="/static/img/roomicon1.png"> 106</span>
+                                <span><img src="/static/img/roomicon2.png"> 20311</span>
+                                <span><img src="/static/img/roomicon2.png"> 20311</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="decC">
+                        <!-- 关注主播定时显示 -->
+                        <div class="qiuguanzhu">
+                            <div class="closefong">&nbsp;</div>
+                            <img src="/static/img/ic_guanzhu.png" alt="">
+                        </div>
+                        <!-- end -->
+                        <div class="focus">
+                            <a href="javascript:">
+                                <span class="span1">
+                                    <img src="/static/img/icon_love.png">
+                                    关注
+                                </span>
+                                <!-- <span class="span2">已关注</span> -->
+                                <span class="span3">1221546</span>
+                            </a>
+                        </div>
+                        <div class="s_d">
+                            <span><a href="javascript:"><i class="iconShare"></i>分享</a></span>
+                            <span><a href="javascript:"><i class="iconShare iconDownload"></i>下载</a></span>
+                        </div>
+                    </div>
+                    <!-- 贡献榜-用户列表-贵宾席 -->
+                    <!-- <div class="decB tabDiv">
+                        <div class="tab">
+                            <a class="tabPane active" href="javascript:" data-target="#contribute">贡献榜</a>
+                            <a class="tabPane" href="javascript:" data-target="#userlist">用户列表</a>
+                            <a class="tabPane" href="javascript:" data-target="#viplist">贵宾席</a>
+                        </div>
+                        <div>
+                            <div id="contribute" class="tabContent active">
+                                <div class="rank rank2">
+                                    <img class="headIcon" src="/static/img/tou.png">
+                                    <span class="nickname">用户名称...</span>
+                                    <img class="rankBg" src="/static/img/contribute2.png">
+                                    <div class="v_l">
+                                        <img src="/static/img/levels/vip/10.png">
+                                        <img src="/static/img/levels/lv/1.png">
+                                    </div>
+                                    <div class="coin">
+                                        <img src="/static/img/icon_coin2.png">
+                                        <span>88888</span>
+                                    </div>
+                                </div>
+                                <div class="rank rank1">
+                                    <img class="headIcon" src="/static/img/tou.png">
+                                    <span class="nickname">用户名称...</span>
+                                    <img class="rankBg" src="/static/img/contribute1.png">
+                                    <div class="v_l">
+                                        <img src="/static/img/levels/vip/10.png">
+                                        <img src="/static/img/levels/lv/1.png">
+                                    </div>
+                                    <div class="coin">
+                                        <img src="/static/img/icon_coin2.png">
+                                        <span>88888</span>
+                                    </div>
+                                </div>
+                                <div class="rank rank3">
+                                    <img class="headIcon" src="/static/img/tou.png">
+                                    <span class="nickname">用户名称...</span>
+                                    <img class="rankBg" src="/static/img/contribute3.png">
+                                    <div class="v_l">
+                                        <img src="/static/img/levels/vip/10.png">
+                                        <img src="/static/img/levels/lv/1.png">
+                                    </div>
+                                    <div class="coin">
+                                        <img src="/static/img/icon_coin2.png">
+                                        <span>88888</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="userlist" class="tabContent">
+                                <div id="scrollbar2">
+                                    <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+                                    <div class="viewport">
+                                        <div class="overview">
+                                            <div class="userTitle t1">
+                                                入座用户
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <span class="index">1</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                                <li>
+                                                    <span class="index">2</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                                <li>
+                                                    <span class="index">3</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                                <li>
+                                                    <span class="index">4</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                                <li>
+                                                    <span class="index">5</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                            </ul>
+                                            <div class="userTitle t2">
+                                                队列用户
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <span class="index">1</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                                <li>
+                                                    <span class="index">2</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                                <li>
+                                                    <span class="index">3</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                            </ul>
+                                            <div class="userTitle t3">
+                                                在线用户
+                                            </div>
+                                            <ul>
+                                                <li>
+                                                    <span class="index">1</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                                <li>
+                                                    <span class="index">2</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                                <li>
+                                                    <span class="index">3</span>
+                                                    <img src="/static/img/levels/vip/10.png">
+                                                    <img src="/static/img/levels/lv/1.png">
+                                                    <span class="username">用户名称</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="viplist" class="tabContent">
+                                <div class="rank rank2">
+                                    <img class="headIcon" src="/static/img/tou.png">
+                                    <span class="nickname">用户名称...</span>
+                                    <img class="rankBg" src="/static/img/contribute2.png">
+                                    <div class="v_l">
+                                        <img src="/static/img/levels/vip/10.png">
+                                        <img src="/static/img/levels/lv/1.png">
+                                    </div>
+                                    <div class="coin">
+                                        <img src="/static/img/icon_coin2.png">
+                                        <span>88888</span>
+                                    </div>
+                                </div>
+                                <div class="rank rank1">
+                                    <img class="headIcon" src="/static/img/tou.png">
+                                    <span class="nickname">用户名称...</span>
+                                    <img class="rankBg" src="/static/img/contribute1.png">
+                                    <div class="v_l">
+                                        <img src="/static/img/levels/vip/10.png">
+                                        <img src="/static/img/levels/lv/1.png">
+                                    </div>
+                                    <div class="coin">
+                                        <img src="/static/img/icon_coin2.png">
+                                        <span>88888</span>
+                                    </div>
+                                </div>
+                                <div class="rank rank3">
+                                    <img class="headIcon" src="/static/img/tou.png">
+                                    <span class="nickname">用户名称...</span>
+                                    <img class="rankBg" src="/static/img/contribute3.png">
+                                    <div class="v_l">
+                                        <img src="/static/img/levels/vip/10.png">
+                                        <img src="/static/img/levels/lv/1.png">
+                                    </div>
+                                    <div class="coin">
+                                        <img src="/static/img/icon_coin2.png">
+                                        <span>88888</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <% } %>
+                <div class="roomChat">
+                    <div class="scrollbarChat allScrollbar">
+                        <div class="scrollbar">
+                            <div class="track">
+                                <div class="thumb">
+                                    <div class="end"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="viewport">
+                            <div class="overview">
+                                <ul class="room-chat-messages">
+                                    <li>
+                                        <div class="chatTitle">
+                                            <span class="chatSystem">您已屏蔽系统消息</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chatTitle">
+                                            <span class="charVip">
+                                                <img class="levels" src="/static/img/levels/vip/10.png">
+                                            </span>
+                                            <span class="chatLevel">
+                                                <img class="levels" src="/static/img/levels/lv/1.png">
+                                            </span>
+                                            <span class="chatUsername"  data-id="1" data-h_icon="/static/img/tou.png">
+                                                我是用户名称
+                                            </span>
+                                        </div>
+                                        <div class="chatMessage">
+                                            这牌打得好
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chatTitle">
+                                            <span class="chatLevel">
+                                                <img class="levels" src="/static/img/levels/lv/1.png">
+                                            </span>
+                                            <span class="chatUsername"  data-id="1" data-h_icon="/static/img/tou.png">
+                                                我是用户名称
+                                            </span>
+                                        </div>
+                                        <div class="chatMessage">
+                                            这牌打得好
+                                        </div>
+                                    </li>
+                                    <li class="enterRoom">
+                                        <img src="/static/img/levels/lv/1.png">
+                                        <span class="chatUsername" data-id="1" data-h_icon="/static/img/tou.png">
+                                            三只小妖
+                                        </span>
+                                        <span class="enterTip">进入房间</span>
+                                        <a class="joinVip" href="javascript:">加入VIP</a>
+                                    </li>
+                                    <li>
+                                        <div class="chatTitle">
+                                            <span class="chatUsername" data-id="1" data-h_icon="/static/img/tou.png">
+                                                三只小妖
+                                            </span>
+                                        </div>
+                                        <div class="chatMessage">
+                                            <span class="giveTip" data-id="/static/img/tou.png>
+                                                赠送主播
+                                            </span>
+                                            <img class="giftImg" src="/static/img/gift/xingxing.gif">
+                                            <img src="/static/img/gift/num/x.png">
+                                            <img src="/static/img/gift/num/1.png">
+                                            <img src="/static/img/gift/num/x.png">
+                                            <img src="/static/img/gift/num/2.png">
+                                            <img src="/static/img/gift/num/g.png">
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="chatTitle">
+                                            <span class="chatLevel">
+                                                <img class="levels" src="/static/img/levels/lv/1.png">
+                                            </span>
+                                            <span class="chatUsername"  data-id="1" data-h_icon="/static/img/tou.png">
+                                                我是用户名称
+                                            </span>
+                                        </div>
+                                        <div class="chatMessage">
+                                            这牌打得好
+                                        </div>
+                                    </li>                                   
+                                </ul>
+                            </div>                            
+                            <div class="chatUserinfo" id="chatUserinfo" data-uid="">
+                                <a class="shutBtn" href="javascript:">
+                                    <img src="/static/img/levelVipShut.png">
+                                </a>
+                                <img class="headIcon" src="/static/img/tou.png">
+                                <div class="chatNickname">
+                                    用户名称
+                                </div>
+                                <div>
+                                    <img src="/static/img/levels/vip/10.png">
+                                    <img src="/static/img/levels/lv/1.png">
+                                </div>
+                                <div class="btnGroup">
+                                    <a class="reportBtn" href="javascript:">举报用户</a>
+                                    <a class="friendBtn" href="javascript:">加为好友</a>
+                                    <a class="shieldBtn" href="javascript:">屏蔽用户</a>
+                                    <a class="privateBtn" href="javascript:">私聊用户</a>
+                                </div>
+                                <a class="beVip" href="javascript:">成为VIP</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chatDialog">
+                    <div class="dialogT"></div>
+                    <div class="dialogC">
+                        <div class="dialogGroup">
+                            <i class="dialogico face "></i>
+                            <i class="dialogico font room-chat-tool" data-tips="聊天消息颜色"></i>
+                            <i class="dialogico gift room-chat-tool" data-tips="礼物屏蔽"></i>
+                            <i class="dialogico lock roomChat-scroll room-chat-tool" data-tips="关闭滚屏"></i>
+                            <i class="dialogico delete room-chat-tool" data-tips="清屏"></i>
+                            <div class="faceGroup tabDiv">
+                                <div id="classicsFace" class="scrollbarFace tabContent active">
+                                    <ul>
+                                        <li>
+                                            <a href="javascript:" data-key="1" data-txt="胜利" title="胜利">
+                                                <img src="/static/img/face/胜利.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="2" data-txt="微笑" title="微笑">
+                                                <img src="/static/img/face/微笑.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="3" data-txt="呆" title="呆">
+                                                <img src="/static/img/face/呆.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="4" data-txt="色" title="色">
+                                                <img src="/static/img/face/色.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="5" data-txt="崇拜" title="崇拜">
+                                                <img src="/static/img/face/崇拜.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="6" data-txt="偷笑" title="偷笑">
+                                                <img src="/static/img/face/偷笑.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="7" data-txt="大哭" title="大哭">
+                                                <img src="/static/img/face/大哭.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="8" data-txt="酷" title="酷">
+                                                <img src="/static/img/face/酷.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="9" data-txt="愤怒" title="愤怒">
+                                                <img src="/static/img/face/愤怒.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="10" data-txt="汗" title="汗">
+                                                <img src="/static/img/face/汗.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="11" data-txt="呲牙" title="呲牙">
+                                                <img src="/static/img/face/呲牙.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="12" data-txt="闭嘴" title="闭嘴">
+                                                <img src="/static/img/face/闭嘴.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="13" data-txt="威胁" title="威胁">
+                                                <img src="/static/img/face/威胁.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="14" data-txt="衰" title="衰">
+                                                <img src="/static/img/face/衰.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="15" data-txt="眩晕" title="眩晕">
+                                                <img src="/static/img/face/眩晕.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="16" data-txt="呕吐" title="呕吐">
+                                                <img src="/static/img/face/呕吐.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="17" data-txt="奋斗" title="奋斗">
+                                                <img src="/static/img/face/奋斗.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="18" data-txt="再见" title="再见">
+                                                <img src="/static/img/face/再见.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="19" data-txt="睡觉" title="睡觉">
+                                                <img src="/static/img/face/睡觉.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="20" data-txt="困" title="困">
+                                                <img src="/static/img/face/困.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="21" data-txt="亲嘴" title="亲嘴">
+                                                <img src="/static/img/face/亲嘴.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="22" data-txt="大笑" title="大笑">
+                                                <img src="/static/img/face/大笑.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="23" data-txt="滑稽" title="滑稽">
+                                                <img src="/static/img/face/滑稽.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="24" data-txt="吐血" title="吐血">
+                                                <img src="/static/img/face/吐血.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="25" data-txt="钱钱钱" title="钱钱钱">
+                                                <img src="/static/img/face/钱钱钱.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="26" data-txt="嘘" title="嘘">
+                                                <img src="/static/img/face/嘘.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="27" data-txt="黑人疑问" title="胜利">
+                                                <img src="/static/img/face/黑人疑问.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="28" data-txt="笑哭" title="笑哭">
+                                                <img src="/static/img/face/笑哭.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="29" data-txt="泪奔" title="泪奔">
+                                                <img src="/static/img/face/泪奔.gif">
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:" data-key="30" data-txt="中指" title="中指">
+                                                <img src="/static/img/face/中指.gif">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="vipFace" class="scrollbarFace tabContent">
+                                    22
+                                </div>
+                                <div class="tab">
+                                    <a class="tabPane classicsFace active" href="javascript:" data-target="#classicsFace">经典表情</a>
+                                    <a class="tabPane vipFace" href="javascript:" data-target="#vipFace">VIP专属</a>
+                                </div>
+                            </div>
+                            <div class="fontcolorGroup">
+                                <div class="fontTitle">
+                                    聊天字体颜色
+                                </div>
+                                <div class="fontCon">
+                                    <span class="default chatColor">
+                            <img src="/static/img/wk2.png">
+                        </span>
+                                    <span class="green chatColor">
+                            <img src="/static/img/wk19.png">
+                        </span>
+                                    <span class="pink chatColor">
+                            <img src="/static/img/wk19.png">
+                        </span>
+                                    <span class="blue chatColor">
+                            <img src="/static/img/wk19.png">
+                        </span>
+                                    <span class="orange chatColor">
+                            <img src="/static/img/wk19.png">
+                        </span>
+                                </div>
+                                <div class="fontBot">
+                                    提升等级或VIP可以解锁更多字体
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialogSend">
+                            <textarea rows="3" placeholder="点击这里输入聊天内容"></textarea>
+                            <a class="sendMessage room-chat-send" href="javascript:">发送</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pc-slide-cover">
+            <div class="pc-slide">
+                <a href="javascript:;" class="close-pc-slide">X</a>
+                <div class="view">
+                    <div class="swiper-container">
+                        <a class="arrow-left" href="#"></a>
+                        <a class="arrow-right" href="#"></a>
+                        <ul class="swiper-wrapper album-big-list" id="album">
+                        </ul>
+                    </div>
+                </div>
+                <div class="preview">
+                    <a class="arrow-left" href="#"></a>
+                    <a class="arrow-right" href="#"></a>
+                    <div class="swiper-container">
+                        <ul class="swiper-wrapper album-sm-list" id="thumbnail">  
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>   
+    <script type="text/javascript">
+        $(".tabPane").on("click", function() {
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+            var target = $(this).data("target");
+            $(this).parents(".tabDiv").find(".tabContent").removeClass('active');
+            $(target).addClass('active');
+        })
+        // 表情按钮点击
+        $(".dialogGroup .face").click(function(e) {
+            e.stopPropagation();
+            $(".faceGroup").toggle();
+            $(".fontcolorGroup").hide();
+            $(document).click(function(e) {
+                $(".faceGroup").hide();
+            })
+            $(".faceGroup").click(function(e) {
+                e.stopPropagation();
+            })
+        })
+        // 选择表情
+        $(".faceGroup li a").click(function() {
+            $(".dialogSend textarea").val($(".dialogSend textarea").val() + "[:" + $(this).data("txt") + "]");
+        });
+        // 字体颜色按钮点击
+        $(".dialogGroup .font").click(function(e) {
+            e.stopPropagation();
+            $(".fontcolorGroup").toggle();
+            $(".faceGroup").hide();
+            $(document).click(function(e) {
+                $(".fontcolorGroup").hide();
+            })
+            $(".fontcolorGroup").click(function(e) {
+                e.stopPropagation();
+            })
+        })
+        //聊天发送
+        $(".sendMessage").click(function() {
+            var _content = $(".dialogSend textarea").val();
+            if (_content == "") {
+                alert("聊天内容不能为空");
+                return;
+            }
+            $(".roomChat ul").append('<li><div class="chatTitle"><span class="chatLevel"><img class="levels" src="/static/img/levels/lv/1.png"></span><span class="chatUsername" data-id="1" data-h_icon="/static/img/tou.png">我是用户名称</span></div><div class="chatMessage">' + _content + '</div></li>')
+            $(".dialogSend textarea").val("");
+            chatScrool();
+        })
+        // 点击用户名弹出信息
+        $(".roomChat .chatUsername").click(function(e) {
+            e.stopPropagation();  
+            var $id = $(this).attr("data-id") ;       
+            var $headIcon = $(this).attr("data-h_icon"); 
+            var $uname = $(this).text() ;
+            $("#chatUserinfo").attr('data-uid',$id) ;   
+            $("#chatUserinfo img.headIcon").attr('src',$headIcon) ;   
+            $("#chatUserinfo div.chatNickname").text($uname) ;   
+            $("#chatUserinfo").show();
+            $(document).click(function() {
+                $(".chatUserinfo").hide();
+            })
+            $(".chatUserinfo .shutBtn").click(function(ev) {
+                ev.stopPropagation();
+                $(".chatUserinfo").hide();
+            })
+        })
+        // 字体颜色选择
+        $(".fontcolorGroup .fontCon span").click(function() {
+            $(this).siblings().html("");
+            $(this).html('<img src="/static/img/wk2.png">');
+        })
+        //公告悬停
+        $(".roomRight .decAnnounce").mouseover(function() {
+            $(this).stop().animate({height:"40px"},200);
+            $(this).css("whiteSpace","normal");
+        });
+        $(".roomRight .decAnnounce").mouseleave(function() {
+            $(this).stop().animate({height:"16px"},200);
+            $(this).css("whiteSpace","nowrap");
+        });
+        //console.log(getPlatInfo()) ;
+        //$("#demo").panel({iWheelStep:50});
+    </script>
+</body>
+</html>

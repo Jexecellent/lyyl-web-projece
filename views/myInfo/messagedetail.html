@@ -1,0 +1,39 @@
+<% include ../include/header1.html %>
+<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+        <div class="content">
+            <div class="container">
+                <div class="myContainer">
+                    <div class="conLeft">
+                        <% include mynav.html %>
+                    </div>
+                    <!-- 消息内容 start -->
+                    <div id="mymessageDetail" class="conRight">
+                        <div class="mesHead">
+                            <a class="btn blue backBtn" href="javascript:window.location.href = document.referrer">< 返回</a>
+                            <a class="btn blue deleteBtn" href="javascript:" data-mid="<%=pageData.data.id%>">删除</a>
+                        </div>
+                        <div class="riContent tabDiv">
+                            <div class="mesTitle">
+                                <h3><%=pageData.data.title%></h3>
+                                <p>发件人：<%=pageData.data.creater%></p>
+                                <p>时间：<%=pageData.data.acDate%></p>
+                            </div>
+                            <div class="mesCon">
+                                <%=pageData.data.content%>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 消息内容 end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/static/js/myinfo/messagedetail.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<% include ../include/header1.html %>
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 黑名单 start-->
+					<div id="blacklist" class="conRight tabDiv">
+						<div class="riTitle">
+							<a class="titleName tabPane active" href="javascript:" data-target="#blackroll">禁言名单</a>
+							<a class="titleName tabPane" href="javascript:" data-target="#unlocklist">解禁记录</a>
+							<a class="backBtn" href="/myInfo/liveset"><i></i>返回直播设置</a>
+						</div>
+						<div id="blackroll" class="tabContent active">
+							<div class="">
+								<span class="clearfix">
+									<a class="btn blue addBtn addblackBtn" href="javascript:">添加</a>
+								</span>
+							</div>
+							<div class="table">
+								<table>
+									<thead>
+										<th>用户昵称</th>
+										<th>有效期</th>
+										<th>操作人</th>
+										<th>操作</th>
+									</thead>
+									<tbody>
+									<% if(pageData && pageData.data.list.length != 0){%>
+									<% pageData.data.list.forEach(function(item){ %>
+									<tr>
+										<td><%=item.account %></td>
+										<td><%=item.createTime %></td>
+										<td><%=item.createName %></td>
+										<td><a class="unbindBtn" href="javascript:" data-uid="<%=item.id%>">解除</a></td>
+									</tr>
+									<% })}else{%>
+									<div>
+										暂时没有记录
+									</div>
+									<%}%>
+									</tbody>
+								</table>
+								<div class="pageComponent">
+									<div class="tcdPageCode"></div>
+								</div>
+							</div>
+						</div>
+					<!-- 黑名单 end-->
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript" src="/static/js/api/jquery.page.js"></script>
+	<script type="text/javascript">
+		var total = '<%=pageData.data.total%>';//总条数
+		var pages = '<%=pageData.data.pages%>';//总页数
+		var pageSize = $.getUrlParam("pageSize") || 6;//每页条数
+		var pageNum = $.getUrlParam("pageNum") || 1;//当前页码
+	</script>
+	<script type="text/javascript" src="/static/js/myinfo/blacklist.js"></script>
+
+</body>
+</html>

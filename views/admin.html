@@ -1,0 +1,42 @@
+	<% include header.html %>	
+	<% include left.html %>	
+	<link rel="stylesheet" href="/css/style.css">
+	<div class="wrap">
+		<% data.forEach(function(item){ %>
+		<div class="later-play-container">
+			<div class="list-header">
+				<span class="icon icon01"><%= item.title %></span>
+				<h3 class="list-title"><%= item.title %></h3>
+			</div>
+			<ul class="video-list clearfix">
+				<% item.romeInfo.forEach(function(rome){ %>
+				<li class="video-list-item">
+					<a href="/room?roomId=<%=rome.romeId%>" class="video-list-item-wrap">
+						<div class="video-cover">
+							<div class="setOption">
+								<p class="roomId">
+									<span class="fl">最大携带：<%= rome.xiedai %>万</span><!--最大携带-->
+									<span class="fr">房间号：<%= rome.romeId %></span><!--房号-->
+								</p>
+								<p class="roomName">
+									<span style="margin-left:10px"><%= rome.romeType %></span>
+								</p>
+							</div>
+							<img class="video-img" data-scr="" src="/images/default.jpg" alt="" >
+							<div class="video-play"></div>
+						</div>
+						<div class="video-info">
+							<span class="video-title" title="sdfsdf">盲注：<%= rome.blind %>/5000</span>
+							<span class="video-nickname"><%= rome.nickname %></span>
+							<span class="video-number">底注：<%= rome.dizhu %></span>
+							<span class="video-cate">0/<span class="green">9</span></span>
+						</div>
+					</a>
+				</li>
+				<% })%>
+			</ul>
+		</div>	
+		<% }) %>		
+	</div>
+</body>
+</html>

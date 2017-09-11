@@ -1,0 +1,287 @@
+.content{
+	padding-top: 70px;
+}
+.hallCon{
+	height: 100%;
+	margin-left: 287px;
+	margin-right: 26px;
+}
+.hallCon .hTitle{
+	line-height: 54px;
+	border-bottom: 1px solid #ccc;
+	margin-right: 9px;
+	margin-top: 25px;
+}
+.hallCon .hTitle span{
+	border-bottom: 2px solid #30b6f8;
+	float: left;
+	margin-top: 16px;
+    height: 37px;
+    width: 35px;
+}
+.hallCon .hTitle img{
+}
+.hallCon .hTitle div{
+	display: inline-block;
+	font-size: 25px;
+	font-weight: bold;
+	color: #000;
+	margin-left: 10px;
+}
+.hallCon .roomList{
+	overflow: hidden;
+}
+.hallCon .roomList .listItem{
+	width: 304px;
+	margin-top: 25px;
+	float: left;
+}
+.hallCon .roomList .listItem .listHover{
+	margin-right: 9px;
+}
+@media screen and (max-width: 1200px) {
+    .hallCon .roomList .listItem{
+        width: 33.33%;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+    .hallCon .roomList .listItem{
+        width: 25%;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .hallCon .roomList .listItem{
+        width: 20%;
+    }
+}
+.hallCon .roomList .listItem .line{
+	height: 3px;
+	background-color: #2fb5f8;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.hallCon .roomList .listItem .roomT{
+	height: 0;
+	padding-bottom: 55%;
+	position: relative;
+	color: #2fb5f8;
+}
+.hallCon .roomList .listItem .roomT .roomName{
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	line-height: 25px;
+	text-indent: 10px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 11;
+}
+.hallCon .listItem .roomT .cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 6;
+    display: none;
+}
+.hallCon .roomList .listItem:hover .line{
+	opacity: 1;
+}
+.hallCon .listItem:hover .roomT .cover{
+	opacity: 1;
+	background-size: 49px 49px;
+	display: block;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, endColorstr=#7F000000);
+}
+.hallCon .listItem:hover .roomIcon img{
+    transform: scale(1.2);
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+}
+.hallCon .listItem:hover .roomIcon .shade{
+	opacity: .5;
+	filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+}
+.hallCon .listItem:hover  .roomIcon .watch{
+	-webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    opacity: 1;
+    -ms-filter: "alpha(opacity=1)";
+    filter: alpha(opacity=1);
+}
+.hallCon .listItem:hover .roomT .roomName{
+	background-color: #242424;
+}
+.hallCon .roomList .listItem .roomT .cover .carry{
+	position: absolute;
+    left: 10px;
+    bottom: 30px;
+}
+.hallCon .roomList .listItem .roomT .cover .roomID{
+	position: absolute;
+    right: 10px;
+    bottom: 30px;
+}
+.hallCon .roomList .listItem .roomB{
+    padding: 7px 10px;
+    background-color: #fff;
+}
+.hallCon .roomList .listItem .roomB .b_b{
+	line-height: 25px;
+	color: #333;
+	font-size: 14px;
+}
+.hallCon .roomList .listItem .roomB .b_b .bottomCash{
+	float: right;
+}
+.hallCon .roomList .listItem .roomB .n_v .nickname{
+	color: #2fb5f8;
+}
+.hallCon .roomList .listItem .roomB .n_v .view{
+	float: right;
+	color: #090;
+}
+.hallCon .roomList .listItem .roomB .n_v .view span{
+	color: #333;
+}
+
+.hallCon .matchList{
+	overflow: hidden;
+}
+.hallCon .matchList .listItem{
+	margin-top: 25px;
+	float: left;
+	width: 304px;
+}
+.hallCon .matchList .listItem .listHover{
+	margin-right: 9px;
+}
+@media screen and (max-width: 1200px) {
+    .hallCon .matchList .listItem{
+        width: 33.33%;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1600px) {
+    .hallCon .matchList .listItem{
+        width: 25%;
+    }
+}
+@media screen and (min-width: 1600px) {
+    .hallCon .matchList .listItem{
+        width: 20%;
+    }
+}
+.hallCon .matchList .listItem .line{
+	height: 3px;
+	background-color: #2fb5f8;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.hallCon .matchList .listItem .roomT{
+	height: 0;
+	padding-bottom: 55%;
+	position: relative;
+	color: #2fb5f8;
+}
+.hallCon .matchList .listItem .roomT .roomName{
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	line-height: 25px;
+	text-indent: 10px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 11;
+}
+.hallCon .matchList .listItem:hover .line{
+	opacity: 1;
+}
+.hallCon .matchList .listItem:hover .roomT .cover{
+	opacity: 1;
+	background-size: 49px 49px;
+	display: block;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000, endColorstr=#7F000000);
+}
+.hallCon .matchList .listItem:hover .roomT .roomName{
+	background-color: #242424;
+}
+.hallCon .matchList .listItem:hover .roomT{
+	background-size: 120% 120%;
+}
+.hallCon .matchList .listItem .roomT .level{
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    color: #fff;
+    width: 61px;
+    height: 25px;
+    line-height: 25px;
+    text-indent: 5px;
+    z-index: 5;
+}
+.hallCon .matchList .listItem .level.levelUp{
+	background-image: url(../img/fillet_up.png);
+}
+.hallCon .matchList .listItem .level.levelMid{
+	background-image: url(../img/fillet_mid.png);
+}
+.hallCon .matchList .listItem .level.levelDown{
+	background-image: url(../img/fillet_down.png);
+}
+.hallCon .matchList .listItem .roomT .roomID{
+	position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color: rgba(0,0,0,0.4);
+    color: #fff;
+    width: 86px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    z-index: 5;
+}
+.hallCon .matchList .listItem .roomT .mScope{
+	position: absolute;
+	color: #fff;
+	font-size: 26px;
+	text-align: center;
+	width: 190px;
+	height: 60px;
+	left: 50%;
+	top: 50%;
+	margin-left: -95px;
+	margin-top: -35px;
+	text-shadow: 0px 2px 5px #5a5a5a;
+
+}
+.hallCon .matchList .listItem .roomB{
+    padding: 7px 10px;
+    background-color: #fff;
+    color: #333;
+}
+.hallCon .matchList .listItem .roomB .b_b{
+	line-height: 25px;
+}
+.hallCon .matchList .listItem .roomB .b_b .blind{
+	font-size: 13px;
+}
+.hallCon .matchList .listItem .roomB .b_b .blind span{
+}
+.hallCon .matchList .listItem .roomB .b_b .view{
+	float: right;
+}
+.hallCon .matchList .listItem .roomB .n_v .bottomCash{
+	font-size: 13px;
+}
+.hallCon .matchList .listItem .roomB .n_v .views{
+	float: right;
+	color: #999;
+}
+.hallCon .matchList .listItem .roomB .n_v .views span{
+	
+}

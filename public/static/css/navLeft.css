@@ -1,0 +1,395 @@
+/* 左侧展开导航 */
+.navLeft.navLeftOut{
+	background-image: url(../img/left-bg.png);
+	width: 230px;
+	position: fixed;
+	top: 70px;
+	bottom: 0;
+	padding: 50px 15px;
+	z-index: 999;
+}
+.navLeft .isLogin{
+
+}
+.navLeft .user{
+	padding-bottom: 10px;
+}
+.navLeft .user .headIcon{
+	width: 62px;
+	height: 62px;
+	vertical-align: top;
+}
+.navLeft .user .userinfo{
+	display: inline-block;
+	margin-left: 10px;
+	width: 146px;
+}
+.navLeft .user .userinfo .username a{
+	width: 123px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    font-size: 14px;
+    color: #2fb5f8;
+    margin: 10px 0;
+}
+.navLeft .user .userinfo .vip{
+	color: #d8db15;
+}
+.navLeft .user .userinfo .logout{
+	float: right;
+	padding-left: 18px;
+    background: url(../img/loginout.png) 0 1px no-repeat;
+}
+.navLeft .user .userinfo .logout a{
+	color: #898c8c;
+}
+.navLeft .splitLine{
+    border-bottom: 1px solid #313539;
+    border-top: 1px solid #4D4C4C;
+}
+.navLeft .bean,.navLeft .coin{
+	color: #f4f902;
+	font-size: 15px;
+	margin: 12px 0;
+} 
+.navLeft .bean img,.navLeft .coin img{
+	margin-right: 12px;
+}
+.navLeft .coin .recharge{
+    float: right;
+    color: #e58d08;
+    font-size: 13px;
+    padding: 3px 4px;
+    border: 1px solid #e58d08;
+    border-radius: 4px;
+}
+.navLeft .noLogin{
+	text-align: center;
+	margin-bottom: 20px;
+}
+.navLeft .noLogin .loginBtn{
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+.navLeft .noLogin .login{
+	color: #fff;
+	background-color: #30b6f8;
+	border-radius: 4px;
+	padding: 7px 53px;
+}
+.navLeft .noLogin .register{
+	color: #cae9f8;
+	margin-left: 15px;
+}
+.navLeft .noLogin p{
+	color: #cae9f8;
+	font-size: 13px;
+	margin-top: 10px;
+}
+
+.navLeft .pokerTitle{
+	color: #999;
+	font-size: 16px;
+	margin: 20px 0;
+}
+.navLeft .pokerType{
+	overflow: hidden;
+}
+.navLeft .pokerType a{
+	width: 72px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+	display: block;
+	background-color: #4d5158;
+	margin-right: 7px;
+	color: #ccd3eb;
+	border-radius: 4px;
+	font-size: 14px;
+}
+.navLeft .pokerType a.active{
+	background-color: #30b4f7;
+	color: #fff;
+}
+.navLeft .pokerType a:hover{
+	background-color: #30b4f7;
+	color: #fff;
+}
+.navLeft .pokerType a+a+a{
+	margin-right: 0;
+}
+.navLeft .roomType a.active{
+	background-color: #23252a;
+}
+.navLeft .roomType a:first-child{
+	color: #48e2ce;
+}
+.navLeft .roomType a+a{
+	color: #f781c8;
+}
+.navLeft .roomType a.cur {
+    background: #23252b;
+}
+.navLeft .roomType a+a+a{
+	color: #e0dea4;
+}
+.navLeft .matchTitle{
+	color: #999;
+	font-size: 16px;
+	margin: 20px 0;
+}
+.navLeft .matchType{
+	overflow: hidden;
+}
+.navLeft .matchType a{
+	width: 52px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+	display: block;
+	background-color: #4d5158;
+	margin-right: 7px;
+	margin-bottom: 7px;
+	color: #ccd3eb;
+	border-radius: 4px;
+	font-size: 14px;
+}
+.navLeft .matchType a.active{
+	background-color: #23252a;
+}
+.navLeft .matchType a:hover{
+	background-color: #23252a;
+}
+.navLeft .matchType a{
+	color: #48e2ce;
+}
+.navLeft .matchType a.cur {
+	background: #23252b;
+}
+.navLeft .matchType a:nth-child(n+5){
+	color: #f781c8;
+}
+.navLeft .matchType a:nth-child(n+9){
+	color: #e0dea4;
+}
+.navLeft .matchType a:nth-child(4n){
+	margin-right: 0;
+}
+
+.navLeft .pokerType .createRoom{
+	background-color: initial;
+}
+.navLeft .pokerType .createRoom:hover{
+	background-color: initial;
+}
+.navLeftFoot{
+	background-color: #3d4042;
+	position: fixed;
+	bottom: 0;
+    left: 0;
+    width: 260px;
+    height: 60px;
+    line-height: 60px;
+}
+.navLeftFoot .footCon{
+	margin: 0 15px;
+	border-top: 1px solid #1b1b1b;
+}
+.navLeftFoot .footCon a{
+	color: #666;
+	margin: 0 13px;
+}
+/* 左侧收缩导航 */
+.navLeft.navLeftIn{
+	background-image: url(../img/left-bg.png);
+	width: 65px;
+	position: fixed;
+	top: 70px;
+	bottom: 0;
+	z-index: 999;
+	text-align: center;
+	display: none;
+}
+.navLeft.navLeftIn .navIcon{
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	background-image: url(../img/group_navleft.png);
+}
+.navLeft.navLeftIn .navIcon.iconLogin{
+	background-position: 0 0;
+}
+.navLeft.navLeftIn .navIcon.iconFocus{
+	background-position: -1px -62px;
+}
+.navLeft.navLeftIn .navIcon.iconFriend{
+	background-position: -1px -123px;
+}
+.navLeft.navLeftIn .navIcon.iconService{
+	background-position: 0 -186px;
+}
+.navLeft.navLeftIn .navIcon.iconSuggest{
+	background-position: -1px -312px;
+}
+.navLeft.navLeftIn .navIcon.iconReport{
+	background-position: 0 -250px;
+}
+
+.navLeft.navLeftIn ul li a{
+	display: block;
+	border-bottom: 1px solid #5b6368;
+	padding: 15px 0;
+	color: #999;
+	font-size: 14px;
+}
+.navLeft.navLeftIn ul li a.double{
+	padding: 6px 0;
+    line-height: 17px;
+}
+.navLeft.navLeftIn ul li a:hover{
+	background-color: rgba(0,0,0,0.3);
+	color: #2fb5f8;
+}
+.navLeft.navLeftIn ul li a:hover .iconLogin{
+	background-position: 27px 0;
+}
+.navLeft.navLeftIn ul li a:hover .iconFocus{
+	background-position: 26px -62px;
+}
+.navLeft.navLeftIn ul li a:hover .iconFriend{
+	background-position: 26px -123px;
+}
+.navLeft.navLeftIn ul li a:hover .iconService{
+	background-position: 27px -186px;
+}
+.navLeft.navLeftIn ul li a:hover .iconSuggest{
+	background-position: 26px -312px;
+}
+.navLeft.navLeftIn ul li a:hover .iconReport{
+	background-position: 27px -250px;
+}
+
+.navLeft.navLeftIn ul li a img,.navLeft.navLeftIn ul li a i{
+	margin-bottom: 7px;
+}
+
+.navLeft.navLeftIn .ulBot{
+	position: absolute;
+	bottom: 0;
+	width: 65px;
+}
+.navLeft.navLeftIn .ulBot li a{
+	border-bottom: 0;
+	border-top: 1px solid #5b6368;
+}
+
+.navLeft .sideclose{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -56px;
+	margin-right: -9px;
+	cursor: pointer;
+}
+.navLeft.navLeftIn .headIcon{
+	width: 34px;
+	height: 34px;
+}
+
+/* 意见反馈 */
+body .layer-ext-moon .layui-layer-title {
+    padding: 0 80px 0 20px;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #fff;
+    overflow: hidden;
+    background-color: #2fb5f8;
+    border-radius: 2px 2px 0 0;
+}
+.layui-layer-content .recall {
+    padding: 0px 35px 20px 35px;
+    background: #f5f5f5;
+    color: #333333;
+    font-size: 12px;
+    overflow: hidden;
+}
+.layui-layer-content .recall div {
+    margin-top: 15px;
+}
+.layui-layer-content .recall .title, .layui-layer-content .recall .area {
+    width: 100%;
+}
+.layui-layer-content .recall .area textarea {
+    width: 85%;
+    padding: 1%;
+    vertical-align: top;
+    font-size: 12px;
+}
+.layui-layer-content .recall .area textarea {
+    width: 85%;
+    padding: 1%;
+    height: 210px;
+}
+.layui-layer-content .rebutton {
+    cursor: pointer;
+    margin: 0 auto;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    background: #2fb5f8;
+    font-size: 13px;
+}
+body .layer-ext-moon .layui-layer-setwin {
+    top: 15px;
+    right: 15px;
+}
+.layui-layer-content .recall .title input {
+    width: 85%;
+    padding: 1%;
+    vertical-align: 0px;
+    font-size: 12px;
+}
+.layui-layer-content .recall .title input {
+    padding: 10px;
+    height: 15px;
+}
+.layui-layer-content .recall .title input {
+    width: 85%;
+    padding: 1%;
+    vertical-align: 0px;
+    font-size: 12px;
+}
+.layui-layer-content .recall .houser2 input {
+    width: 170px;
+}
+.layui-layer-content .recall .jubao {
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 14px;
+    color: #333333;
+    background: #ffffff;
+    border: 1px solid #c2c2c2;
+}
+.layui-layer-content .jubao.active {
+    background: #e5e5e5;
+}
+.layui-layer-content .jubao:hover, .layui-layer-content .jubao.active:hover {
+    background: #2fb5f8;
+    color: #fff;
+}
+.layui-layer-content .rebutton:hover {
+    background: #2DA5E1;
+}

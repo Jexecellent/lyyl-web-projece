@@ -1,0 +1,154 @@
+<div class="siderbar-left">
+    <div class="navLeft navLeftOut">
+    <% if(session.isLogin && session.user !== null) { %>
+        <div class="isLogin">
+            <div class="user">
+                <a href="javascript:"><img class="headIcon" src="<%=session.user.headIcon || '/static/img/tou.png'%>"></a>
+                <div class="userinfo">
+                    <div class="username">
+                        <a href="javascript:"><%=session.user.nickName%></a>
+                        <input type="hidden" id="isLoginInput">
+                    </div>
+                    <div class="v_l">
+                        <span class="vip">[vip<%=session.user.vip || 0 %>]</span>
+                        <span class="logout"><a href="/user/logout">退出</a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="splitLine"></div>
+            <div class="bean">
+                <img src="/static/img/iocn_bean2.png"><span><%=session.user.goldBeans%></span>
+            </div>
+            <div class="coin">
+                <img src="/static/img/icon_coin2.png"><span><%=session.user.gold%></span>
+                <a class="recharge" href="javascript:">充值金币</a>
+            </div>
+        </div>
+        <% }else {%>
+       <div class="noLogin">
+           <div class="loginBtn">
+               <a class="login" id="login_a" href="javascript:">登录</a>
+               <a class="register" href="javascript:">注册</a>
+           </div>
+           <p>
+               仅注册用户可以使用改功能。
+           </p>
+           <p>
+               请登录后继续吧！
+           </p>
+       </div>
+        <% } %>
+        <div class="splitLine"></div>
+        <div class="poker sidebar-long">
+            <div class="pokerTitle">德州扑克</div>
+            <div class="pokerType">
+                <a class="<%= cur&&cur == 1 ? 'active':''%>" data-pt="1"  href="/hall/1">主播发牌</a>
+                <a class="<%= cur&&cur == 2 ? 'active':''%>" data-pt="2" href="/hall/2">主播陪玩</a>
+                <a class="<%= cur&&cur == 3 ? 'active':''%>" data-pt="3" href="/hall/3">比赛场</a>
+            </div>
+            <% if( !cur || cur < 3){ %>
+            <div class="pokerTitle">房间级别</div>
+            <div class="pokerType roomType">
+                <a class="<%= idx&&idx==1 ? 'cur': '' %>" data-pt="1" href="/hall/<%=cur%>?idx=1">新手房</a>
+                <a class="<%= idx&&idx==2 ? 'cur': '' %>" data-pt="2" href="/hall/<%=cur%>?idx=2">普通房</a>
+                <a class="<%= idx&&idx==3 ? 'cur': '' %>" data-pt="3" href="/hall/<%=cur%>?idx=3">高手房</a>
+            </div>
+            <% }else {%>
+            <div class="matchTitle">赛场级别</div>
+            <div class="matchType">
+                <% lev.forEach(function(num){ %>
+                <a class="<%= idx&&idx==num ? 'cur': '' %>" href="/hall/<%= num %>?idx=<%= num %>&cur=3">级别<%= num-6 %></a>
+                <% })%>
+            </div>
+            <% } %>
+            <div class="matchTitle">房间类型</div>
+            <div class="pokerType">
+                <a href="/hall/19?cur=19">包厢</a>
+                <a class="createRoom" href="javascript:">创建包厢</a>
+            </div>
+        </div>
+        <% if(session.isLogin && session.user !== null){%>
+        <div class="navLeftFoot">
+            <div class="footCon">
+                <a class="kefulink" href="javascript:">联系客服</a>
+                <a id="recall" href="javascript:">意见反馈</a>
+                <a id="roomcall" href="javascript:">房间举报</a>
+            </div>
+        </div>
+        <% } %>
+        <div class="sideclose">
+            <img src="/static/img/sideclose.png">
+        </div>
+    </div>
+    <div class="navLeft navLeftIn">
+        <ul class="ulTop">
+            <li>
+                <a href="javascript:">
+                    <img src="/static/img/navleft_islogin.png"><br>
+                    大厅
+                </a>
+            </li>
+            <% if(!session.isLogin && session.user == null){%>
+             <li>
+                <a href="javascript:">
+                    <i class="navIcon iconLogin"></i>
+                </a>
+            </li>
+            <% }else{%>
+            <li>
+                <a href="javascript:">
+                    <img class="headIcon" src="/static/img/tou.png"><br>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:">
+                    <i class="navIcon iconFocus"></i><br>
+                    关注
+                </a>
+            </li>
+            <li>
+                <a href="javascript:">
+                    <i class="navIcon iconFriend"></i><br>
+                    好友
+                </a>
+            </li>
+        </ul>
+        <ul class="ulBot">
+            <li>
+                <a href="javascript:">
+                    <i class="navIcon iconService"></i><br>
+                    客服
+                </a>
+            </li>
+            <li>
+                <a class="double" id="recall" href="javascript:">
+                    <i class="navIcon iconSuggest"></i><br>
+                    意见<br>反馈
+                </a>
+            </li>
+            <li>
+                <a class="double" id="roomcall" href="javascript:">
+                    <i class="navIcon iconReport"></i><br>
+                    房间<br>举报
+                </a>
+            </li>
+            <% } %>
+        </ul>
+        <div class="sideclose">
+            <img src="/static/img/sideclose2.png">
+        </div>
+    </div>
+    <div id="yijian-option"  style="display:none;">
+        <div  data-value="1">使用帮助</div>    
+        <div  data-value="2">游戏帮助</div>
+        <div  data-value="3">账号安全</div>   
+        <div  data-value="4">其他</div>   
+    </div>  
+    <div id="jubao-option"  style="display:none;">
+        <div  data-value="1">衣着暴露</div>
+        <div  data-value="2">非法行为（涉政 色情</div>
+        <div  data-value="3">作弊行为</div>
+        <div  data-value="4">其他擦边球行为</div>
+    </div>
+</div>
+        

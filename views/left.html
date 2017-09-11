@@ -1,0 +1,139 @@
+
+<link rel="stylesheet" href="/css/left.css"/>
+<div id="side-tools-bar">
+	<div class="sidebar-container sidebar-full" style="display: block">
+		<div class="sidebar-expand">
+			<div class="sidebar-content sidebar-long" id="leftbarScrollbar">
+				<div class="scrollbar">
+					<div class="track">
+						<div class="thumb">
+							<div class="end"></div>
+						</div>
+					</div>
+				</div>
+				<div class="viewport">
+					<div class="overview">
+						<!-- 登录状态 -->
+						<div class="login"  style="display: none">
+							<!-- sidebar-userinfo start -->
+							<div class="sidebar-userinfo">
+								<div class="user-left fl">
+									<a href="JavaScript:;"><img src="/images/default.jpg" alt=""> </a>
+								</div>
+								<div class="user-middle fl">
+									<input type="hidden" id="isLoginInput"><a class="user-middle-name" href="">逃之夭夭</a>
+									<div class="user-middle-level">[vip3]</div>
+								</div>
+								<a class="user-right fl" href="" id="login_out">退出登录</a>
+								<div class="clearb"></div>
+							</div>
+							<!-- sidebar-userinfo end -->
+							<div class="sidebar-split-line"></div>
+							<!-- sdidebar-user-pay start -->
+							<div class="sidebar-pay">
+								<div class="payinfo">
+									<img src="/images/dou.png" />
+									<label>9.99亿</label>
+								</div>
+								<div class="payinfo">
+									<img src="/images/bi.png" class=" bi"/>
+									<label>9.99亿</label>
+									<a href="JavaScript:;" target="_blank" class="playbutton">充值</a>
+								</div>
+							</div>
+							<!-- sdidebar-user-pay end -->
+						</div>
+						<!-- 登录状态 -->
+						<!-- 未登录状态 -->
+						<div class="login-out">
+							<div class="login-status">
+								<span class="login-status-left fl" id="login_a">登录</span>
+								<a class="login-status-right fr" href="javascript:void(0)" id="reg_user_left">注册</a>
+								<div class="clearb"></div>
+							</div>
+							<div class="login-message">登录后来玩个痛快吧！</div>
+						</div>
+						<!-- 未登录状态 -->
+						<div class="sidebar-split-line"></div>
+						<div class="sidebar-quick-browse">
+							<div class="sidebar-list-head">德州扑克</div>
+							<ul class="sidebar-list sidebar-list-1" id="roomTypes">
+								<li>
+									<a class="rlol roomType <%= cur&&cur == 1 ? 'active':''%>" data-pt="1" href="/all/1">主播发牌</a>
+									<a class="rlol roomType <%= cur&&cur == 2 ? 'active':''%>" data-pt="2" href="/all/2">主播陪玩</a>
+									<a class="rlol roomType <%= cur&&cur == 3 ? 'active':''%>" data-pt="3" href="/all/3">比赛场</a>
+								</li>
+							</ul>
+						</div>
+						<div class="sidebar-split-line"></div>
+						<div class="sidebar-quick-browse">
+							<div class="sidebar-list-head">房间级别</div>
+							<ul class="sidebar-list sidebar-list-1" id="roomTypes">
+								<li>
+									<a class="rlol roomType <%= idx&&idx==4 ? 'cur': '' %>" data-pt="4" href="/all/4?idx=4&cur=<%= cur|| 0 %>">新手房</a>
+									<a class="rlol roomType <%= idx&&idx==5 ? 'cur': '' %>" data-pt="5" href="/all/5?idx=5&cur=<%= cur|| 0 %>">普通房</a>
+									<a class="rlol roomType <%= idx&&idx==6 ? 'cur': '' %>" data-pt="6" href="/all/6?idx=6&cur=<%= cur|| 0 %>">高手房</a>
+								</li>
+							</ul>
+						</div>
+						<div class="sidebar-split-line"></div>
+						<div class="sidebar-quick-browse">
+							<div class="sidebar-list-head">房间类型</div>
+							<ul class="sidebar-list sidebar-list-1" id="roomTypes">
+								<li>
+									<a class="rlol roomType " href="JavaScript:;">包厢</a>
+									<span class="found">[创建包厢]</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- sidebar-foot start -->
+			<div class="sidebar-foot">
+				<div class="sidebar-split-line"></div>
+				<ul class="sidebar-list sidebar-list-3 clearfix">
+					<li class="kefulink"><a>联系客服</a></li>
+					<li><a id="recall">意见反馈</a></li>
+					<li><a id="roomcall">房间举报</a></li>
+				</ul>
+			</div>
+			<!-- sidebar-foot end -->
+		</div>
+		<div class="sidebar-collapse"></div>
+		<a href="javascript:;" class="toggle-btn sidebar-state-toggle-btn"></a>
+	</div>
+	<!-- 长的结束 -->
+	<!-- 短的 -->
+	<div class="sidebar-container sidebar-collapsed" style="display: none;">
+		<div class="sidebar-collapse">
+			<div class="sidebar-collapse-head">
+				<a href="JavaScript:;" target="_top"><i class="sidebar-icon sidebar-icon-home"></i> </a>
+			</div>
+			<div class="sidebar-collapse-content ps-container ps-active-y"
+				 data-ps-id="c4534b00-7003-07ec-0e39-b4acadd10782">
+				<div class="sidebar-split-line"></div>
+				<ul class="sidebar-list sidebar-list-4">
+					<!--登录-->
+					<li style="display: none">
+						<a href="JavaScript:;" class="sidebar-userinfo-login-btn">
+							<img src="/images/picture.png" alt="">
+							<span>逃之夭夭</span>
+						</a>
+					</li>
+					<!--登录-->
+					<!--未登录-->
+					<li>
+						<a href="javascript:;" class="sidebar-userinfo-login-btn" id="login_a"> <i class="sidebar-icon sidebar-icon-personal"></i>
+							<span>登录</span>
+						</a>
+					</li>
+					<!--未登录-->
+				</ul>
+			</div>
+		</div>
+		<a href="javascript:;" class="toggle-btn sidebar-state-toggle-btn2"></a>
+	</div>
+	<!-- 短的结束 -->
+</div>
+

@@ -1,0 +1,180 @@
+body .stateroom-class{
+    color: #fff;
+    background: transparent;
+}
+body .stateroom-class .layui-layer-title{
+    background-color: #0698e1;
+    border-color: #0698e1;
+    font-size: 22px;
+    text-align: center;
+    height: 77px;
+    line-height: 77px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 0;
+}
+body .stateroom-class .layui-layer-close1{
+    background-image: url('../../img/btn_guanbi.png');
+    width: 19px;
+    height: 14px;
+    background-position: 0 0;
+}
+body .stateroom-class .layui-layer-close1:hover{
+    background-position: 0 -15px;
+}
+body .stateroom-class .layui-layer-content{
+    background-color: #0698e1;
+    border-color: #0698e1;
+    font-size: 16px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+body .stateroom-class .layui-layer-content .stateCon{
+    background-color: #0794db;
+    margin: 0 58px;
+    padding: 15px 0;
+    border: 1px solid #06aae8;
+    border-radius: 5px;
+    box-shadow: inset 0 0 9px -1px #616161;
+}
+body .stateroom-class .layui-layer-content .stateCon .formGroup{
+    padding: 10px 0;
+}
+body .stateroom-class .layui-layer-content .stateCon label.controlLabel{
+    display: inline-block;
+    width: 116px;
+    text-align: right;
+}
+body .stateroom-class .layui-layer-content .stateCon input[type='text'],body .stateroom-class .layui-layer-content .stateCon input[type='password']{
+    width: 388px;
+    height: 29px;
+    border: 1px solid #c2c2c2;
+    text-indent: 15px;
+    color: #333;
+    font-size: 16px;
+}
+
+body .stateroom-class .layui-layer-content .checkLabel {
+    cursor: pointer;
+    font-size: 1em;
+    background-color: #0794db;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    width: 11px;
+    height: 11px;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 15px 0 20px;
+}
+body .stateroom-class .layui-layer-content .checkLabel span{
+    font-size: 12px;
+    display: none;
+}
+body .stateroom-class .layui-layer-content .checkInput:checked + label {
+    background-color: #2fb5f8;
+    width: 15px;
+    height:15px;
+    border: 0;
+    text-align: center;
+    line-height: 14px;
+}
+body .stateroom-class .layui-layer-content .checkInput:checked + label,body .stateroom-class .layui-layer-content .checkInput:checked + label span{
+    display: inline-block;
+ }
+
+body .stateroom-class .layui-layer-content .slideGroup{
+    padding: 0 42px;
+    font-weight: normal;
+}
+body .stateroom-class .layui-layer-content .slideGroup .groupDiv{
+    margin-top: 15px;
+}
+body .stateroom-class .layui-layer-content .slideGroup .spanLeft{
+
+}
+body .stateroom-class .layui-layer-content .slideGroup .spanRight{
+    float: right;
+}
+body .stateroom-class .layui-layer-content .slideGroup.blue b{
+    color: #46cefb;
+}
+body .stateroom-class .layui-layer-content .slideGroup.orange b{
+    color: #ffae00;
+}
+body .stateroom-class .layui-layer-content .highDiv{
+    text-align: center;
+    padding: 15px 0;
+}
+body .stateroom-class .layui-layer-content .highSet{
+    color: #fec33d;
+    border: 1px solid #fec33d;
+    font-size: 16px;
+    border-radius: 3px;
+    padding:5px 22px;
+}
+body .stateroom-class .layui-layer-content .highSet:hover{
+    background-color: #fec33d;
+    color: #fff;
+}
+body .stateroom-class .layui-layer-content .roomDetail{
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+body .stateroom-class .layui-layer-content{
+    overflow: visible;
+}
+body .stateroom-class .helpBtn{
+    position: absolute;
+    margin: -66px 0 0 20px;
+}
+
+body .stateroom-class .btnCreateRoom{
+    background-image: url('../../img/btn_xzkaiju.png');
+    background-position: 0 0;
+    display: inline-block;
+    width: 111px;
+    height: 36px;
+}
+body .stateroom-class .btnCreateRoom:hover{
+    background-position: 0 -36px;
+}
+body .stateroom-class .btnCreateRoom:active{
+    background-position: 0 -71px;
+}
+body .stateroom-class .btnConfirm{
+    background-image: url('../../img/btn_queding.png');
+    background-position: 0 0;
+    display: inline-block;
+    width: 111px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 15px;
+    color: #fff;
+}
+body .stateroom-class .btnConfirm:hover{
+    background-position: 0 -36px;
+}
+body .stateroom-class .btnConfirm:active{
+    background-position: 0 -71px;
+}
+
+body .stateroom-class .layui-layer-content .roomBot{
+    text-align: center;
+    padding: 20px 0;
+}
+
+body .stateroom-class .detailLeft{
+    display: inline-block;
+    width: 124px;
+    margin-left: 40px;
+    vertical-align: top;
+}
+body .stateroom-class .detailRight{
+    display: inline-block;
+    width: 322px;
+    margin-left: 40px;
+}

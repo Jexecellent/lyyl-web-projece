@@ -1,0 +1,166 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.nav {
+	height: 56px;
+	background: url("../../images/nav-bj.jpg") repeat-x;
+}
+
+.nav-in, .main {
+	width: 1280px;
+	margin: 0 auto;
+}
+
+.nav .logo {
+	float: left;
+	margin: 15px 35px 0 0;
+}
+
+.nav h3 {
+	font: 24px/56px "微软雅黑";
+	color: #EBEBEB;
+	float: left;
+}
+
+.main {
+	background: #FFF;
+	padding-top: 90px;
+	overflow: hidden;
+}
+
+.main-l {
+	width: 790px;
+	height: 510px;
+	margin: 0 45px 0 45px;
+	float: left;
+}
+
+.main-r {
+	width: 270px;
+	height: 340px;
+	border: 1px solid #EBEBEB;
+	border-radius: 5px;
+	float: left;
+	padding: 30px 30px 0 30px;
+}
+
+.main-r h4 {
+	font: 20px "微软雅黑";
+	color: #2479E4;
+	text-align: center;
+	margin-bottom: 30px;
+	font-weight: 500;
+}
+
+.main-r label {
+	width: 68px;
+	text-align: right;
+	font: 14px "微软雅黑";
+	display: inline-block;
+	margin-right: 10px;
+	float: left;
+}
+
+.main-r .inp input {
+	width: 176px;
+	height: 27px;
+	line-height: 27px;
+	border: 1px solid #E6E7EC;
+	padding-left: 5px;
+	float: left;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.main-r .inp {
+	height: 46px;
+}
+
+.iden label, .iden input {
+	float: left;
+}
+
+.iden label, .inp label {
+	line-height: 29px;
+}
+
+.main-r .iden {
+	position: relative;
+}
+
+.main-r .iden input {
+	width: 89px;
+}
+
+.main-r .iden .hint, .hint1 {
+	display: block;
+	position: absolute;
+	top: 32px;
+	left: 73px;
+	color: #FFB653;
+	font: 12px "微软雅黑";
+}
+
+.idenImg {
+	width: 70px;
+	height: 31px;
+	display: inline-block;
+	cursor: pointer;
+	float: right;
+}
+
+.btn {
+	width: 258px;
+	height: 38px;
+	background: #237AE4;
+	color: #fff;
+	font: 16px/38px "微软雅黑";
+	text-align: center;
+	border-radius: 1px;
+	border: none;
+	margin-top: 35px;
+	cursor: pointer;
+}
+
+.select {
+	font: 12px "微软雅黑";
+	margin-top: 15px;
+	height: 16px;
+}
+
+.entryText {
+	float: left;
+}
+
+.areaText {
+	float: right;
+}
+
+.entryText label {
+	float: left;
+}
+
+.entryText label {
+	color: #DADADA;
+	float: left;
+	margin: -2px 0 0 0;
+	background: url('../../images/login_pressed.png') no-repeat 0px 4px;
+	padding-left: 20px;
+	cursor: pointer;
+	width: 100px;
+	text-align: left;
+}
+
+.areaText {
+	margin: -2px 0 0 0;
+}
+
+.areaText span {
+	margin-right: 5px;
+}
+
+.hint, .hint1 {
+	padding-left: 14px;
+	background: url("../../images/ic_login_zy.png") no-repeat 0 2px;
+}

@@ -1,0 +1,257 @@
+li,ul {
+	list-style: none;
+}
+
+article,aside,details,figure,footer,header,hr,nav,section,summary {
+	display: block;
+}
+
+a,hr {
+	padding: 0;
+}
+
+a,a:active,a:hover,a:link,a:visited {
+	text-decoration: none!important;
+}
+
+abbr,address,article,aside,audio,b,blockquote,body,body div,caption,cite,code,dd,del,details,dfn,dl,dt,em,fieldset,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,ul,var,video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: 0;
+	vertical-align: baseline;
+	font-weight: 400;
+	font-size: 100%;
+}
+
+li,td {
+	vertical-align: top;
+}
+
+input[type=checkbox],th {
+	vertical-align: bottom;
+}
+
+html {
+	box-sizing: border-box;
+	background-color: #eee;
+}
+html,body{
+	height: 100%;
+}
+embed,img,object {
+	max-width: 100%;
+}
+
+blockquote,q {
+	quotes: none;
+}
+
+blockquote:after,blockquote:before,q:after,q:before {
+	content: '';
+	content: none;
+}
+
+a {
+	margin: 0;
+	background: 0;
+	vertical-align: baseline;
+	font-size: 100%;
+}
+
+del {
+	text-decoration: line-through;
+}
+
+abbr[title],dfn[title] {
+	border-bottom: 1px dotted #000;
+	cursor: help;
+}
+
+th {
+	font-weight: 700;
+}
+
+td {
+	font-weight: 400;
+}
+
+hr {
+	margin: 1em 0;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+}
+
+input,select {
+	vertical-align: middle;
+}
+
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	white-space: pre-line;
+	word-wrap: break-word;
+}
+
+input[type=radio] {
+	vertical-align: text-bottom;
+}
+
+.ie7 input[type=checkbox] {
+	vertical-align: baseline;
+}
+
+.ie6 input {
+	vertical-align: text-bottom;
+}
+
+table {
+	border-collapse: collapse;
+	font: 100%;
+	border-spacing: 0;
+}
+
+small {
+	font-size: 85%;
+}
+
+strong {
+	font-weight: 700;
+}
+
+td,td img {
+	vertical-align: top;
+}
+
+sub,sup {
+	position: relative;
+	font-size: 75%;
+	line-height: 0;
+}
+
+sup {
+	top: -.5em;
+}
+
+sub {
+	bottom: -.25em;
+}
+
+code,kbd,pre,samp {
+	font-family: monospace,sans-serif;
+}
+
+.setOption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 9;
+	overflow: hidden;
+	width: 100%;
+}
+
+.setOption .roomId .fr {
+	margin-right: 90px;
+    margin-top: 0px;
+    width: 100px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #2fb5f8;
+    text-align: center;
+    line-height: 20px;
+}
+
+.video-list-item-wrap .roomName {
+	overflow: hidden;
+	width: 100%;
+	background: rgba(0,0,0,.7);
+	color: #fff;
+	font: 12px/30px "΢���ź�";
+}
+
+a,a:hover {
+	color: #2fb5f8;
+}
+
+.video-list-item-wrap .roomName span {
+	/*margin-left: 10px;*/
+}
+/*.video-list-item-wrap .spanStaus{
+	display: block;
+	float: left;
+	width: 200px;
+	height: 30px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}*/
+.video-cover .roomId {
+	display: none;
+	overflow: hidden;
+	padding: 5px 10px;
+	color: #2fb5f8;
+	font-size: 13px;
+}
+
+.video-list-item-wrap:hover .roomId {
+	display: block;
+}
+
+.clickable,button,input[type=button],input[type=file],input[type=submit],label {
+	cursor: pointer;
+}
+
+button,input,select,textarea {
+	margin: 0;
+}
+
+button,input[type=button] {
+	overflow: visible;
+	width: auto;
+}
+
+.ie7 img {
+	-ms-interpolation-mode: bicubic;
+}
+
+.clearfix:after,.clearfix:before {
+	display: block;
+	overflow: hidden;
+	height: 0;
+	content: "\0020";
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+body,button,input,select,textarea {
+	color: #333;
+	font: 12px STHeiti,"Microsoft YaHei","Helvetica Neue",Helvetica,SimSun,STSong,Arial,sans-serif;
+}
+
+a {
+	-webkit-transition: color .2s ease-out,background-color .2s ease-out,border-color .2s ease-out,opacity .2s ease-out;
+	transition: color .2s ease-out,background-color .2s ease-out,border-color .2s ease-out,opacity .2s ease-out;
+	-ms-transition: color .2s ease-out,background-color .2s ease-out,border-color .2s ease-out,opacity .2s ease-out;
+}
+
+input:-moz-placeholder {
+	color: #a9a9a9;
+}
+
+textarea:-moz-placeholder {
+	color: #a9a9a9;
+}
+
+textarea {
+	resize: none;
+}
+.mt30{
+	margin-top: 30px;
+}

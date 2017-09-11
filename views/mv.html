@@ -1,0 +1,195 @@
+	<!-- header.html start -->
+	<% include include/header1.html %>
+	<!-- header.html end   -->
+	<link rel="stylesheet" type="text/css" href="./static/css/mv.css">
+	<link rel="stylesheet" type="text/css" href="./static/css/common/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="./static/css/common/paging.css"/>
+
+</head>
+
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+		<% include include/nav.html %>
+		<!-- nav end -->
+		<div class="content">
+			<div class="mvContent">
+				<div class="container">
+					<div class="mvTop">
+						<span class="mvName">
+							<%= videoList.videoInfo.data.name%>
+						</span>
+						<i class="icon iconPlay"></i>
+						<span class="mvPlaytimes">
+							<%= videoList.videoInfo.data.views%>
+						</span>
+					</div>
+					<div class="clearfix">
+						<div class="mvLeft">
+							<!-- 视频 -->
+							<object name="name" id="moveflash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="100%" height="100%">
+								<param name="Base" value="" />
+								<param name="movie" value="" />
+								<param name="quality" value=High/>
+								<param name="_cx" value="12383" />
+								<param name="_cy" value="1588" />
+								<param name="FlashVars" />
+								<param name="Src" value="" />
+								<param name="WMode" value="transparent" />
+								<param name="Play" value="-1" />
+								<param name="Loop" value="-1" />
+								<param name="Menu" value="-1" />
+								<param name="AllowScriptAccess" value="always" />
+								<param name="Scale" value="ShowAll" />
+								<param name="DeviceFont" value="0" />
+								<param name	="EmbedMovie" value="0" />
+								<param name="BGColor" />
+								<param name="SWRemote" />
+								<param name="MovieData" />
+								<embed wmode="transparent"
+									   src="<%= videoList.videoInfo.data.filePath%>"
+									   quality=high
+									   pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"
+									   type="application/x-shockwave-flash"
+									   width="100%"
+									   height="100%">
+								</embed>
+							</object>
+							<!--http://dispatcher.video.qiyi.com/disp/shareplayer.swf?vid=cef30f325dc9fa53ee444b6d5b8e9e0b&tvId=656223000&cid=qc_105043_300253&coop=coop_9kumusicxmas&bd=1&autoPlay=1-->
+							<!-- 视频代码结束 -->
+						</div>
+						<div class="mvRight">
+							<div class="rightT">
+								推荐视频
+							</div>
+							<div class="rightC">
+								<ul class="shotMvList">
+									<% if (videoList.recommend.data.list != "") { %>
+									<% videoList.recommend.data.list.forEach(function(item){ %>
+									<li id="<%= item.id%>">
+										<a href="/mv?id=<%= item.id%>&anchorId=<%= videoList.videoInfo.data.anchorId%>">
+											<div class="mvCover">
+												<img src="<%= item.cover || './static/img/huodong_03.png'%>">
+												<span class="mvLive">正在播放</span>
+												<span class="mvTime"><%= item.recordlen%><!--时长--></span>
+											</div>
+											<div class="mvDetail">
+												<div class="mvTitle">
+													<%= item.name%> <!--视频名称-->
+												</div>
+												<div class="mvPlaytimes">
+													<i class="icon iconPlay2"></i>
+													<span><%= item.views%><!--浏览量--></span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="commentDiv" data-videoId="<%= videoList.videoInfo.data.id%>">
+						<img class="chatIcon" src="./static/img/rank/chatIcon.png">
+						<img class="hornIcon" src="./static/img/rank/icon_horn.png">
+						<input class="commentInput" type="text" name="" placeholder="我也要评论！" maxlength="20">
+						<a class="btn sendBtn" href="javscript:;">发送</a>
+						<a class="btn praiseBtn" href="javscript:;"><img src="./static/img/rank/icon-laud.png"><span><%= videoList.videoInfo.data.appreciate%></span></a>
+						<a class="btn shareBtn" href="javscript:;"><img src="./static/img/rank/icon-ect.png">分享</a>
+					</div>
+				</div>
+			</div>
+			<div class="commentContent">
+				<div class="container">
+					<div class="commentLeft">
+						<div class="anchorInfo">
+							<img class="headIcon" src="./static/img/anchor1.png">
+							<div class="anchorDet">
+								<p><a class="anchorName" href="javascript:"><%= videoList.videoInfo.data.roomName%></a></p>
+								<p class="mvSummary"><%= videoList.videoInfo.data.remark%></p>
+								<p class="uploadTime"><%= videoList.videoInfo.data.createTime%></p>
+							</div>
+							<div class="focusDiv">
+								<img class="flishPerson" src="./static/img/rank/flishPerson.png">
+								<div class="focusGroup">
+									<a class="focusBtn" href="javascript:">关注</a>
+									<!--<a class="concernBtn" href="javascript:">已关注</a>|-->
+									<span><%= videoList.videoInfo.data.fansNum%></span>
+								</div>
+							</div>
+						</div>
+						<div class="commentList">
+						</div>
+						<div id="pageTool"></div>
+					</div>
+					<div class="commentRight">
+						<div class="otherMv">
+							<div class="commentShotT">
+								其他视频
+								<a class="moreBtn" href="javscript:">更多&nbsp;>></a>
+							</div>
+							<div class="">
+								<ul class="shotMvList">
+									<% if (videoList.other.data.list != "") { %>
+									<% videoList.other.data.list.forEach(function(item){ %>
+									<li>
+										<a href="/mv?id=<%= item.id%>&anchorId=<%= videoList.videoInfo.data.anchorId%>">
+											<div class="mvCover">
+												<img src="./static/img/huodong_03.png">
+												<span class="mvTime"><%= item.recordlen%><!--时长--></span>
+											</div>
+											<div class="mvDetail">
+												<div class="mvTitle">
+													<%= item.name%>
+												</div>
+												<div class="mvPlaytimes">
+													<i class="icon iconPlay"></i>
+													<span><%= item.views%></span>
+												</div>
+											</div>
+										</a>
+									</li>
+									<% }) %>
+									<% } %>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="scrollTop">回到顶部</div>
+	</div>
+	<!-- 评论 -->
+	<script type="text/template" id="comment">
+		<div class="commentShotT">
+			所有评论<span>({{data.total}})</span>
+		</div>
+		{{ if data.list != ""}}
+		<ul class="cList">
+			{{each data.list as value i}}
+			<li>
+				<img class="headIcon" src="./static/img/anchor1.png">
+				<div class="userInfo">
+					<p>
+						<a class="username" href="javasript:">{{value.createName}}</a>
+						<span class="commentTime">{{value.createDate}}</span>
+					</p>
+					<p class="commmentCon">{{value.content}}</p>
+				</div>
+			</li>
+			{{/each}}
+		</ul>
+		{{else}}
+		<p class="cue">还没有评论哦</p>
+		{{/if}}
+	</script>
+	<script type="text/javascript" src="./static/js/api/zUI.js"></script>
+	<script type="text/javascript" src="./static/js/api/paging.js"></script>
+	<script type="text/javascript" src="./static/js/api/hyapi.js"></script>
+	<script type="text/javascript" src="./static/js/mv.js"></script>
+	<script type="text/javascript" src="/static/js/libs/template.js"></script>
+</body>
+</html>

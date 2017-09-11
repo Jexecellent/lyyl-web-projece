@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册 - 海妖直播</title>
+    <link rel="stylesheet" href="/static/css/common/normalize.min.css">
+    <link rel="stylesheet" href="/static/css/user.css">
+</head>
+<body>
+    <header>
+        <div class="h-inner">
+            <div class="fl logo">
+                <img src="/static/img/haiyao_logo.png" alt="">
+                <span class="h-text">
+                    用户注册
+                </span>
+            </div>
+            <a href="/" class="fr back">返回首页<i class="icon icon-back"></i></a>
+        </div>
+    </header>
+    <div class="app-user">
+        <div class="main fl">
+        <form action="" id="regFrom" novalidate="novalidate">
+            <div class="line">
+                <span class="tit">注册</span>
+                <span class="fr mt5">
+                    已经有账号？<a href="/user/login">马上登录</a>
+                </span>
+            </div>
+            <div class="line-field">
+                <input type="text" placeholder="请输入手机号码" maxlength="11" required="required" name="mobile">
+                <i class="icon icon-ok"></i>
+                <div class="field-tip"></div>
+            </div>
+            <div class="line-field">
+                <input type="password" placeholder="设置密码" maxlength="16" required="required" name="password">
+                <i class="icon icon-ok"></i>
+                <div class="field-tip"></div>
+            </div>
+            <div class="line-field">
+                <input type="password" placeholder="确认密码" maxlength="16" required="required" name="passwordIdent">
+                <i class="icon icon-ok"></i>
+                <div class="field-tip"></div>
+            </div>
+            <div class="line-field">
+                <input type="text" placeholder="输入短信验证码" maxlength="4" required="required" class="short" name="valideCode">
+                <a href="javascript:;" class="btn btn-main btn-sendcode">免费获取验证码</a>
+                 <div class="field-tip"></div>
+            </div>
+            <div class="line-field">
+               <input type="checkbox" name="hasRead" id="checkTrems">
+               <label class="im-text" for="checkTrems">我已经阅读并同意<a href="#readTrems">《用户协议》</a></label>
+               <!-- <div class="field-tip">请先同意用户协议</div> -->
+            </div>
+            <div class="line-field">
+                <input type="submit" value="立即注册" class="btn btn-main btn-block">
+            </div>
+            </form>
+        </div>
+        <div class="sider">
+            <p class="tell-me">使用社交账号快速登录</p>
+            <div class="g-block">
+                <a href="javascript:;" class="btn btn-main">
+                    <i class="icon icon-qq"></i>QQ账号登录
+                </a>
+                <a href="javascript:;" class="btn btn-wechat">
+                    <i class="icon icon-wx"></i>微信账号登录
+                </a>
+                <a href="javascript:;" class="btn btn-weibo">
+                    <i class="icon icon-wb"></i>新浪账号登录
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/libs/md5.min.js"></script>
+    <script src="/static/js/api/jquery-1.12.2.min.js"></script>
+    <script src="/static/js/api/hyapi.js"></script>
+    <script src="/static/js/api/formcheck.js"></script>
+    <script src="/static/js/reg-v2.js"></script>
+</body>
+</html>

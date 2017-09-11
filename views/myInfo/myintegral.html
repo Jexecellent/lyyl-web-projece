@@ -1,0 +1,152 @@
+<% include ../include/header1.html %>
+	<link rel="stylesheet" type="text/css" href="/static/css/personal.css">
+</head>
+<body>
+	<div class="wrap">
+		<!-- nav start -->
+        <% include ../include/nav.html %>
+        <!-- nav end -->
+		<div class="content">
+			<div class="container">
+				<div class="myContainer">
+					<div class="conLeft">
+						<% include mynav.html %>
+					</div>
+					<!-- 积分中心 start -->
+					<div id="myintegral" class="conRight">
+						<div class="riTitle">
+							<span class="titleName active">积分中心</span>
+						</div>
+						<div class="riContainer">
+							<div class="user">
+								<div class="userinfo">
+									<div class="userT">
+										<img class="headIcon" src="/static/img/tou.png">
+										<div class="userD">
+											<p><img src="/static/img/levels/vip/1.png"><%=user.nickName%></p>
+											<p>我的积分：<span>3333</span></p>
+										</div>
+									</div>
+									<div class="userB">
+										<a class="btn blue creditslogBtn" href="javascript:">积分记录</a>
+										<a class="btn blue" target="_blank" href="http://game.13322.com/pointshop/index">兑换礼品</a>
+									</div>
+								</div>
+								<div class="banner">
+									<img src="/static/img/personal/banner_integral.png">
+								</div>
+							</div>
+						</div>
+						<div class="riTitle">
+							<span class="titleName active">赚取积分</span>
+						</div>
+						<div class="riContainer">
+							<div class="integralList">
+								<ul class="clearfix">
+									<li>
+										<div class="integralBg integral1">
+											<div class="summary1">
+												个人成就达到10级
+											</div>
+											<div class="summary2">
+												个人成就达到10级<br>
+												奖励：2000积分
+											</div>
+										</div>
+										<div class="listB">
+											<!-- <a href="javascript:">去完成</a> -->
+											<a class="alGet" href="javascript:">已领取</a>
+										</div>
+									</li>
+									<li>
+										
+										<div class="integralBg integral2">
+											<div class="summary1">
+												充值金额累计：10000金币
+											</div>
+											<div class="summary2">
+												充值金额累计：10000金币<br>
+												奖励：3000积分
+											</div>
+										</div>
+										<div class="listB">
+											<!-- <a href="javascript:">去充值</a> -->
+											<a class="goGet" href="javascript:">去领取</a>
+										</div>
+									</li>
+									<li>
+										
+										<div class="integralBg integral3">
+											<div class="summary1">
+												个人VIP等级：8级
+											</div>
+											<div class="summary2">
+												个人成就达到10级<br>
+												奖励：4000积分
+											</div>
+										</div>
+										<div class="listB">
+											<a href="/myInfo">去查看</a>
+										</div>
+									</li>
+									<li>
+										
+										<div class="integralBg integral4">
+											<div class="summary1">
+												每日签到获得积分
+											</div>
+											<div class="summary2">
+												每日签到获得积分
+											</div>
+										</div>
+										<div class="listB">
+											<a href="javascript:">去签到</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="riTitle">
+							<span class="titleName active">积分说明</span>
+						</div>
+						<div class="riContainer">
+							<div class="">
+								<div class="divGroup">
+									<div class="divQ">
+										1.积分是什么？
+									</div>
+									<div class="divA">
+										积分是我们为所有热爱<<海妖直播>>的朋友打造的回馈系统。用户可以使用积分在积分商城里免费兑换实物、卡卷等;
+									</div>
+								</div>
+								<div class="divGroup">
+									<div class="divQ">
+										2.积分怎么获得？
+									</div>
+									<div class="divA">
+										用户通过“积分中心”里面的“赚取积分”，完成可获得积分，若完成任务后可能会出现数据延迟，建议隔十分钟再来领取积分;
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 积分中心 end -->
+				</div>
+			</div>
+		</div>
+			<script type="text/javascript" src="/static/js/personal.js"></script>
+	<script type="text/javascript">
+		/*积分记录弹窗*/
+		$('.creditslogBtn').on('click', function(){
+			layer.open({
+				title: '积分记录',
+				skin: 'haiyao-class',
+				type: 1,
+				area: ['800px', '545px'],
+				shadeClose: true, //点击遮罩关闭
+				content: '<div class="creditslogList"><table><thead><th>序号</th><th>日期时间</th><th>获得途径</th><th>积分状态</th><th>账号积分</th></thead><tbody><tr><td>1</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>2</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>3</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>4</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>5</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>6</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>7</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>8</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>9</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr><tr><td>10</td><td>2017-6-2 10:29:00</td><td>签到获得</td><td>+20</td><td>2000</td></tr></tbody></table></div>'
+			});
+		});
+	</script>
+</body>
+</html>
